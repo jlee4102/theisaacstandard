@@ -53,11 +53,12 @@ export const categories = [
 export const reviews = [
   {
     slug: 'beelink-gti13-ultra-review',
-    title: 'Beelink GTi13 Ultra Review: i9-13900HK Mini PC, Three Months In',
+    title: 'Beelink GTi13 Ultra Review: A Quiet i9 Mini PC With a Real GPU Escape Hatch',
     category: 'mini-pcs',
     excerpt:
-      'Three months of daily use on the i9 / 64GB / 2TB flagship Beelink mini PC. The PCIe expansion slot, the real thermals, and what the spec sheet skips.',
+      "Don't buy this for the CPU benchmarks. Buy it for the silent operation and the PCIe x8 escape hatch that turns a fist-sized box into a real gaming rig. Three months in.",
     date: '2026-05-24',
+    rating: 4.2,
     image: 'https://www.bee-link.com/cdn/shop/files/9_a1060a2b-d1b9-4dc5-a4c6-b8c08b1d1c7d.png?v=1764744541',
   },
   {
