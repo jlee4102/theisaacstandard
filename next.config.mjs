@@ -10,5 +10,14 @@ const nextConfig = {
       { protocol: 'https', hostname: 'cdn.shopify.com' },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/review/anker-soundcore-q20i-vs-p20i',
+        destination: '/review/anker-soundcore-q20i-review',
+        permanent: true,
+      },
+    ];
+  },
 };
 export default nextConfig;

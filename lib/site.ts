@@ -44,11 +44,12 @@ export const categories = [
 
 export const reviews = [
   {
-    slug: 'anker-soundcore-q20i-vs-p20i',
-    title: 'Anker Soundcore Q20i vs P20i: Scaffold (Needs Testing)',
+    slug: 'anker-soundcore-q20i-review',
+    title: 'Anker Soundcore Q20i Review: Strong ANC, Weak Tuning, Honest Caveats',
     category: 'budget-audio',
     excerpt:
-      'Spec-only scaffold comparing two budget Anker pairs. Awaiting hands-on testing before recommendation.',
+      'After hands-on testing: the 60-hour battery is closer to 49, the ANC genuinely works, and the V-shaped tuning is the catch nobody mentions. Honest take on the budget ANC headphone everyone is buying.',
     date: '2026-05-22',
+    rating: 3.9,
   },
 ];
