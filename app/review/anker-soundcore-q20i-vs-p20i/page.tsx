@@ -45,8 +45,18 @@ export default function Page() {
       </p>
 
       <div className="not-prose grid grid-cols-2 gap-4 my-8">
-        <ProductImage alt="Soundcore Q20i — full headphones shot on a neutral background" aspect="1/1" />
-        <ProductImage alt="Soundcore P20i — earbuds in case, lid open, on a neutral background" aspect="1/1" />
+        <ProductImage
+          src="https://cdn.shopify.com/s/files/1/0516/3761/6830/files/soundcore-q20i-blue-anc-headphones_3840x.jpg?v=1748311376"
+          alt="Soundcore Q20i over-ear ANC headphones (manufacturer image)"
+          caption="Q20i shown in blue; also available in black and white. Image: Soundcore."
+          aspect="1/1"
+        />
+        <ProductImage
+          src="https://cdn.shopify.com/s/files/1/0516/3761/6830/files/20260304-121406_3840x.png?v=1772597724"
+          alt="Soundcore P20i true wireless earbuds in charging case (manufacturer image)"
+          caption="P20i with charging case. Image: Soundcore."
+          aspect="1/1"
+        />
       </div>
 
       <h2>What they are &amp; who they're for</h2>

@@ -1,8 +1,15 @@
 import Image from 'next/image';
 
-// Use this for ACTUAL product photography you take during testing.
-// Drop the image into public/reviews/<slug>/ and pass src="/reviews/<slug>/main.jpg".
-// Avoids fake product imagery — visual content matches the channel's testing rules.
+// Image source priority (channel policy):
+//   1. YOUR own photography of the tested product — best for E-E-A-T and trust.
+//      Drop in public/reviews/<slug>/ and pass src="/reviews/<slug>/main.jpg".
+//   2. Manufacturer / press-kit images, attributed via the caption prop
+//      (e.g. "Image: Soundcore"). Fine for scaffolds before testing.
+//   3. Leave src undefined → renders a "Photo needed" placeholder.
+//
+// DO NOT use Amazon listing images without PA-API access — they belong to the
+// third-party seller, and Google's helpful-content updates demote sites that
+// share perceptually-identical stock product shots with other affiliate sites.
 export default function ProductImage({
   src,
   alt,
