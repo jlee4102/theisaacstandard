@@ -2,7 +2,7 @@ export const metadata = { title: 'Contact' };
 
 export default function Page() {
   return (
-    <article className="prose-isaac">
+    <article className="prose-isaac max-w-3xl mx-auto px-6 md:px-10 py-10">
       <h1 className="font-serif text-3xl">Contact</h1>
       <p>
         Got a tip on a product worth reviewing? Found an error in one of our reviews? We read every message.

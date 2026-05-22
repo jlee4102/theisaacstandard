@@ -9,11 +9,7 @@ export default function Newsletter() {
     e.preventDefault();
     setStatus('submitting');
     try {
-      // TODO: replace with your Beehiiv / ConvertKit endpoint.
-      // Beehiiv example:
-      //   POST https://api.beehiiv.com/v2/publications/<PUB_ID>/subscriptions
-      //   headers: { Authorization: 'Bearer <API_KEY>' }
-      //   body: { email, reactivate_existing: true }
+      // TODO: wire to Beehiiv/ConvertKit via /api/subscribe
       await new Promise((r) => setTimeout(r, 600));
       setStatus('done');
       setEmail('');
@@ -23,30 +19,39 @@ export default function Newsletter() {
   }
 
   return (
-    <aside className="not-prose border border-ink/10 rounded-lg p-6 bg-ink/[0.02] my-10">
-      <h3 className="font-serif text-xl">Get the weekly Standard</h3>
-      <p className="text-ink/70 text-sm mt-1">
-        One short email each Sunday: the week's best gear deals and what's actually worth buying. No spam, unsubscribe anytime.
-      </p>
-      <form onSubmit={submit} className="flex flex-col sm:flex-row gap-2 mt-4">
-        <input
-          type="email"
-          required
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="you@example.com"
-          className="flex-1 px-3 py-2 border border-ink/20 rounded bg-paper"
-          disabled={status === 'submitting' || status === 'done'}
-        />
-        <button
-          type="submit"
-          className="bg-accent text-paper px-5 py-2 rounded font-medium hover:opacity-90 disabled:opacity-60"
-          disabled={status === 'submitting' || status === 'done'}
-        >
-          {status === 'submitting' ? 'Subscribing…' : status === 'done' ? 'Subscribed ✓' : 'Subscribe'}
-        </button>
-      </form>
-      {status === 'error' && <p className="text-red-700 text-sm mt-2">Something went wrong — try again?</p>}
+    <aside className="not-prose relative overflow-hidden rounded-2xl border border-line bg-card shadow-card my-12">
+      <div className="absolute -right-20 -top-20 w-72 h-72 rounded-full opacity-30 pointer-events-none"
+        style={{ background: 'radial-gradient(circle, #c2562a 0%, transparent 70%)', filter: 'blur(20px)' }}
+      />
+      <div className="relative p-7 md:p-9 grid md:grid-cols-5 gap-6 items-center">
+        <div className="md:col-span-3">
+          <div className="eyebrow mb-2">The weekly Standard</div>
+          <h3 className="font-serif text-2xl md:text-3xl tracking-tight">One honest review per Sunday.</h3>
+          <p className="text-ink-soft mt-2 leading-relaxed">
+            Short email. One review, one deal worth your attention, one piece of gear we&apos;d skip.
+            No spam, unsubscribe anytime.
+          </p>
+        </div>
+        <form onSubmit={submit} className="md:col-span-2 flex flex-col gap-2">
+          <input
+            type="email"
+            required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="you@example.com"
+            className="px-4 py-3 border border-line rounded-md bg-paper text-ink placeholder:text-ink-faint focus:outline-none focus:border-accent transition"
+            disabled={status === 'submitting' || status === 'done'}
+          />
+          <button
+            type="submit"
+            className="bg-ink text-paper px-5 py-3 rounded-md font-medium hover:bg-accent-deep transition disabled:opacity-60"
+            disabled={status === 'submitting' || status === 'done'}
+          >
+            {status === 'submitting' ? 'Subscribing…' : status === 'done' ? 'Subscribed ✓' : 'Subscribe'}
+          </button>
+          {status === 'error' && <p className="text-red-700 text-sm">Something went wrong — try again?</p>}
+        </form>
+      </div>
     </aside>
   );
 }

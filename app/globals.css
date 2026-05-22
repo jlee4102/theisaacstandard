@@ -3,9 +3,69 @@
 @tailwind utilities;
 
 html { scroll-behavior: smooth; }
-body { background: theme('colors.paper'); color: theme('colors.ink'); }
-.prose-isaac h2 { @apply font-serif text-2xl mt-10 mb-3; }
-.prose-isaac h3 { @apply font-serif text-xl mt-6 mb-2; }
-.prose-isaac p { @apply leading-7 my-4; }
-.prose-isaac ul { @apply list-disc pl-6 my-3; }
-.prose-isaac a { @apply text-accent underline underline-offset-2; }
+
+body {
+  background: theme('colors.paper');
+  color: theme('colors.ink');
+  font-family: 'Spline Sans', system-ui, sans-serif;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Subtle film-grain overlay across the whole site */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Eyebrow / mono labels */
+.eyebrow {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: theme('colors.accent-deep');
+}
+
+/* Article typography */
+.prose-isaac h2 {
+  @apply font-serif text-2xl md:text-3xl mt-12 mb-3 tracking-tight;
+  font-weight: 600;
+}
+.prose-isaac h3 {
+  @apply font-serif text-xl mt-8 mb-2;
+  font-weight: 600;
+}
+.prose-isaac p {
+  @apply leading-7 my-4 text-ink-soft;
+}
+.prose-isaac p strong { color: theme('colors.ink'); font-weight: 600; }
+.prose-isaac ul { @apply list-none pl-0 my-3; }
+.prose-isaac ul li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: theme('colors.ink-soft');
+}
+.prose-isaac ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 6px;
+  height: 6px;
+  background: theme('colors.accent');
+  transform: rotate(45deg);
+}
+.prose-isaac ul li strong { color: theme('colors.ink'); font-weight: 600; }
+.prose-isaac a {
+  color: theme('colors.accent-deep');
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+}
+.prose-isaac a:hover { color: theme('colors.accent'); }

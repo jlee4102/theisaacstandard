@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { categories, reviews } from '@/lib/site';
 import ReviewCard from '@/components/ReviewCard';
 
@@ -5,15 +6,34 @@ const SLUG = 'budget-audio';
 const cat = categories.find((c) => c.slug === SLUG)!;
 export const metadata = { title: cat.name, description: cat.blurb };
 
+const HERO_IMAGE = 'https://images.unsplash.com/photo-1487215078519-e21cc028cb29?w=1600&q=80&auto=format&fit=crop';
+
 export default function Page() {
   const list = reviews.filter((r) => r.category === SLUG);
   return (
-    <div>
-      <h1 className="font-serif text-3xl">{cat.name}</h1>
-      <p className="text-ink/70 mt-2">{cat.blurb}</p>
-      <div className="grid gap-4 mt-8">
-        {list.length === 0 ? <p className="text-ink/50">Reviews coming soon.</p> : list.map((r) => <ReviewCard key={r.slug} {...r} />)}
-      </div>
-    </div>
+    <>
+      <header className="relative h-56 md:h-72 overflow-hidden border-b border-line">
+        <Image src={HERO_IMAGE} alt={cat.name} fill priority className="object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-r from-ink/80 via-ink/40 to-transparent" />
+        <div className="absolute inset-0 flex items-end">
+          <div className="max-w-6xl mx-auto px-6 md:px-10 py-8 w-full">
+            <div className="eyebrow text-paper/80 mb-1">Category</div>
+            <h1 className="font-serif text-3xl md:text-5xl text-paper tracking-tight">{cat.name}</h1>
+            <p className="text-paper/85 mt-2 max-w-2xl text-sm md:text-base">{cat.blurb}</p>
+          </div>
+        </div>
+      </header>
+      <section className="max-w-6xl mx-auto px-6 md:px-10 py-12">
+        {list.length === 0 ? (
+          <p className="text-ink-faint italic">Reviews coming soon.</p>
+        ) : (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {list.map((r) => (
+              <ReviewCard key={r.slug} {...r} category={cat.name} />
+            ))}
+          </div>
+        )}
+      </section>
+    </>
   );
 }

@@ -12,17 +12,21 @@ export default function FAQ({ items }: { items: QA[] }) {
   };
 
   return (
-    <section className="not-prose my-8">
+    <section className="not-prose my-10">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <h2 className="font-serif text-2xl mb-4">Frequently asked questions</h2>
-      <div className="space-y-3">
+      <div className="eyebrow mb-2">Questions</div>
+      <h2 className="font-serif text-2xl md:text-3xl tracking-tight mb-5">Frequently asked</h2>
+      <div className="space-y-2">
         {items.map((i, idx) => (
-          <details key={idx} className="border border-ink/10 rounded p-4 [&_summary::-webkit-details-marker]:hidden">
-            <summary className="font-medium cursor-pointer flex justify-between items-center">
-              {i.q}
-              <span className="text-accent ml-4">+</span>
+          <details
+            key={idx}
+            className="group border border-line rounded-lg bg-card overflow-hidden [&_summary::-webkit-details-marker]:hidden"
+          >
+            <summary className="cursor-pointer p-5 flex justify-between items-center gap-4 font-medium text-ink hover:text-accent-deep transition">
+              <span>{i.q}</span>
+              <span className="text-accent shrink-0 text-xl group-open:rotate-45 transition-transform">+</span>
             </summary>
-            <p className="text-ink/80 mt-3 leading-7">{i.a}</p>
+            <p className="px-5 pb-5 text-ink-soft leading-7">{i.a}</p>
           </details>
         ))}
       </div>

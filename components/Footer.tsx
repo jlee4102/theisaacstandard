@@ -3,20 +3,33 @@ import { site } from '@/lib/site';
 
 export default function Footer() {
   return (
-    <footer className="border-t border-ink/10 mt-16">
-      <div className="max-w-4xl mx-auto px-4 py-8 text-sm text-ink/70 space-y-4">
-        <p>
-          <strong>Affiliate disclosure:</strong> As an Amazon Associate, {site.name} earns from qualifying purchases.
-          We only recommend products we'd buy ourselves. <Link href="/disclosure" className="underline">Full disclosure</Link>.
+    <footer className="border-t border-line mt-24 bg-card/40 relative z-10">
+      <div className="max-w-6xl mx-auto px-6 md:px-10 py-10 text-sm text-ink-soft space-y-5">
+        <div className="grid md:grid-cols-3 gap-6">
+          <div>
+            <div className="eyebrow mb-2">The Standard</div>
+            <p className="text-ink font-serif text-lg">Honest gear, held to a higher bar.</p>
+          </div>
+          <div>
+            <p className="font-medium text-ink mb-2">Site</p>
+            <nav className="flex flex-col gap-1">
+              <Link href="/about" className="hover:text-accent-deep">About</Link>
+              <Link href="/contact" className="hover:text-accent-deep">Contact</Link>
+              <Link href="/authors/isaac" className="hover:text-accent-deep">Author</Link>
+            </nav>
+          </div>
+          <div>
+            <p className="font-medium text-ink mb-2">Legal</p>
+            <nav className="flex flex-col gap-1">
+              <Link href="/disclosure" className="hover:text-accent-deep">Affiliate Disclosure</Link>
+              <Link href="/privacy" className="hover:text-accent-deep">Privacy</Link>
+              <Link href="/terms" className="hover:text-accent-deep">Terms</Link>
+            </nav>
+          </div>
+        </div>
+        <p className="border-t border-line pt-5 text-xs">
+          As an Amazon Associate, {site.name} earns from qualifying purchases. © {new Date().getFullYear()} {site.name}.
         </p>
-        <nav className="flex flex-wrap gap-x-5 gap-y-2">
-          <Link href="/about" className="hover:text-accent">About</Link>
-          <Link href="/contact" className="hover:text-accent">Contact</Link>
-          <Link href="/disclosure" className="hover:text-accent">Affiliate Disclosure</Link>
-          <Link href="/privacy" className="hover:text-accent">Privacy</Link>
-          <Link href="/terms" className="hover:text-accent">Terms</Link>
-        </nav>
-        <p>© {new Date().getFullYear()} {site.name}. All rights reserved.</p>
       </div>
     </footer>
   );

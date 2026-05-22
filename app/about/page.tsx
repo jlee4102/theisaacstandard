@@ -4,7 +4,7 @@ export const metadata = { title: 'About', description: `What ${site.name} is, an
 
 export default function Page() {
   return (
-    <article className="prose-isaac">
+    <article className="prose-isaac max-w-3xl mx-auto px-6 md:px-10 py-10">
       <h1 className="font-serif text-3xl">About {site.name}</h1>
       <p>
         {site.name} is an independent product review site. We buy gear, live with it, and tell you whether it earned its

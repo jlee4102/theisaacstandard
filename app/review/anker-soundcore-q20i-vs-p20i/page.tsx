@@ -3,6 +3,7 @@ import Byline from '@/components/Byline';
 import ComparisonTable from '@/components/ComparisonTable';
 import FAQ from '@/components/FAQ';
 import Newsletter from '@/components/Newsletter';
+import ProductImage from '@/components/ProductImage';
 import { site } from '@/lib/site';
 
 export const metadata = {
@@ -24,7 +25,7 @@ export default function Page() {
   };
 
   return (
-    <article className="prose-isaac">
+    <article className="prose-isaac max-w-3xl mx-auto px-6 md:px-10 py-10">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <div className="not-prose bg-yellow-50 border-l-4 border-yellow-600 px-4 py-3 my-4 text-sm text-ink/80">
@@ -42,6 +43,11 @@ export default function Page() {
       <p className="text-lg text-ink/80 mt-3">
         [HOOK + VERDICT — 2-3 sentences after testing both pairs. State plainly: which one earns the $50, in what use case, and what each gets concretely wrong. Don't hedge.]
       </p>
+
+      <div className="not-prose grid grid-cols-2 gap-4 my-8">
+        <ProductImage alt="Soundcore Q20i — full headphones shot on a neutral background" aspect="1/1" />
+        <ProductImage alt="Soundcore P20i — earbuds in case, lid open, on a neutral background" aspect="1/1" />
+      </div>
 
       <h2>What they are &amp; who they're for</h2>
       <p>

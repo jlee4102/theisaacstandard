@@ -4,7 +4,7 @@ export const metadata = { title: 'Privacy Policy' };
 
 export default function Page() {
   return (
-    <article className="prose-isaac">
+    <article className="prose-isaac max-w-3xl mx-auto px-6 md:px-10 py-10">
       <h1 className="font-serif text-3xl">Privacy Policy</h1>
       <p className="text-ink/50 text-sm">Last updated: May 21, 2026</p>
 
