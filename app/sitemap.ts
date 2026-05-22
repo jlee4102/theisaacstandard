@@ -6,6 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: site.url, lastModified: now },
     { url: `${site.url}/about`, lastModified: now },
+    { url: `${site.url}/how-we-test`, lastModified: now },
     { url: `${site.url}/contact`, lastModified: now },
     { url: `${site.url}/disclosure`, lastModified: now },
     { url: `${site.url}/privacy`, lastModified: now },

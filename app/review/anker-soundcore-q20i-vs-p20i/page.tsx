@@ -51,7 +51,7 @@ export default function Page() {
 
       <h2>What they are &amp; who they're for</h2>
       <p>
-        These are two different form factors at overlapping price points. The Q20i is an over-ear Bluetooth headphone with hybrid active noise cancellation. Anker rates the driver at 40mm and claims up to 60 hours of playback with ANC off and around 40 hours with ANC on. The P20i is a true-wireless earbud set with a smaller 10mm driver per side; Anker claims a total of 30 hours of playback when including the charging case (around 10 hours per charge plus case top-ups). Both list USB-C charging.
+        These are two different form factors at overlapping price points. The Q20i is an over-ear Bluetooth 5.0 headphone with hybrid active noise cancellation — Soundcore says it uses four microphones (two outside the cup, two inside) and a 40mm dynamic driver. They list 245 g, multipoint pairing, 22 EQ presets via the Soundcore app, and 40 hours of battery with ANC on (60 hours without). The P20i is a true-wireless earbud set built on Bluetooth 5.3 with a 10mm driver per side, IPX4 sweat/splash resistance (per Soundcore's product page; some listings cite IPX5), and a manufacturer-claimed 30 hours total with the case (10 hours per bud). Codec support on both is SBC and AAC — no aptX, no LDAC. Both charge over USB-C.
       </p>
       <p>
         Most buyers comparing these are choosing between &quot;one pair on my head all day&quot; (Q20i) and &quot;something I can pocket and forget&quot; (P20i). They're not direct competitors so much as the same brand's answer to two different questions. Sits in the [INSERT CURRENT PRICE TIER — verify at publish] tier; main alternatives at this price include [COMPARABLE PRODUCT 1 — TESTED?] and [COMPARABLE PRODUCT 2 — TESTED?].
@@ -61,15 +61,24 @@ export default function Page() {
       <ComparisonTable
         headers={['Soundcore Q20i', 'Soundcore P20i']}
         rows={[
-          { feature: 'Form factor', values: ['Over-ear headphones', 'True wireless earbuds'] },
-          { feature: 'Driver size', values: ['40mm (Anker spec)', '10mm (Anker spec)'] },
-          { feature: 'Active noise cancellation', values: ['Yes — hybrid (Anker)', 'No active ANC (passive only)'] },
-          { feature: 'Battery — manufacturer claim', values: ['Up to 60h ANC off / 40h ANC on', '~10h/bud + ~20h from case = 30h total'] },
-          { feature: 'Water resistance', values: ['Not rated', 'IPX5 (Anker spec)'] },
-          { feature: 'Charging', values: ['USB-C', 'USB-C'] },
-          { feature: 'Typical street price', values: ['[INSERT — check at publish]', '[INSERT — check at publish]'] },
+          { feature: 'Form factor', values: ['Over-ear, on-cup mic', 'True wireless earbuds, lanyard'] },
+          { feature: 'Driver size', values: ['40mm dynamic', '10mm dynamic'] },
+          { feature: 'Active noise cancellation', values: ['Yes — hybrid (4 mics)', 'No — passive isolation only'] },
+          { feature: 'Bluetooth version', values: ['5.0', '5.3'] },
+          { feature: 'Codecs (Anker)', values: ['SBC, AAC (Hi-Res via 3.5mm cable)', 'SBC, AAC'] },
+          { feature: 'Battery — Anker claim', values: ['40h ANC on / 60h ANC off', '10h/bud + 20h from case = 30h total'] },
+          { feature: 'Fast charge', values: ['5 min → 4h playback', '10 min → 2h playback'] },
+          { feature: 'Weight', values: ['245 g', '4.3 g per bud · 47.6 g case'] },
+          { feature: 'Water resistance', values: ['Not rated', 'IPX4 (per Soundcore page; some listings cite IPX5)'] },
+          { feature: 'Multipoint', values: ['Yes (Anker spec)', 'Not advertised'] },
+          { feature: 'EQ presets in app', values: ['22', '22'] },
+          { feature: 'Charging port', values: ['USB-C', 'USB-C'] },
+          { feature: 'Typical street price', values: ['[VERIFY AT PUBLISH]', '[VERIFY AT PUBLISH]'] },
         ]}
       />
+      <p className="text-xs text-ink-faint italic mt-2 not-prose">
+        Specs cited from Soundcore product pages and Anker listings as of May 2026. The P20i&apos;s water-resistance figure is contradictory between Soundcore&apos;s own product page (IPX4) and several retailer listings (IPX5) — at the lower IPX4 it&apos;s protected against splashes only, not water jets; we recommend treating it as IPX4 until tested.
+      </p>
 
       <div className="flex flex-wrap gap-3 not-prose my-6">
         <AffiliateLink asin={Q20I_ASIN}>Check Q20i price on Amazon</AffiliateLink>
@@ -153,7 +162,7 @@ export default function Page() {
         items={[
           {
             q: 'Is the Anker Soundcore Q20i waterproof?',
-            a: 'Anker does not publish a water-resistance rating for the Q20i. Treat it as not waterproof — fine for indoor use and dry commutes, not safe for sweat or rain. If you need water resistance at this price, the P20i (rated IPX5 by Anker) is the safer pick.',
+            a: "Soundcore does not publish a water-resistance rating for the Q20i. Treat it as not waterproof — safe for indoor use and dry commutes, but not for sweat, rain, or gym sessions. If you need water resistance at this price, the P20i is the better choice (Soundcore's product page lists IPX4 — splash-resistant, not fully waterproof).",
           },
           {
             q: 'How long does the P20i battery actually last per charge?',
@@ -161,7 +170,7 @@ export default function Page() {
           },
           {
             q: 'Can the Q20i connect to two devices at once (multipoint)?',
-            a: '[NEEDS TESTING: verify current firmware behavior. Multipoint support has shifted between firmware versions on budget Soundcore models. Check whether the version you receive supports simultaneous phone + laptop pairing.]',
+            a: "Soundcore's official Q20i product page advertises multipoint pairing — the headphones can stay connected to two devices at once and switch between them. The P20i does not advertise multipoint. [NEEDS TESTING: verify multipoint reliability on the Q20i — budget Soundcore firmware has historically been inconsistent on this feature.]",
           },
           {
             q: 'Is either model good for gaming?',
@@ -169,7 +178,7 @@ export default function Page() {
           },
           {
             q: 'Do these support hi-res audio codecs like LDAC?',
-            a: '[NEEDS TESTING: check the current Anker product page for codec support — historically Soundcore at this price tier supports SBC and AAC only, but newer firmware can add codecs. Verify before claiming.]',
+            a: "No. Both the Q20i and P20i support SBC and AAC only — neither lists aptX or LDAC. The Q20i is marketed as Hi-Res Audio compatible, but only via its included 3.5mm aux cable (wired); wireless playback is capped at AAC. If you need high-bitrate wireless audio, look at a different price tier.",
           },
         ]}
       />

@@ -22,7 +22,7 @@ export default function Hero() {
               Read the latest review
             </Link>
             <Link
-              href="/about"
+              href="/how-we-test"
               className="border border-ink/20 px-6 py-3 rounded-md font-medium hover:border-accent-deep hover:text-accent-deep transition"
             >
               How we test

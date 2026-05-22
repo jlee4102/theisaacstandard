@@ -49,10 +49,16 @@ scripts/new-review.mjs     — Claude-powered draft generator
 
 ## Adding a new review
 
-1. Run `npm run new-review` to get a draft, OR write from scratch.
-2. Create `app/review/<your-slug>/page.tsx` (copy the Anker review as a template).
-3. Add the entry to the `reviews` array in `lib/site.ts`.
-4. Replace `[ASIN]` placeholders with real ones.
+The **canonical template** is `templates/review-template.tsx`. Every new review — hand-written or AI-drafted — must match this structure.
+
+1. **Test the product first.** Fill in `templates/testing-notes-template.md` as you go.
+2. Copy `templates/review-template.tsx` to `app/review/<your-slug>/page.tsx`.
+3. Hand your testing notes to Claude with: *"Here are my notes on [product]. Write a review using our template at templates/review-template.tsx — fill every [NEEDS TESTING] bracket from these notes, flag anything you still need a fact for."*
+4. Edit Claude's output, verify ASIN, drop product photos in `public/reviews/<slug>/`.
+5. Add an entry to the `reviews` array in `lib/site.ts` (top of array, newest first). Only add `rating` after testing is complete.
+6. Delete the yellow DRAFT banner before publishing. Push to main → Vercel auto-deploys.
+
+The biweekly autonomous cron (`automation/weekly-reviews.ps1`) generates new pages in this same template shape on a `drafts/` branch for you to review, fill, and merge.
 
 ## Adding a new category
 

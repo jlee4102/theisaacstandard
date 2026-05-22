@@ -15,8 +15,10 @@ export default function Footer() {
             <p className="font-medium text-ink mb-2">Site</p>
             <nav className="flex flex-col gap-1">
               <Link href="/about" className="hover:text-accent-deep">About</Link>
+              <Link href="/how-we-test" className="hover:text-accent-deep">How we test</Link>
               <Link href="/contact" className="hover:text-accent-deep">Contact</Link>
               <Link href="/authors/isaac" className="hover:text-accent-deep">Author</Link>
+              <Link href="/press.html" className="hover:text-accent-deep">Press kit</Link>
             </nav>
           </div>
           <div>

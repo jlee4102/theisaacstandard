@@ -225,6 +225,7 @@ CRITICAL REMINDERS:
 - Every section that requires hands-on observation must be bracketed with [NEEDS TESTING: ...] — the specific thing to test, not a generic placeholder.
 - Manufacturer specs require attribution every time. "Anker claims X" or "the spec sheet lists Y" — never bare "the battery is 30 hours".
 - No rating in JSON-LD until tested. Don't include a rating in the JSON output either.
+- The canonical structure / wording for these scaffolds is documented in templates/review-template.tsx in the repo. Match that file's structure exactly — every section, every component, every bracket convention.
 "@
 
 $userPrompt = "Today is $today. Use web_search to find 2-3 currently-trending products on Amazon in the allowed categories. For each, verify the ASIN by viewing the amazon.com/dp/ page. Gather manufacturer specs from the listing. Then return the JSON. Remember: scaffolds only — every experiential claim must be bracketed. Do not include a rating field."
