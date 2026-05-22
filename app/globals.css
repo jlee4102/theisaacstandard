@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+body { background: theme('colors.paper'); color: theme('colors.ink'); }
+.prose-isaac h2 { @apply font-serif text-2xl mt-10 mb-3; }
+.prose-isaac h3 { @apply font-serif text-xl mt-6 mb-2; }
+.prose-isaac p { @apply leading-7 my-4; }
+.prose-isaac ul { @apply list-disc pl-6 my-3; }
+.prose-isaac a { @apply text-accent underline underline-offset-2; }
