@@ -13,6 +13,8 @@ export const metadata = {
 };
 
 const ASIN = 'B0DYJ871R7';
+const SER7_ASIN = 'B0CQT9N951';
+const MINI_S12_ASIN = 'B0BVFS94J5';
 
 export default function Page() {
   const jsonLd = {
@@ -121,6 +123,43 @@ export default function Page() {
       </p>
       <p>
         <strong>[NEEDS TESTING from James]:</strong> If James has tested or used a competitor — even briefly — what he&apos;d call out. Otherwise, this stays as attributed comparison to public specs only.
+      </p>
+
+      <h2>Cheaper alternatives from Beelink</h2>
+      <p>
+        Most readers landing on a $769 i9 mini PC don&apos;t actually need an i9. Two cheaper Beelinks in the same family solve different problems for noticeably less money. Honest framing: these aren&apos;t recommended over the GTi13 Ultra — they&apos;re recommended <em>instead of</em> it, when your workload doesn&apos;t justify the top tier.
+      </p>
+
+      <div className="not-prose grid gap-4 my-6">
+        <div className="border border-line rounded-lg bg-card p-5">
+          <div className="flex flex-wrap items-baseline justify-between gap-3 mb-2">
+            <h3 className="font-serif text-xl text-ink">Beelink SER7 (Ryzen 7 7840HS)</h3>
+            <span className="font-mono text-xs uppercase tracking-widest text-accent-deep">~$400-450</span>
+          </div>
+          <p className="text-sm text-ink-soft leading-relaxed">
+            The honest sweet-spot pick. AMD&apos;s Ryzen 7 7840HS with <strong>Radeon 780M</strong> integrated graphics is materially better for gaming and emulation than the GTi13&apos;s Iris Xe — the 780M handles many modern AAA titles at 1080p low/medium without a discrete card, and demanding emulators (Yuzu, Cemu, RPCS3) run noticeably smoother. No PCIe dock support, but if you weren&apos;t going to buy the EX Pro anyway, you save several hundred dollars for better real-world graphics performance.
+          </p>
+          <div className="mt-4">
+            <AffiliateLink asin={SER7_ASIN}>Check SER7 price on Amazon</AffiliateLink>
+          </div>
+        </div>
+
+        <div className="border border-line rounded-lg bg-card p-5">
+          <div className="flex flex-wrap items-baseline justify-between gap-3 mb-2">
+            <h3 className="font-serif text-xl text-ink">Beelink Mini S12 Pro (N100)</h3>
+            <span className="font-mono text-xs uppercase tracking-widest text-accent-deep">~$160-200</span>
+          </div>
+          <p className="text-sm text-ink-soft leading-relaxed">
+            The true budget pick. Intel N100 is a quad-core efficiency-class CPU — fine for web browsing, media playback, Plex transcoding for one or two streams, Home Assistant, light NAS duties, and retro emulation through PS1. It will <em>not</em> handle modern gaming, demanding emulation (GameCube and up struggle), or heavy multitasking. But at a fifth of the GTi13&apos;s price, it&apos;s the right call when you just need a tiny, quiet, always-on box.
+          </p>
+          <div className="mt-4">
+            <AffiliateLink asin={MINI_S12_ASIN}>Check Mini S12 Pro price on Amazon</AffiliateLink>
+          </div>
+        </div>
+      </div>
+
+      <p className="text-xs text-ink-faint italic not-prose">
+        Both alternatives carry the same Beelink build quality and Windows 11 pre-installation as the GTi13 Ultra. Prices vary; verify at publish time. Neither has been hands-on tested by {site.name} yet — recommendations here are based on public specs and the Ryzen / N100 architectures&apos; known performance profiles.
       </p>
 
       <h2>Who should buy / skip</h2>
