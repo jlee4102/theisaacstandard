@@ -60,24 +60,24 @@
   </g>
 
   <!-- Wordmark + tagline on right side of safe area -->
-  <g transform="translate(940,570)">
+  <g transform="translate(940,520)">
     <text x="0" y="60"
           font-family="'JetBrains Mono', ui-monospace, monospace"
           font-size="34" letter-spacing="10" fill="#8f3d1c">THE STANDARD</text>
     <line x1="0" y1="86" x2="300" y2="86" stroke="#c2562a" stroke-width="4"/>
-    <text x="0" y="226"
+    <text x="0" y="216"
           font-family="Fraunces, 'Playfair Display', Georgia, serif"
-          font-weight="900" font-size="160" fill="#1a1d1f" letter-spacing="-4">Isaac</text>
-    <text x="0" y="380"
+          font-weight="900" font-size="150" fill="#1a1d1f" letter-spacing="-4">Isaac</text>
+    <text x="0" y="358"
           font-family="Fraunces, 'Playfair Display', Georgia, serif"
-          font-style="italic" font-weight="500" font-size="160"
+          font-style="italic" font-weight="500" font-size="150"
           fill="#c2562a" letter-spacing="-3">Standard</text>
   </g>
 
   <!-- Tagline below wordmark, still inside safe area -->
-  <text x="940" y="960"
+  <text x="940" y="930"
         font-family="'Spline Sans', system-ui, sans-serif"
-        font-size="44" font-weight="400" fill="#4a4f54">Honest gear, held to a higher bar.</text>
+        font-size="38" font-weight="400" fill="#4a4f54">Honest gear, held to a higher bar.</text>
 
   <!-- Decorative chips outside safe area (only visible on TV/wider crops) -->
   <g transform="translate(160,640)" opacity="0.7">

@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+  <!-- Video intro / outro card — 1920 × 1080 (16:9, full HD).
+       Use as a 3-5 second still frame at the start AND end of every video.
+       Place lower-third / call-to-action text below the wordmark if needed. -->
+  <defs>
+    <radialGradient id="introGlow" cx="78%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#c2562a" stop-opacity="0.32"/>
+      <stop offset="55%" stop-color="#8f3d1c" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#f4f1ea" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grainIntro" width="120" height="120" patternUnits="userSpaceOnUse">
+      <rect width="120" height="120" fill="#f4f1ea"/>
+      <circle cx="20" cy="30" r="0.5" fill="#1a1d1f" opacity="0.10"/>
+      <circle cx="60" cy="70" r="0.4" fill="#1a1d1f" opacity="0.08"/>
+      <circle cx="95" cy="20" r="0.6" fill="#1a1d1f" opacity="0.09"/>
+      <circle cx="40" cy="100" r="0.4" fill="#1a1d1f" opacity="0.07"/>
+    </pattern>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#grainIntro)"/>
+  <rect width="1920" height="1080" fill="url(#introGlow)"/>
+
+  <!-- Top border with eyebrow -->
+  <line x1="120" y1="100" x2="1800" y2="100" stroke="#ddd6c8" stroke-width="1.5"/>
+  <text x="120" y="80"
+        font-family="'JetBrains Mono', ui-monospace, monospace"
+        font-size="18" letter-spacing="6" fill="#8a9097">EST. 2026 · INDEPENDENT REVIEWS</text>
+  <text x="1800" y="80" text-anchor="end"
+        font-family="'JetBrains Mono', ui-monospace, monospace"
+        font-size="18" letter-spacing="6" fill="#8a9097">THEISAACSTANDARD.COM</text>
+
+  <!-- Centered mark + wordmark -->
+  <g transform="translate(640,300)">
+    <rect width="260" height="260" rx="32" fill="#1a1d1f"/>
+    <circle cx="30" cy="30" r="5" fill="#c2562a" opacity="0.85"/>
+    <circle cx="230" cy="30" r="5" fill="#c2562a" opacity="0.85"/>
+    <circle cx="30" cy="230" r="5" fill="#c2562a" opacity="0.85"/>
+    <circle cx="230" cy="230" r="5" fill="#c2562a" opacity="0.85"/>
+    <text x="130" y="180"
+          text-anchor="middle"
+          font-family="Fraunces, 'Playfair Display', Georgia, serif"
+          font-style="italic" font-weight="900" font-size="180"
+          fill="#c2562a" letter-spacing="-2.5">S</text>
+    <line x1="80" y1="210" x2="180" y2="210" stroke="#f4f1ea" stroke-width="6" stroke-linecap="square"/>
+    <line x1="80" y1="210" x2="80" y2="224" stroke="#f4f1ea" stroke-width="6"/>
+    <line x1="130" y1="210" x2="130" y2="222" stroke="#f4f1ea" stroke-width="5"/>
+    <line x1="180" y1="210" x2="180" y2="224" stroke="#f4f1ea" stroke-width="6"/>
+  </g>
+
+  <g transform="translate(960,330)">
+    <text x="0" y="50"
+          font-family="'JetBrains Mono', ui-monospace, monospace"
+          font-size="28" letter-spacing="9" fill="#8f3d1c">THE STANDARD</text>
+    <line x1="0" y1="72" x2="240" y2="72" stroke="#c2562a" stroke-width="3.5"/>
+    <text x="0" y="200"
+          font-family="Fraunces, 'Playfair Display', Georgia, serif"
+          font-weight="900" font-size="140" fill="#1a1d1f" letter-spacing="-3.5">Isaac</text>
+    <text x="0" y="340"
+          font-family="Fraunces, 'Playfair Display', Georgia, serif"
+          font-style="italic" font-weight="500" font-size="140"
+          fill="#c2562a" letter-spacing="-2.5">Standard</text>
+  </g>
+
+  <!-- Tagline centered below -->
+  <text x="960" y="850" text-anchor="middle"
+        font-family="Fraunces, 'Playfair Display', Georgia, serif"
+        font-weight="400" font-size="40" fill="#4a4f54" font-style="italic">"Honest gear, held to a higher bar."</text>
+
+  <!-- Bottom border + CTA strip -->
+  <line x1="120" y1="980" x2="1800" y2="980" stroke="#ddd6c8" stroke-width="1.5"/>
+  <text x="960" y="1020" text-anchor="middle"
+        font-family="'JetBrains Mono', ui-monospace, monospace"
+        font-size="20" letter-spacing="8" fill="#4a4f54">SUBSCRIBE  ·  NEW REVIEW EVERY SUNDAY</text>
+</svg>

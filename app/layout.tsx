@@ -2,6 +2,7 @@ import './globals.css';
 import { site } from '@/lib/site';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import AnnouncementBanner from '@/components/AnnouncementBanner';
 
 export const metadata = {
   metadataBase: new URL(site.url),
@@ -35,6 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className="min-h-screen flex flex-col">
+        <AnnouncementBanner />
         <Header />
         <main className="flex-1 w-full">{children}</main>
         <Footer />

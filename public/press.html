@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Press Kit — The Isaac Standard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,900&family=Spline+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1d1f;
+    --ink-soft: #4a4f54;
+    --ink-faint: #8a9097;
+    --paper: #f4f1ea;
+    --card: #fffdf8;
+    --accent: #c2562a;
+    --accent-deep: #8f3d1c;
+    --line: #ddd6c8;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Spline Sans', system-ui, sans-serif;
+    background: var(--paper); color: var(--ink);
+    line-height: 1.6; padding: 4rem 2rem;
+  }
+  .wrap { max-width: 960px; margin: 0 auto; }
+  .eyebrow {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--accent-deep);
+  }
+  h1 { font-family: 'Fraunces', Georgia, serif; font-weight: 900;
+    font-size: clamp(2.5rem, 6vw, 4rem); letter-spacing: -0.025em; line-height: 1; margin: 0.5rem 0 1rem; }
+  h1 em { font-style: italic; color: var(--accent); font-weight: 500; }
+  h2 { font-family: 'Fraunces', Georgia, serif; font-weight: 600;
+    font-size: 1.8rem; margin: 3rem 0 1rem; padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--ink); display: flex; align-items: baseline; gap: 0.8rem; }
+  h2 .num { font-family: 'JetBrains Mono', monospace; font-size: 0.9rem;
+    color: var(--accent); font-weight: 500; }
+  h3 { font-family: 'Fraunces', serif; font-weight: 600;
+    font-size: 1.15rem; margin: 1.5rem 0 0.6rem; }
+  p { color: var(--ink-soft); margin-bottom: 0.8rem; }
+
+  .grid { display: grid; gap: 1.5rem; }
+  .grid-2 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+  .grid-3 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+  .grid-5 { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
+
+  .asset {
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: 10px; overflow: hidden;
+  }
+  .asset-preview {
+    background: var(--paper); padding: 1.5rem; display: flex;
+    align-items: center; justify-content: center; min-height: 160px;
+  }
+  .asset-preview.dark { background: var(--ink); }
+  .asset img { max-width: 100%; height: auto; max-height: 140px; display: block; }
+  .asset-meta { padding: 0.9rem 1.1rem; font-size: 0.85rem; }
+  .asset-meta .name { font-weight: 600; color: var(--ink); display: block; }
+  .asset-meta .dim { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem;
+    color: var(--ink-faint); display: block; margin-top: 0.15rem; }
+  .asset-meta a { color: var(--accent-deep); text-decoration: none;
+    font-size: 0.78rem; font-weight: 500; display: inline-block; margin-top: 0.5rem; }
+  .asset-meta a:hover { color: var(--accent); text-decoration: underline; }
+
+  .swatch {
+    border-radius: 10px; padding: 1.2rem 1.1rem; min-height: 140px;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    border: 1px solid var(--line);
+  }
+  .swatch .hex { font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem; letter-spacing: 0.05em; }
+  .swatch .label { font-size: 0.85rem; font-weight: 600; margin-top: 0.15rem; }
+  .swatch.dark { color: var(--paper); }
+  .swatch.dark .hex { color: rgba(244,241,234,0.8); }
+
+  .font-card {
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: 10px; padding: 1.5rem;
+  }
+  .font-card .name { font-size: 0.85rem; color: var(--ink-faint);
+    font-family: 'JetBrains Mono', monospace; margin-bottom: 0.5rem; }
+  .font-card .sample { font-size: 2.2rem; line-height: 1.1; color: var(--ink); }
+  .font-card .meta { margin-top: 0.6rem; font-size: 0.8rem; color: var(--ink-soft); }
+
+  ul { list-style: none; padding: 0; }
+  ul li { position: relative; padding-left: 1.4rem; margin-bottom: 0.4rem;
+    color: var(--ink-soft); }
+  ul li::before { content: ""; position: absolute; left: 0; top: 0.65em;
+    width: 5px; height: 5px; background: var(--accent); transform: rotate(45deg); }
+  ul li strong { color: var(--ink); }
+
+  .do-dont {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem; margin-top: 1rem;
+  }
+  .do-dont div { padding: 1rem 1.2rem; border-radius: 8px;
+    font-size: 0.92rem; }
+  .do-dont .do { background: #e7f0e3; border-left: 3px solid #5a8a3f; color: #2c4a1e; }
+  .do-dont .dont { background: #f3dfd9; border-left: 3px solid var(--accent); color: var(--accent-deep); }
+
+  footer { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--line);
+    font-family: 'JetBrains Mono', monospace; font-size: 0.78rem;
+    color: var(--ink-faint); text-align: center; letter-spacing: 0.05em; }
+  footer a { color: var(--accent-deep); text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="eyebrow">Press &amp; Brand Kit</div>
+  <h1>The <em>Isaac</em> Standard</h1>
+  <p style="max-width: 56ch; font-size: 1.05rem; margin-top: 0.8rem;">
+    Brand assets, logo files, color palette, typography, and usage guidelines.
+    Everything you need to reference, write about, or feature the channel.
+  </p>
+
+  <h2><span class="num">01</span> Logo &amp; Mark</h2>
+  <p>Download any of these as SVG by right-clicking the link. For raster (PNG) versions, see Section 06 or run the conversion script in the repo.</p>
+  <div class="grid grid-3" style="margin-top: 1.5rem;">
+    <div class="asset">
+      <div class="asset-preview"><img src="brand/mark.svg" alt="Mark"></div>
+      <div class="asset-meta">
+        <span class="name">Mark — primary</span>
+        <span class="dim">SVG · 64×64 base</span>
+        <a href="brand/mark.svg" download>Download SVG ↓</a>
+      </div>
+    </div>
+    <div class="asset">
+      <div class="asset-preview dark"><img src="brand/mark-light.svg" alt="Mark reversed"></div>
+      <div class="asset-meta">
+        <span class="name">Mark — reversed</span>
+        <span class="dim">SVG · for dark backgrounds</span>
+        <a href="brand/mark-light.svg" download>Download SVG ↓</a>
+      </div>
+    </div>
+    <div class="asset">
+      <div class="asset-preview"><img src="brand/lockup-horizontal.svg" alt="Horizontal lockup"></div>
+      <div class="asset-meta">
+        <span class="name">Horizontal lockup</span>
+        <span class="dim">SVG · mark + wordmark</span>
+        <a href="brand/lockup-horizontal.svg" download>Download SVG ↓</a>
+      </div>
+    </div>
+  </div>
+
+  <h2><span class="num">02</span> Banners</h2>
+  <div class="grid grid-2" style="margin-top: 1.5rem;">
+    <div class="asset">
+      <div class="asset-preview"><img src="brand/youtube-banner.svg" alt="YouTube banner"></div>
+      <div class="asset-meta">
+        <span class="name">YouTube channel art</span>
+        <span class="dim">SVG · 2560×1440</span>
+        <a href="brand/youtube-banner.svg" download>Download SVG ↓</a>
+      </div>
+    </div>
+    <div class="asset">
+      <div class="asset-preview"><img src="brand/twitter-banner.svg" alt="Twitter header"></div>
+      <div class="asset-meta">
+        <span class="name">X / Twitter header</span>
+        <span class="dim">SVG · 1500×500</span>
+        <a href="brand/twitter-banner.svg" download>Download SVG ↓</a>
+      </div>
+    </div>
+    <div class="asset">
+      <div class="asset-preview"><img src="brand/web-banner.svg" alt="Web banner"></div>
+      <div class="asset-meta">
+        <span class="name">Web banner (email / press)</span>
+        <span class="dim">SVG · 1920×480</span>
+        <a href="brand/web-banner.svg" download>Download SVG ↓</a>
+      </div>
+    </div>
+    <div class="asset">
+      <div class="asset-preview"><img src="brand/video-intro.svg" alt="Video intro card"></div>
+      <div class="asset-meta">
+        <span class="name">Video intro card</span>
+        <span class="dim">SVG · 1920×1080 · 16:9</span>
+        <a href="brand/video-intro.svg" download>Download SVG ↓</a>
+      </div>
+    </div>
+  </div>
+
+  <h2><span class="num">03</span> Color palette</h2>
+  <div class="grid grid-5" style="margin-top: 1.5rem;">
+    <div class="swatch dark" style="background: #1a1d1f;">
+      <div class="label">Ink</div><div class="hex">#1A1D1F</div>
+    </div>
+    <div class="swatch dark" style="background: #4a4f54;">
+      <div class="label">Ink Soft</div><div class="hex">#4A4F54</div>
+    </div>
+    <div class="swatch dark" style="background: #c2562a;">
+      <div class="label">Accent</div><div class="hex">#C2562A</div>
+    </div>
+    <div class="swatch dark" style="background: #8f3d1c;">
+      <div class="label">Accent Deep</div><div class="hex">#8F3D1C</div>
+    </div>
+    <div class="swatch" style="background: #f4f1ea;">
+      <div class="label">Paper</div><div class="hex">#F4F1EA</div>
+    </div>
+  </div>
+
+  <h2><span class="num">04</span> Typography</h2>
+  <div class="grid grid-3" style="margin-top: 1.5rem;">
+    <div class="font-card">
+      <div class="name">SERIF — HEADLINES</div>
+      <div class="sample" style="font-family: 'Fraunces', Georgia, serif; font-weight: 900;">Fraunces</div>
+      <div class="meta">Google Fonts · Variable · weights 400-900 · italic</div>
+    </div>
+    <div class="font-card">
+      <div class="name">SANS — BODY</div>
+      <div class="sample" style="font-family: 'Spline Sans', system-ui, sans-serif;">Spline Sans</div>
+      <div class="meta">Google Fonts · weights 400-600</div>
+    </div>
+    <div class="font-card">
+      <div class="name">MONO — LABELS</div>
+      <div class="sample" style="font-family: 'JetBrains Mono', monospace; font-size: 1.8rem;">JetBrains Mono</div>
+      <div class="meta">Google Fonts · weights 400-500</div>
+    </div>
+  </div>
+
+  <h2><span class="num">05</span> Usage guidelines</h2>
+  <div class="do-dont">
+    <div class="do">
+      <strong>DO</strong>
+      <ul style="margin-top: 0.5rem;">
+        <li>Use the mark on a contrasting background — ink on cream, mark-light on dark.</li>
+        <li>Give it room — at least the height of the mark as clearspace on all sides.</li>
+        <li>Use the SVG whenever possible for crisp scaling.</li>
+        <li>Keep the wordmark italic on "Standard" — it's part of the brand.</li>
+      </ul>
+    </div>
+    <div class="dont">
+      <strong>DON'T</strong>
+      <ul style="margin-top: 0.5rem;">
+        <li>Recolor the mark or wordmark to colors outside the palette.</li>
+        <li>Squish, stretch, rotate, or skew the logo.</li>
+        <li>Drop shadows, glows, or 3D effects on the mark.</li>
+        <li>Place over busy photography without a dark overlay or scrim.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2><span class="num">06</span> About the channel</h2>
+  <p><strong>Name:</strong> The Isaac Standard</p>
+  <p><strong>Founded:</strong> 2026</p>
+  <p><strong>Founder:</strong> Isaac (James Lee)</p>
+  <p><strong>Tagline:</strong> Honest gear, held to a higher bar.</p>
+  <p><strong>One-liner:</strong> An independent product review blog and YouTube channel covering budget audio, smart home, trackers, mini PCs, and outdoor robots — built around technical, opinionated reviews based on real hands-on testing.</p>
+  <p><strong>Press contact:</strong> press@theisaacstandard.com</p>
+
+  <footer>
+    The Isaac Standard · <a href="/">theisaacstandard.com</a> · Press kit last updated 2026-05-22
+  </footer>
+</div>
+</body>
+</html>

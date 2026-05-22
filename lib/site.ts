@@ -5,6 +5,15 @@ export const site = {
   affiliateTag: process.env.AMAZON_AFFILIATE_TAG || 'yourtag-20',
 };
 
+// Site-wide announcement bar above the header. Set enabled=false to hide.
+// Keep the message short — under ~90 chars looks best on mobile.
+export const announcement = {
+  enabled: true,
+  message: 'New review every Sunday — testing in progress.',
+  cta: 'Get the weekly Standard →',
+  href: '/#latest',
+};
+
 export const categories = [
   {
     slug: 'budget-audio',
