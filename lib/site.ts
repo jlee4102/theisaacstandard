@@ -52,6 +52,15 @@ export const categories = [
 
 export const reviews = [
   {
+    slug: 'beelink-gti13-ultra-review',
+    title: 'Beelink GTi13 Ultra Review: i9-13900HK Mini PC, Three Months In',
+    category: 'mini-pcs',
+    excerpt:
+      'Three months of daily use on the i9 / 64GB / 2TB flagship Beelink mini PC. The PCIe expansion slot, the real thermals, and what the spec sheet skips.',
+    date: '2026-05-24',
+    image: 'https://www.bee-link.com/cdn/shop/files/9_a1060a2b-d1b9-4dc5-a4c6-b8c08b1d1c7d.png?v=1764744541',
+  },
+  {
     slug: 'anker-soundcore-q20i-review',
     title: 'Anker Soundcore Q20i Review: Strong ANC, Weak Tuning, Honest Caveats',
     category: 'budget-audio',
