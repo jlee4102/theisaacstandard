@@ -36,11 +36,10 @@ export const categories = [
 export const reviews = [
   {
     slug: 'anker-soundcore-q20i-vs-p20i',
-    title: 'Anker Soundcore Q20i vs P20i: Which to Buy Under $50',
+    title: 'Anker Soundcore Q20i vs P20i: Scaffold (Needs Testing)',
     category: 'budget-audio',
     excerpt:
-      'Two of the most-bought budget Anker pairs of 2026, head to head. Honest take on which actually deserves your money.',
-    date: '2026-05-21',
-    rating: 4.4,
+      'Spec-only scaffold comparing two budget Anker pairs. Awaiting hands-on testing before recommendation.',
+    date: '2026-05-22',
   },
 ];
