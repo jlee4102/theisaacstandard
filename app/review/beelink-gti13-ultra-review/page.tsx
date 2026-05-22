@@ -12,7 +12,7 @@ export const metadata = {
     'Hands-on review of the Beelink GTi13 Ultra (i9-13900HK, 64GB DDR5, 2TB SSD) after three months of daily use for light gaming and emulation — including the PCIe expansion claim, real thermals, and what the spec sheet doesn’t tell you.',
 };
 
-const ASIN = 'B0DT9GMJZ9';
+const ASIN = 'B0DYJ871R7';
 
 export default function Page() {
   const jsonLd = {
@@ -63,7 +63,7 @@ export default function Page() {
         The differentiator is the <strong>PCIe 4.0 x8 slot</strong> exposed at the bottom of the chassis. Beelink sells a separate &quot;EX Pro&quot; docking station that connects through this slot, allowing the GTi13 to drive a full-size desktop discrete GPU. Without the dock, you&apos;re running on the integrated Iris Xe — which is competent for older or lighter titles, console emulation, and 4K media playback, but not for current AAA gaming. With the dock and a discrete card, the GTi13 effectively becomes a small-form-factor gaming PC. That dual-mode capability is what positions it differently from competing mini PCs at the same price.
       </p>
       <p>
-        At its base 32GB / 1TB configuration, Beelink lists it around <strong>$759 MSRP</strong> (currently $599 direct from Beelink during 2026 promotions). The 64GB / 2TB configuration tested here lands closer to <strong>$899-1,099</strong> depending on color and stock channel. That price tier puts it against the Minisforum NAB9, ASUS NUC 13 Pro, and GMKtec K8 — all i9-class mini PCs in roughly the same band.
+        At its base 32GB / 1TB configuration, Beelink lists it around <strong>$759 MSRP</strong> (currently $599 direct during 2026 promotions). The 64GB / 2TB configuration tested here is <strong>$769 direct from Beelink</strong> and lands around <strong>$799-899 on Amazon</strong>, depending on color and stock channel. That price tier puts it against the Minisforum NAB9, ASUS NUC 13 Pro, and GMKtec K8 — all i9-class mini PCs in roughly the same band.
       </p>
 
       <h2>Specs at a glance (manufacturer-claimed)</h2>
@@ -80,7 +80,7 @@ export default function Page() {
           { feature: 'Power', values: ['Built-in PSU — single cord, no external brick'] },
           { feature: 'Manufacturer noise claim', values: ['As low as 32 dB (Beelink)'] },
           { feature: 'Color (as tested)', values: ['Frost Silver'] },
-          { feature: 'Typical street price (as configured)', values: ['~$899-1,099 (verify at publish)'] },
+          { feature: 'Typical price (as configured)', values: ['$769 direct from Beelink · ~$799-899 on Amazon (verify at publish)'] },
         ]}
       />
       <p className="text-xs text-ink-faint italic mt-2 not-prose">
