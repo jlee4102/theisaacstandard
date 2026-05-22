@@ -32,6 +32,7 @@ export default function Home() {
             date={featured.date}
             rating={featured.rating}
             category={categoryName(featured.category)}
+            image={(featured as { image?: string }).image}
             featured
           />
         )}
@@ -47,6 +48,7 @@ export default function Home() {
                 date={r.date}
                 rating={r.rating}
                 category={categoryName(r.category)}
+                image={(r as { image?: string }).image}
               />
             ))}
           </div>

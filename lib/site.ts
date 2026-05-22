@@ -51,5 +51,7 @@ export const reviews = [
       'After hands-on testing: the 60-hour battery is closer to 49, the ANC genuinely works, and the V-shaped tuning is the catch nobody mentions. Honest take on the budget ANC headphone everyone is buying.',
     date: '2026-05-22',
     rating: 3.9,
+    image:
+      'https://cdn.shopify.com/s/files/1/0516/3761/6830/files/soundcore-q20i-blue-anc-headphones_3840x.jpg?v=1748311376',
   },
 ];

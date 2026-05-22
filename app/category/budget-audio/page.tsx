@@ -29,7 +29,7 @@ export default function Page() {
         ) : (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {list.map((r) => (
-              <ReviewCard key={r.slug} {...r} category={cat.name} />
+              <ReviewCard key={r.slug} {...(r as never)} category={cat.name} />
             ))}
           </div>
         )}
