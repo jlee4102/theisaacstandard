@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+  <rect width="1920" height="1080" fill="#f4f1ea"/>
+  <text x="120" y="180" font-family="'JetBrains Mono', monospace" font-size="28" letter-spacing="8" fill="#8f3d1c">THREE THINGS NOBODY MENTIONS</text>
+
+  <g transform="translate(120,300)">
+    <text x="0" y="0" font-family="Fraunces, Georgia, serif" font-style="italic" font-weight="900" font-size="80" fill="#c2562a">01.</text>
+    <text x="160" y="-10" font-family="Fraunces, Georgia, serif" font-weight="600" font-size="64" fill="#1a1d1f">3.5mm cable disables ANC</text>
+    <text x="160" y="50" font-family="'Spline Sans', sans-serif" font-size="32" fill="#4a4f54">No in-flight ANC over seat-back audio.</text>
+  </g>
+
+  <g transform="translate(120,490)">
+    <text x="0" y="0" font-family="Fraunces, Georgia, serif" font-style="italic" font-weight="900" font-size="80" fill="#c2562a">02.</text>
+    <text x="160" y="-10" font-family="Fraunces, Georgia, serif" font-weight="600" font-size="64" fill="#1a1d1f">Mic dies in noise</text>
+    <text x="160" y="50" font-family="'Spline Sans', sans-serif" font-size="32" fill="#4a4f54">Calls from cafés or open offices: callers hear it all.</text>
+  </g>
+
+  <g transform="translate(120,680)">
+    <text x="0" y="0" font-family="Fraunces, Georgia, serif" font-style="italic" font-weight="900" font-size="80" fill="#c2562a">03.</text>
+    <text x="160" y="-10" font-family="Fraunces, Georgia, serif" font-weight="600" font-size="64" fill="#1a1d1f">Bluetooth 5.0, not 5.3</text>
+    <text x="160" y="50" font-family="'Spline Sans', sans-serif" font-size="32" fill="#4a4f54">Older protocol — less efficient, shorter range than current gen.</text>
+  </g>
+</svg>

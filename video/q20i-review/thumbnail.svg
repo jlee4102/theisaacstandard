@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <radialGradient id="tg" cx="78%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#c2562a" stop-opacity="0.40"/>
+      <stop offset="55%" stop-color="#8f3d1c" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#f4f1ea" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1280" height="720" fill="#1a1d1f"/>
+  <rect width="1280" height="720" fill="url(#tg)"/>
+
+  <!-- Brand mark, top-left -->
+  <g transform="translate(40,40)">
+    <rect width="80" height="80" rx="14" fill="#f4f1ea"/>
+    <text x="40" y="58" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-style="italic" font-weight="900" font-size="60" fill="#c2562a" letter-spacing="-0.5">S</text>
+    <line x1="22" y1="68" x2="58" y2="68" stroke="#1a1d1f" stroke-width="2.4"/>
+  </g>
+  <text x="140" y="70" font-family="'JetBrains Mono', monospace" font-size="16" letter-spacing="6" fill="#c2562a">THE ISAAC STANDARD</text>
+  <text x="140" y="100" font-family="'Spline Sans', sans-serif" font-size="20" fill="#f4f1ea" opacity="0.7">Budget Audio · Hands-on</text>
+
+  <!-- Main thumbnail text -->
+  <text x="40" y="300" font-family="Fraunces, Georgia, serif" font-weight="900" font-size="120" fill="#f4f1ea" letter-spacing="-3">Anker Q20i</text>
+  <text x="40" y="430" font-family="Fraunces, Georgia, serif" font-style="italic" font-weight="500" font-size="80" fill="#c2562a" letter-spacing="-1.5">3 things they</text>
+  <text x="40" y="510" font-family="Fraunces, Georgia, serif" font-style="italic" font-weight="500" font-size="80" fill="#c2562a" letter-spacing="-1.5">won&apos;t tell you</text>
+
+  <!-- Rating chip, bottom right -->
+  <g transform="translate(960,540)">
+    <rect width="260" height="140" rx="20" fill="#f4f1ea"/>
+    <text x="130" y="80" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="900" font-size="80" fill="#1a1d1f">3.9</text>
+    <text x="130" y="120" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="20" letter-spacing="4" fill="#8f3d1c">/ 5  HONEST</text>
+  </g>
+</svg>

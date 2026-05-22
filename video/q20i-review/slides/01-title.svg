@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+  <defs>
+    <radialGradient id="g" cx="78%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#c2562a" stop-opacity="0.30"/>
+      <stop offset="55%" stop-color="#8f3d1c" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#f4f1ea" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="#f4f1ea"/>
+  <rect width="1920" height="1080" fill="url(#g)"/>
+  <text x="120" y="100" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="22" letter-spacing="7" fill="#8a9097">THE ISAAC STANDARD · BUDGET AUDIO</text>
+  <line x1="120" y1="120" x2="1800" y2="120" stroke="#ddd6c8" stroke-width="1.5"/>
+
+  <text x="120" y="420" font-family="Fraunces, 'Playfair Display', Georgia, serif" font-weight="900" font-size="180" fill="#1a1d1f" letter-spacing="-4">Anker Soundcore</text>
+  <text x="120" y="600" font-family="Fraunces, 'Playfair Display', Georgia, serif" font-weight="900" font-size="180" fill="#1a1d1f" letter-spacing="-4">Q20i</text>
+
+  <text x="120" y="730" font-family="Fraunces, 'Playfair Display', Georgia, serif" font-style="italic" font-weight="500" font-size="80" fill="#c2562a" letter-spacing="-1.5">Strong ANC, weak tuning, honest caveats.</text>
+
+  <line x1="120" y1="960" x2="1800" y2="960" stroke="#ddd6c8" stroke-width="1.5"/>
+  <text x="120" y="1010" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="22" letter-spacing="7" fill="#4a4f54">3.9 / 5  ·  HANDS-ON REVIEW  ·  THEISAACSTANDARD.COM</text>
+</svg>

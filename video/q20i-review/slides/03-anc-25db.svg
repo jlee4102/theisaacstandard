@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+  <rect width="1920" height="1080" fill="#f4f1ea"/>
+  <text x="120" y="200" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="26" letter-spacing="8" fill="#8f3d1c">ACTIVE NOISE CANCELLATION</text>
+
+  <text x="120" y="500" font-family="Fraunces, Georgia, serif" font-weight="900" font-size="380" fill="#1a1d1f" letter-spacing="-12">~25</text>
+  <text x="780" y="500" font-family="Fraunces, Georgia, serif" font-style="italic" font-weight="500" font-size="220" fill="#c2562a">dB</text>
+
+  <text x="120" y="640" font-family="Fraunces, Georgia, serif" font-weight="400" font-size="60" fill="#4a4f54">measured attenuation</text>
+
+  <line x1="120" y1="780" x2="1800" y2="780" stroke="#ddd6c8" stroke-width="2"/>
+  <text x="120" y="860" font-family="'Spline Sans', system-ui, sans-serif" font-size="36" fill="#1a1d1f" font-weight="500">Strong against:</text>
+  <text x="120" y="920" font-family="'Spline Sans', system-ui, sans-serif" font-size="32" fill="#4a4f54">Plane cabin · HVAC hum · Bus &amp; road rumble</text>
+
+  <text x="1100" y="860" font-family="'Spline Sans', system-ui, sans-serif" font-size="36" fill="#1a1d1f" font-weight="500">Weak against:</text>
+  <text x="1100" y="920" font-family="'Spline Sans', system-ui, sans-serif" font-size="32" fill="#4a4f54">Talking · Dishes · Sirens · Transients</text>
+</svg>
