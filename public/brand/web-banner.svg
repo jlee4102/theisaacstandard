@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 480" width="1920" height="480">
+  <!-- Generic web banner — 1920 × 480. Use for email headers,
+       press kit, embedded site hero, video bumpers (just crop to 16:9). -->
+  <defs>
+    <radialGradient id="warm3" cx="78%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#c2562a" stop-opacity="0.30"/>
+      <stop offset="55%" stop-color="#8f3d1c" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#f4f1ea" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1920" height="480" fill="#f4f1ea"/>
+  <rect width="1920" height="480" fill="url(#warm3)"/>
+
+  <!-- Mark on left -->
+  <g transform="translate(120,120)">
+    <rect width="240" height="240" rx="28" fill="#1a1d1f"/>
+    <circle cx="28" cy="28" r="4.5" fill="#c2562a" opacity="0.85"/>
+    <circle cx="212" cy="28" r="4.5" fill="#c2562a" opacity="0.85"/>
+    <circle cx="28" cy="212" r="4.5" fill="#c2562a" opacity="0.85"/>
+    <circle cx="212" cy="212" r="4.5" fill="#c2562a" opacity="0.85"/>
+    <text x="120" y="166"
+          text-anchor="middle"
+          font-family="Fraunces, 'Playfair Display', Georgia, serif"
+          font-style="italic" font-weight="900" font-size="166"
+          fill="#c2562a" letter-spacing="-2">S</text>
+    <line x1="74" y1="194" x2="166" y2="194" stroke="#f4f1ea" stroke-width="5" stroke-linecap="square"/>
+    <line x1="74" y1="194" x2="74" y2="208" stroke="#f4f1ea" stroke-width="5"/>
+    <line x1="120" y1="194" x2="120" y2="205" stroke="#f4f1ea" stroke-width="4"/>
+    <line x1="166" y1="194" x2="166" y2="208" stroke="#f4f1ea" stroke-width="5"/>
+  </g>
+
+  <!-- Wordmark stack -->
+  <g transform="translate(420,148)">
+    <text x="0" y="36"
+          font-family="'JetBrains Mono', ui-monospace, monospace"
+          font-size="20" letter-spacing="6" fill="#8f3d1c">THE STANDARD</text>
+    <line x1="0" y1="52" x2="180" y2="52" stroke="#c2562a" stroke-width="2.5"/>
+    <text x="0" y="140"
+          font-family="Fraunces, 'Playfair Display', Georgia, serif"
+          font-weight="900" font-size="96" fill="#1a1d1f" letter-spacing="-2.4">Isaac</text>
+    <text x="0" y="232"
+          font-family="Fraunces, 'Playfair Display', Georgia, serif"
+          font-style="italic" font-weight="500" font-size="96"
+          fill="#c2562a" letter-spacing="-1.6">Standard</text>
+    <text x="0" y="276"
+          font-family="'Spline Sans', system-ui, sans-serif"
+          font-size="22" fill="#4a4f54">Honest gear, held to a higher bar.</text>
+  </g>
+</svg>

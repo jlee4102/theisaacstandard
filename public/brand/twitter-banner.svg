@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 500" width="1500" height="500">
+  <!-- Twitter/X header — 1500 × 500. Profile photo overlays bottom-left
+       (~ x:120 y:340, 200px diameter). Keep that area visually quiet. -->
+  <defs>
+    <radialGradient id="warm2" cx="80%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#c2562a" stop-opacity="0.28"/>
+      <stop offset="55%" stop-color="#8f3d1c" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#f4f1ea" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1500" height="500" fill="#f4f1ea"/>
+  <rect width="1500" height="500" fill="url(#warm2)"/>
+
+  <!-- Top mono strip -->
+  <text x="60" y="50"
+        font-family="'JetBrains Mono', ui-monospace, monospace"
+        font-size="14" letter-spacing="4" fill="#8a9097">EST. 2026 · INDEPENDENT REVIEWS</text>
+
+  <!-- Wordmark right-aligned so profile photo (bottom-left) has clear space -->
+  <g transform="translate(420,140)">
+    <text x="0" y="40"
+          font-family="'JetBrains Mono', ui-monospace, monospace"
+          font-size="22" letter-spacing="7" fill="#8f3d1c">THE STANDARD</text>
+    <line x1="0" y1="56" x2="180" y2="56" stroke="#c2562a" stroke-width="2.5"/>
+    <text x="0" y="148"
+          font-family="Fraunces, 'Playfair Display', Georgia, serif"
+          font-weight="900" font-size="100" fill="#1a1d1f" letter-spacing="-2.5">Isaac</text>
+    <text x="0" y="248"
+          font-family="Fraunces, 'Playfair Display', Georgia, serif"
+          font-style="italic" font-weight="500" font-size="100"
+          fill="#c2562a" letter-spacing="-1.8">Standard</text>
+    <text x="0" y="292"
+          font-family="'Spline Sans', system-ui, sans-serif"
+          font-size="20" fill="#4a4f54">Honest gear, held to a higher bar.</text>
+  </g>
+
+  <!-- Mark — small, top-right corner -->
+  <g transform="translate(1320,60)">
+    <rect width="120" height="120" rx="16" fill="#1a1d1f"/>
+    <circle cx="14" cy="14" r="2.2" fill="#c2562a" opacity="0.85"/>
+    <circle cx="106" cy="14" r="2.2" fill="#c2562a" opacity="0.85"/>
+    <circle cx="14" cy="106" r="2.2" fill="#c2562a" opacity="0.85"/>
+    <circle cx="106" cy="106" r="2.2" fill="#c2562a" opacity="0.85"/>
+    <text x="60" y="82"
+          text-anchor="middle"
+          font-family="Fraunces, 'Playfair Display', Georgia, serif"
+          font-style="italic" font-weight="900" font-size="82"
+          fill="#c2562a" letter-spacing="-1">S</text>
+    <line x1="36" y1="96" x2="84" y2="96" stroke="#f4f1ea" stroke-width="2.6" stroke-linecap="square"/>
+    <line x1="36" y1="96" x2="36" y2="103" stroke="#f4f1ea" stroke-width="2.6"/>
+    <line x1="60" y1="96" x2="60" y2="102" stroke="#f4f1ea" stroke-width="2.2"/>
+    <line x1="84" y1="96" x2="84" y2="103" stroke="#f4f1ea" stroke-width="2.6"/>
+  </g>
+
+  <!-- Bottom strip -->
+  <line x1="0" y1="460" x2="1500" y2="460" stroke="#ddd6c8" stroke-width="1"/>
+  <text x="60" y="487"
+        font-family="'JetBrains Mono', ui-monospace, monospace"
+        font-size="13" letter-spacing="4" fill="#8a9097">NEW REVIEW EVERY SUNDAY · NO SPONSORED FLUFF · THEISAACSTANDARD.COM</text>
+</svg>
