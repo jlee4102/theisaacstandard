@@ -146,6 +146,29 @@ export default function Page() {
         <AffiliateLink asin={ASIN}>Check current price on Amazon</AffiliateLink>
       </div>
 
+      {/* ============= OPTIONAL: WHAT OTHER REVIEWERS FOUND =============
+          Use this section ONLY in scaffold drafts before hands-on testing.
+          Every claim must be attributed to a named source with a working link.
+          DELETE this section once your own testing is complete (or rewrite it
+          as "How we compare to other reviews" once you have data to contrast).
+          ================================================================= */}
+      <h2>What other reviewers found (pre-testing research)</h2>
+      <p>
+        Before we put our own hands on the [PRODUCT], here&apos;s what published reviews establish — useful as a baseline for what we&apos;ll measure against. <strong>None of these findings are ours.</strong> They&apos;re external work, attributed and cited at the end of this section.
+      </p>
+      <ul>
+        <li><strong>[Theme 1, e.g. Sound profile].</strong> [What reviewer X / reviewer Y found, with attribution. Note disagreements if reviewers contradict each other — that's signal.]</li>
+        <li><strong>[Theme 2].</strong> [...]</li>
+        <li><strong>[Theme 3].</strong> [...]</li>
+        <li><strong>[Notable flaw multiple reviewers agree on].</strong> [...]</li>
+      </ul>
+      <p className="text-xs text-ink-faint italic not-prose mt-3">
+        Sources: <a href="[URL]" target="_blank" rel="noopener">[Reviewer Name]</a>, <a href="[URL]" target="_blank" rel="noopener">[Reviewer Name]</a>, <a href="[URL]" target="_blank" rel="noopener">[Reviewer Name]</a>.
+      </p>
+      <p>
+        <strong>Where our testing will focus:</strong> [Spell out the specific data points your own testing will capture — conditions, measurements, named tests. This tells readers what to expect when the bracketed [NEEDS TESTING] notes below get filled in.]
+      </p>
+
       {/* ============= PRIMARY PERFORMANCE DIMENSION ============= */}
       <h2>[PRIMARY DIMENSION — pick the dimension that matters MOST for this product type]</h2>
       <p>

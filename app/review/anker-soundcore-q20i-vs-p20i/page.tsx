@@ -85,6 +85,38 @@ export default function Page() {
         <AffiliateLink asin={P20I_ASIN}>Check P20i price on Amazon</AffiliateLink>
       </div>
 
+      <h2>What other reviewers found (pre-testing research)</h2>
+      <p>
+        Before we put our own hands on the Q20i and P20i, here&apos;s what published reviews establish — useful as a baseline for what we&apos;ll be measuring against. <strong>None of these findings are ours.</strong> They&apos;re external work, attributed and cited at the end of this section.
+      </p>
+
+      <h3>Q20i — what the existing reviews say</h3>
+      <ul>
+        <li><strong>Sound profile is V-shaped and polarizing.</strong> TechGearLab characterizes the tuning as &quot;bass-heavy, unbalanced, and muddy,&quot; with the 22 in-app EQ presets unable to fully correct the imbalance. Robb Sutton&apos;s hands-on takes a more positive view, calling the bass &quot;punchy and well-defined.&quot; Both agree the tuning favors bass-forward genres over acoustic or classical material.</li>
+        <li><strong>ANC is meaningfully effective at this price.</strong> Reviewers report roughly 25 dB of attenuation, with the hybrid ANC handling steady low-frequency noise (HVAC, plane and bus hum) well. It does not match flagship-tier ANC like the Sony XM5 or Bose QC.</li>
+        <li><strong>Battery life is real.</strong> Hands-on testing has landed near 49 hours of mixed use, against the 60-hour ANC-off manufacturer claim.</li>
+        <li><strong>Notable flaw: wired-mode ANC is disabled.</strong> Plugging in the included 3.5mm aux cable turns ANC off entirely — limiting the headphones&apos; usefulness on flights where you want to plug into seat-back audio.</li>
+        <li><strong>Call quality.</strong> Acceptable in quiet rooms; degrades sharply in noisy environments.</li>
+      </ul>
+
+      <h3>P20i — what the existing reviews say</h3>
+      <ul>
+        <li><strong>Treble rolloff.</strong> Multiple reviewers note recessed highs — micro-detail in strings, cymbals, and other treble-rich material doesn&apos;t come through cleanly. Sits in V-shape territory like the Q20i but more rolled off at the top.</li>
+        <li><strong>Battery is close to claim.</strong> Hands-on testing has put per-bud playback near 8.5 hours against the 10-hour figure.</li>
+        <li><strong>Documented macOS connectivity issue.</strong> Multiple sources flag random audio dropouts when paired with Macs — appears to be a recurring firmware-level bug, not user error. Worth confirming on current firmware before publishing a verdict.</li>
+        <li><strong>Fit is inconsistent.</strong> Most reviewers find the included tips comfortable for long sessions; some report fatigue in smaller ear canals.</li>
+        <li><strong>Mic quality.</strong> Average for the price.</li>
+        <li><strong>Market reception.</strong> Over 7,500 five-star Amazon reviews — these clearly sell well at their price tier.</li>
+      </ul>
+
+      <p className="text-xs text-ink-faint italic not-prose mt-3">
+        Sources: <a href="https://www.techgearlab.com/reviews/audio/budget-headphones/soundcore-q20i" target="_blank" rel="noopener">TechGearLab Q20i</a>, <a href="https://robbsutton.com/soundcore-by-anker-q20i-hybrid-active-review/" target="_blank" rel="noopener">Robb Sutton Q20i</a>, <a href="https://www.techgearlab.com/reviews/audio/wireless-earbuds/soundcore-p20i" target="_blank" rel="noopener">TechGearLab P20i</a>, <a href="https://www.rtings.com/headphones/reviews/anker/soundcore-p25i-p20i-true-wireless" target="_blank" rel="noopener">RTINGS Soundcore P20i/P25i</a>, <a href="https://www.cnn.com/cnn-underscored/reviews/anker-soundcore-p20i-true-wireless-earbuds" target="_blank" rel="noopener">CNN Underscored P20i</a>.
+      </p>
+
+      <p>
+        <strong>Where our testing will focus:</strong> we&apos;re specifically targeting (a) whether the Q20i&apos;s V-shaped tuning can be salvaged with EQ for non-bass genres, (b) whether the P20i&apos;s macOS dropout issue persists on current firmware, (c) ANC measurements against three named noise types at fixed dB references, (d) call quality across quiet, café, and street conditions, and (e) whether either earns the recommendation at current street prices. The bracketed [NEEDS TESTING] notes below mark the specific data points we&apos;ll capture.
+      </p>
+
       <h2>Sound &amp; ANC</h2>
       <p>
         <strong>Mechanism (no testing required):</strong> Driver size influences low-end response — bigger drivers have more cone area to move air, which generally helps perceived bass extension and dynamic range, especially in open form factors like over-ear cups. The Q20i's 40mm driver in a sealed earcup is going to behave very differently from a 10mm driver pressed into an ear canal, even before you account for tuning. Hybrid ANC uses two microphones per ear: a feedforward mic outside the cup that hears noise <em>before</em> it reaches you, and a feedback mic inside that hears what leaks past the seal. The chip applies an inverse waveform in real time. ANC works best on steady low-frequency noise (HVAC, plane hum, car cabin rumble); it does little against sudden transients (people talking, dishes clinking).
