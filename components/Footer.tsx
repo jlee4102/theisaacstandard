@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { site } from '@/lib/site';
+import { LogoMark } from '@/components/Logo';
 
 export default function Footer() {
   return (
@@ -7,7 +8,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6 md:px-10 py-10 text-sm text-ink-soft space-y-5">
         <div className="grid md:grid-cols-3 gap-6">
           <div>
-            <div className="eyebrow mb-2">The Standard</div>
+            <LogoMark size={48} className="mb-3" />
             <p className="text-ink font-serif text-lg">Honest gear, held to a higher bar.</p>
           </div>
           <div>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="The Isaac Standard">
+  <rect width="64" height="64" rx="10" fill="#1a1d1f"/>
+  <!-- Serial dots top corners (like a stamp / certificate) -->
+  <circle cx="8" cy="8" r="1.2" fill="#c2562a" opacity="0.85"/>
+  <circle cx="56" cy="8" r="1.2" fill="#c2562a" opacity="0.85"/>
+  <circle cx="8" cy="56" r="1.2" fill="#c2562a" opacity="0.85"/>
+  <circle cx="56" cy="56" r="1.2" fill="#c2562a" opacity="0.85"/>
+  <!-- The serif S — set in Fraunces italic black; fallback to Georgia -->
+  <text x="32" y="44"
+        text-anchor="middle"
+        font-family="Fraunces, 'Playfair Display', Georgia, serif"
+        font-style="italic"
+        font-weight="900"
+        font-size="44"
+        fill="#c2562a"
+        letter-spacing="-0.5">S</text>
+  <!-- Measure-rule beneath -->
+  <line x1="20" y1="52" x2="44" y2="52" stroke="#f4f1ea" stroke-width="1.4" stroke-linecap="square"/>
+  <line x1="20" y1="52" x2="20" y2="55" stroke="#f4f1ea" stroke-width="1.4"/>
+  <line x1="32" y1="52" x2="32" y2="54.5" stroke="#f4f1ea" stroke-width="1.2"/>
+  <line x1="44" y1="52" x2="44" y2="55" stroke="#f4f1ea" stroke-width="1.4"/>
+</svg>
