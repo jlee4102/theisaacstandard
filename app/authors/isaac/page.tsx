@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import { LogoMark } from '@/components/Logo';
 import { site } from '@/lib/site';
 
 export const metadata = {
@@ -21,14 +21,14 @@ export default function Page() {
     <article className="max-w-3xl mx-auto px-6 md:px-10 py-10">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-      <div className="flex flex-col sm:flex-row gap-6 items-start mb-10">
-        {/* Avatar slot — drop /public/authors/isaac.jpg in and the Image below will pick it up */}
-        <div className="relative w-32 h-32 rounded-full overflow-hidden border-2 border-line bg-card flex items-center justify-center shrink-0">
-          {/* When you add /public/authors/isaac.jpg, replace this placeholder block with:
-              <Image src="/authors/isaac.jpg" alt="Isaac" fill className="object-cover" /> */}
-          <span className="font-serif text-4xl text-ink-faint">I</span>
+      <div className="flex flex-col sm:flex-row gap-6 items-center sm:items-start mb-10">
+        {/* Brand mark as avatar — the brand is the byline. Editorial pattern used by
+            many trust-first publications (The Economist, etc.). Keeps E-E-A-T signal
+            without requiring a photo of the author. */}
+        <div className="relative w-32 h-32 rounded-full overflow-hidden bg-card shadow-card flex items-center justify-center shrink-0 border border-line">
+          <LogoMark size={96} />
         </div>
-        <div>
+        <div className="text-center sm:text-left">
           <div className="eyebrow mb-2">The Standard</div>
           <h1 className="font-serif text-4xl tracking-tight">Isaac</h1>
           <p className="text-ink-soft mt-1">Founder &amp; Lead Reviewer, {site.name}</p>
