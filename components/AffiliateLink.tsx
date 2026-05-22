@@ -7,7 +7,7 @@ export default function AffiliateLink({ asin, children }: { asin: string; childr
       href={href}
       target="_blank"
       rel="nofollow sponsored noopener"
-      className="inline-block bg-accent text-paper px-5 py-2 rounded font-medium hover:opacity-90"
+      className="inline-block bg-accent !text-paper !no-underline px-5 py-2 rounded font-medium hover:opacity-90"
     >
       {children}
     </a>
