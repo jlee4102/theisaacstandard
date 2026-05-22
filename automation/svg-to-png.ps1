@@ -32,6 +32,7 @@ $exportSizes = @{
     'twitter-banner.svg'    = @{ width = 1500; height = 500  }
     'web-banner.svg'        = @{ width = 1920; height = 480  }
     'video-intro.svg'       = @{ width = 1920; height = 1080 }
+    'q20i-x-card.svg'       = @{ width = 1600; height = 900  }
 }
 
 $wrapperTemplate = @'
