@@ -1,5 +1,5 @@
 import { LogoMark } from '@/components/Logo';
-import { site } from '@/lib/site';
+import { site, socials } from '@/lib/site';
 
 export const metadata = {
   title: 'Isaac — Author',
@@ -14,7 +14,7 @@ export default function Page() {
     url: `${site.url}/authors/isaac`,
     jobTitle: 'Founder & Lead Reviewer',
     worksFor: { '@type': 'Organization', name: site.name },
-    sameAs: [],
+    sameAs: Object.values(socials).map((s) => s.url),
   };
 
   return (
@@ -60,6 +60,8 @@ export default function Page() {
         <h2>Get in touch</h2>
         <p>
           Email: <a href="mailto:hello@theisaacstandard.com">hello@theisaacstandard.com</a>
+          <br />
+          X: <a href={socials.x.url} target="_blank" rel="noopener">{socials.x.handle}</a>
         </p>
       </div>
     </article>

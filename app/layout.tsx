@@ -1,5 +1,5 @@
 import './globals.css';
-import { site } from '@/lib/site';
+import { site, socials } from '@/lib/site';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import AnnouncementBanner from '@/components/AnnouncementBanner';
@@ -20,6 +20,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
+    site: socials.x.handle,
+    creator: socials.x.handle,
     title: site.name,
     description: site.tagline,
     images: ['/brand/og-image.svg'],

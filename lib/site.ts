@@ -5,6 +5,14 @@ export const site = {
   affiliateTag: process.env.AMAZON_AFFILIATE_TAG || 'yourtag-20',
 };
 
+// Social profiles. Add new platforms here; the footer / author page / OpenGraph
+// pick them up automatically.
+export const socials = {
+  x: { handle: '@IsaacStandard_', url: 'https://x.com/IsaacStandard_' },
+  // youtube: { handle: '@theisaacstandard', url: 'https://youtube.com/@theisaacstandard' },
+  // instagram: { handle: '@theisaacstandard', url: 'https://instagram.com/theisaacstandard' },
+};
+
 // Site-wide announcement bar above the header. Set enabled=false to hide.
 // Keep the message short — under ~90 chars looks best on mobile.
 export const announcement = {
