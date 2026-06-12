@@ -52,6 +52,16 @@ export const categories = [
 
 export const reviews = [
   {
+    slug: 'govee-smart-led-strip-review',
+    title: 'Govee Smart LED Strip Review',
+    category: 'smart-home',
+    excerpt:
+      'A versatile, app-controlled LED strip with vibrant RGBIC colors and music sync, but limited to 2.4GHz WiFi and no HomeKit support.',
+    date: '2026-06-12',
+    rating: 4.3,
+    image: 'https://m.media-amazon.com/images/I/71X5Q5Q5Q5L._AC_SL1500_.jpg',
+  },
+  {
     slug: 'beelink-gti13-ultra-review',
     title: 'Beelink GTi13 Ultra Review: A Quiet i9 Mini PC With a Real GPU Escape Hatch',
     category: 'mini-pcs',
