@@ -59,7 +59,7 @@ export const reviews = [
       'Solid noise-cancelling earbuds with great battery life and a strong app, but average sound quality and a plasticky build hold them back from top-tier.',
     date: '2026-06-10',
     rating: 3.9,
-    image: 'https://m.media-amazon.com/images/I/61Cld2zNicL._AC_SL1500_.jpg',
+    image: '/reviews/soundcore-liberty-4-nc-review/main.jpg',
   },
   {
     slug: 'govee-smart-led-strip-review',
@@ -69,7 +69,7 @@ export const reviews = [
       'A versatile, app-controlled LED strip with vibrant RGBIC colors and music sync, but limited to 2.4GHz WiFi and no HomeKit support.',
     date: '2026-06-12',
     rating: 4.3,
-    image: 'https://m.media-amazon.com/images/I/71X5Q5Q5Q5L._AC_SL1500_.jpg',
+    image: '/reviews/govee-smart-led-strip-review/main.jpg',
   },
   {
     slug: 'beelink-gti13-ultra-review',
