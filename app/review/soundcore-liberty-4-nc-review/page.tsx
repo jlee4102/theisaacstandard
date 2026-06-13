@@ -54,12 +54,6 @@ export default function Page() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <article className="max-w-3xl mx-auto px-4 py-8">
-        {/* DRAFT Banner */}
-        <div className="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-900 p-4 mb-8 rounded">
-          <p className="font-bold">⚠️ DRAFT — Not yet approved for publication</p>
-          <p className="text-sm">Remove this banner before publishing.</p>
-        </div>
-
         <h1 className="text-3xl font-bold mb-4">
           Soundcore Liberty 4 NC Review: Great Battery and ANC, But Sound and Build Cut Corners
         </h1>
@@ -164,4 +158,24 @@ export default function Page() {
           <p className="mb-4">
             Call quality is inconsistent. Despite six microphones (three per earbud), the Liberty 4 NC struggle in noisy environments. In a quiet room, calls sound clear. But on a busy street or near a fan, the microphones pick up wind noise and background chatter, and your voice can sound muffled or robotic. If you take calls in loud places frequently, look elsewhere.
           </p>
+        </section>
+
+        <section className="mb-8">
+          <h2 className="text-2xl font-bold mb-4">The verdict</h2>
           <p className="mb-4">
+            The Liberty 4 NC nail the practical stuff: long battery life, genuinely useful ANC, and a well-built app with HearID and a 10-band EQ. The compromises are sound quality, plasticky build, and shaky call performance in noise. If battery and ANC top your list and you&apos;ll EQ them anyway, they earn their price. If sound quality leads, the Earfun Air Pro 3 is worth a look first.
+          </p>
+          <p className="mb-4">
+            <a href={affiliateUrl} target="_blank" rel="nofollow sponsored" className="text-blue-600 underline font-semibold">
+              Check the current price on Amazon
+            </a>
+          </p>
+        </section>
+
+        <p className="text-xs text-gray-500 mt-10">
+          As an Amazon Associate, The Isaac Standard earns from qualifying purchases made through links on this page, at no extra cost to you. Specs cited from manufacturer listings; impressions from hands-on testing.
+        </p>
+      </article>
+    </>
+  );
+}

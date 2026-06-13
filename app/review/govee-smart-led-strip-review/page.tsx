@@ -54,12 +54,6 @@ export default function Page() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       
-      {/* DRAFT Banner */}
-      <div className="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 mb-8" role="alert">
-        <p className="font-bold">DRAFT</p>
-        <p>This review is a draft and has not been approved. Remove this banner when approved.</p>
-      </div>
-
       <article className="max-w-4xl mx-auto px-4 py-8">
         <h1 className="text-4xl font-bold mb-4">
           Govee Smart LED Strip Lights 32.8ft Review: Colorful, Cheap, and Surprisingly Capable
@@ -201,4 +195,24 @@ export default function Page() {
           <p className="mb-4">
             No Apple HomeKit or Matter support. If you&apos;re in the Apple ecosystem, this strip is a dead end. You can&apos;t control it from the Home app, set it in scenes alongside other HomeKit devices, or use Siri. Google Assistant and Alexa work fine, but that&apos;s it. Matter support would future-proof this, but Govee hasn&apos;t added it.
           </p>
+        </section>
+
+        <section className="mb-8">
+          <h2 className="text-2xl font-bold mb-4">The verdict</h2>
           <p className="mb-4">
+            At around $30, the Govee Smart LED Strip earns its place: vivid RGBIC color, music sync that genuinely works, and painless Alexa and Google control. Go in knowing the adhesive needs the included mounting clips from day one, it&apos;s 2.4GHz-only, and there&apos;s no HomeKit or Matter. For budget ambient and accent lighting, it&apos;s an easy recommendation.
+          </p>
+          <p className="mb-4">
+            <a href={affiliateUrl} target="_blank" rel="nofollow sponsored" className="text-blue-600 underline font-semibold">
+              Check the current price on Amazon
+            </a>
+          </p>
+        </section>
+
+        <p className="text-xs text-gray-500 mt-10">
+          As an Amazon Associate, The Isaac Standard earns from qualifying purchases made through links on this page, at no extra cost to you. Specs cited from manufacturer listings; impressions from hands-on testing.
+        </p>
+      </article>
+    </>
+  );
+}

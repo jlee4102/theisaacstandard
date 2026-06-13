@@ -52,6 +52,16 @@ export const categories = [
 
 export const reviews = [
   {
+    slug: 'soundcore-liberty-4-nc-review',
+    title: 'Soundcore Liberty 4 NC Review',
+    category: 'budget-audio',
+    excerpt:
+      'Solid noise-cancelling earbuds with great battery life and a strong app, but average sound quality and a plasticky build hold them back from top-tier.',
+    date: '2026-06-10',
+    rating: 3.9,
+    image: 'https://m.media-amazon.com/images/I/61Cld2zNicL._AC_SL1500_.jpg',
+  },
+  {
     slug: 'govee-smart-led-strip-review',
     title: 'Govee Smart LED Strip Review',
     category: 'smart-home',
