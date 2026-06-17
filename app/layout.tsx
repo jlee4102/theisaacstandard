@@ -16,7 +16,7 @@ export const metadata = {
     url: site.url,
     siteName: site.name,
     type: 'website',
-    images: [{ url: '/brand/og-image.svg', width: 1200, height: 630, alt: site.name }],
+    images: [{ url: '/brand/png/og-image.png', width: 1200, height: 630, alt: site.name }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -24,7 +24,7 @@ export const metadata = {
     creator: socials.x.handle,
     title: site.name,
     description: site.tagline,
-    images: ['/brand/og-image.svg'],
+    images: ['/brand/png/og-image.png'],
   },
 };
 

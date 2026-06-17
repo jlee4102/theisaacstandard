@@ -9,6 +9,15 @@ import { site } from '@/lib/site';
 export const metadata = {
   title: 'Govee Smart LED Strip Lights 32.8ft Review: Colorful, Cheap, and Surprisingly Capable',
   description: 'For $30, you get 33 feet of vibrant, multi-color LED strip with music sync that works—but the adhesive is mediocre and you\'re locked out of HomeKit. The RGBIC feature lets you disp',
+  openGraph: {
+    title: 'Govee Smart LED Strip Lights 32.8ft Review',
+    description: 'Colorful, cheap, and surprisingly capable RGBIC LED strip — honest review.',
+    images: [{ url: '/reviews/govee-smart-led-strip-review/main.jpg', alt: 'Govee Smart LED Strip Lights 32.8ft' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/reviews/govee-smart-led-strip-review/main.jpg'],
+  },
 };
 
 const ASIN = 'B09LDFGLXG';

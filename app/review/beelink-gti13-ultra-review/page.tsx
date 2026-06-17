@@ -10,6 +10,15 @@ export const metadata = {
   title: 'Beelink GTi13 Ultra Review: A Quiet i9 Mini PC With a Real GPU Escape Hatch',
   description:
     "Three months with the Beelink GTi13 Ultra. The CPU is good, just not 2025-good. The cooling is the quiet flex. And the PCIe x8 dock is the whole story — it turns this fist-sized box into a real gaming rig.",
+  openGraph: {
+    title: 'Beelink GTi13 Ultra Review',
+    description: 'A quiet i9 mini PC with a real GPU escape hatch — honest review.',
+    images: [{ url: '/brand/png/beelink-x-card.png', width: 1600, height: 900, alt: 'Beelink GTi13 Ultra' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/brand/png/beelink-x-card.png'],
+  },
 };
 
 const ASIN = 'B0DYJ871R7';

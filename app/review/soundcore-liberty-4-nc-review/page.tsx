@@ -9,6 +9,15 @@ import { site } from '@/lib/site';
 export const metadata = {
   title: 'Soundcore Liberty 4 NC Review: Budget ANC That Punches Above Its Weight',
   description: 'The Soundcore Liberty 4 NC delivers genuinely impressive active noise cancellation and LDAC support for just $100, making it one of the best value propositions in the budget audio',
+  openGraph: {
+    title: 'Soundcore Liberty 4 NC Review',
+    description: 'Budget ANC that punches above its weight — honest review.',
+    images: [{ url: '/reviews/soundcore-liberty-4-nc-review/main.jpg', alt: 'Soundcore Liberty 4 NC' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/reviews/soundcore-liberty-4-nc-review/main.jpg'],
+  },
 };
 
 const ASIN = 'B0CF8WLKW2';

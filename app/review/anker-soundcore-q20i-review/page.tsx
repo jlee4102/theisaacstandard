@@ -10,6 +10,15 @@ export const metadata = {
   title: 'Anker Soundcore Q20i Review: Strong ANC, Weak Tuning, Honest Caveats',
   description:
     'Honest review of the Anker Soundcore Q20i after hands-on testing — what the ANC actually does, what the 60-hour battery really delivers, and the tuning compromise nobody fixes.',
+  openGraph: {
+    title: 'Anker Soundcore Q20i Review',
+    description: 'Strong ANC, weak tuning, honest caveats — hands-on review.',
+    images: [{ url: '/brand/png/q20i-x-card.png', width: 1600, height: 900, alt: 'Anker Soundcore Q20i' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/brand/png/q20i-x-card.png'],
+  },
 };
 
 const Q20I_ASIN = 'B0CQXMXJC5';
