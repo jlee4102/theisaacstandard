@@ -52,6 +52,16 @@ export const categories = [
 
 export const reviews = [
   {
+    slug: 'samsung-smarttag2-review',
+    title: 'Samsung SmartTag2 Review',
+    category: 'trackers',
+    excerpt:
+      'The Samsung SmartTag2 is the best Bluetooth tracker for Galaxy phone owners, period. It fixes the original SmartTag\'s biggest flaw—battery life—by jumping from ',
+    date: '2026-06-17',
+    rating: 4.1,
+    image: '/reviews/samsung-smarttag2-review/main.jpg',
+  },
+  {
     slug: 'soundcore-liberty-4-nc-review',
     title: 'Soundcore Liberty 4 NC Review',
     category: 'budget-audio',
