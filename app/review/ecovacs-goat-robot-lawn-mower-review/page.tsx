@@ -36,7 +36,7 @@ export default function Page() {
       <p className="text-lg text-ink/80 mt-3">The Ecovacs GOAT delivers exceptional LiDAR-guided lawn mapping and wire-free navigation that rivals premium competitors, but its animal protection feature that disables night mowing is a genuine limitation for large yards. At $1,299, it undercuts the Husqvarna EPOS by $700 while offering similar precision, but lacks the Worx Landroid&apos;s modular upgrade path. After three weeks of testing on a 0.3-acre yard, I found the GOAT to be the best value in high-precision robot mowing—if you don&apos;t need to mow after dark.</p>
       <p className="text-2xl font-bold my-4 not-prose">Rating: 3.8 / 5</p>
       <div className="not-prose my-8">
-        <ProductImage alt="Ecovacs GOAT Robot Lawn Mower product photo" caption="Manufacturer image pending." aspect="4/3" />
+        <ProductImage src="/reviews/ecovacs-goat-robot-lawn-mower-review/main.jpg" alt="Ecovacs GOAT Robot Lawn Mower (manufacturer image)" caption="Image: Ecovacs (manufacturer)." aspect="4/3" />
       </div>
       <h2>What it is &amp; who it&apos;s for</h2>
       <p>The Ecovacs GOAT is a LiDAR-based robot lawn mower that uses satellite-free RTK positioning to navigate without boundary wires. It sits in the premium tier of the outdoor robot mower market, competing directly with the Husqvarna EPOS (which starts at $1,999) and the Worx Landroid Vision (which uses camera-based navigation at $1,099). The GOAT is designed for homeowners with medium to large lawns (up to 0.5 acres per unit) who want precise, pattern-based mowing without burying wire in their yard.</p>

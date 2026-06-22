@@ -59,7 +59,7 @@ export const reviews = [
       'The Ecovacs GOAT delivers exceptional LiDAR-guided lawn mapping and wire-free navigation that rivals premium competitors, but its animal protection feature that',
     date: '2026-06-22',
     rating: 3.8,
-    image: 'https://m.media-amazon.com/images/I/71Xq6zLpLSL._AC_SL1500_.jpg',
+    image: '/reviews/ecovacs-goat-robot-lawn-mower-review/main.jpg',
   },
   {
     slug: 'samsung-smarttag2-review',
