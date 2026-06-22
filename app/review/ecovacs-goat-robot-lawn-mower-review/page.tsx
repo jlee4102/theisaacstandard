@@ -12,11 +12,11 @@ export const metadata = {
   openGraph: {
     title: 'Ecovacs GOAT Robot Lawn Mower Review: LiDAR Precision vs. Night Mowing Trade-Offs',
     description: 'The Ecovacs GOAT delivers exceptional LiDAR-guided lawn mapping and wire-free navigation that rivals premium competitors, but its animal protection feature that disables night mowi',
-    images: [{ url: '/brand/png/og-image.png', alt: 'Ecovacs GOAT Robot Lawn Mower' }],
+    images: [{ url: '/reviews/ecovacs-goat-robot-lawn-mower-review/main.jpg', alt: 'Ecovacs GOAT Robot Lawn Mower' }],
   },
   twitter: {
     card: 'summary_large_image',
-    images: ['/brand/png/og-image.png'],
+    images: ['/reviews/ecovacs-goat-robot-lawn-mower-review/main.jpg'],
   },
 };
 
