@@ -52,6 +52,16 @@ export const categories = [
 
 export const reviews = [
   {
+    slug: 'makeblock-mbot-robot-kit-review',
+    title: 'Makeblock mBot Robot Kit Review',
+    category: 'outdoor-robots',
+    excerpt:
+      'The Makeblock mBot Robot Kit is the best entry-level coding robot for kids aged 8-12, offering genuine Scratch-based programming in a durable, outdoor-friendly ',
+    date: '2026-06-25',
+    rating: 4.2,
+    image: '/reviews/makeblock-mbot-robot-kit-review/main.jpg',
+  },
+  {
     slug: 'ecovacs-goat-robot-lawn-mower-review',
     title: 'Ecovacs GOAT Robot Lawn Mower Review',
     category: 'outdoor-robots',
