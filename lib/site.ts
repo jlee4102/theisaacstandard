@@ -52,6 +52,16 @@ export const categories = [
 
 export const reviews = [
   {
+    slug: 'soundpeats-h3-wireless-earbuds-review',
+    title: 'Soundpeats H3 Wireless Earbuds Review',
+    category: 'budget-audio',
+    excerpt:
+      'The Soundpeats H3 earbuds deliver genuinely effective active noise cancellation and solid sound quality for just $40, making them the best budget ANC option I\'v',
+    date: '2026-06-30',
+    rating: 3.7,
+    image: '/reviews/soundpeats-h3-wireless-earbuds-review/main.jpg',
+  },
+  {
     slug: 'makeblock-mbot-robot-kit-review',
     title: 'Makeblock mBot Robot Kit Review',
     category: 'outdoor-robots',
