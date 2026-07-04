@@ -52,6 +52,16 @@ export const categories = [
 
 export const reviews = [
   {
+    slug: 'geekom-a6-mini-pc-review',
+    title: 'Geekom A6 Mini PC Review',
+    category: 'mini-pcs',
+    excerpt:
+      'The Geekom A6 is a palm-sized mini PC that delivers genuine desktop performance thanks to an AMD Ryzen 7 6800H and Radeon 680M graphics. It handles office work,',
+    date: '2026-07-04',
+    rating: 4.2,
+    image: '/reviews/geekom-a6-mini-pc-review/main.jpg',
+  },
+  {
     slug: 'soundpeats-h3-wireless-earbuds-review',
     title: 'Soundpeats H3 Wireless Earbuds Review',
     category: 'budget-audio',
