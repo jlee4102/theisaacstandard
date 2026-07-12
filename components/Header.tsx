@@ -18,6 +18,7 @@ export default function Header() {
               {c.name}
             </Link>
           ))}
+          <Link href="/reviews" className="hover:text-accent-deep transition">All reviews</Link>
           <Link href="/about" className="hover:text-accent-deep transition">About</Link>
         </nav>
       </div>
