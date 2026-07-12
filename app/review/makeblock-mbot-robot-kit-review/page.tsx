@@ -8,6 +8,7 @@ import { site } from '@/lib/site';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import StickyBuyBar from '@/components/StickyBuyBar';
 import RelatedReviews from '@/components/RelatedReviews';
+import AuthorBio from '@/components/AuthorBio';
 
 export const metadata = {
   title: 'Makeblock mBot Robot Kit Review: The $65 STEM Robot That Actually Teaches Coding',
@@ -126,6 +127,7 @@ export default function Page() {
       <p className="text-xs text-ink/50 mt-10 not-prose">
         Specs cited from Makeblock manufacturer listings. Measured values and impressions from hands-on testing by {site.name}. Pricing and availability vary &mdash; verify at publish time.
       </p>
+          <AuthorBio />
           <RelatedReviews slug="makeblock-mbot-robot-kit-review" category="outdoor-robots" />
     </article>
   );

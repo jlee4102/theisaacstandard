@@ -8,6 +8,7 @@ import { site } from '@/lib/site';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import StickyBuyBar from '@/components/StickyBuyBar';
 import RelatedReviews from '@/components/RelatedReviews';
+import AuthorBio from '@/components/AuthorBio';
 
 export const metadata = {
   title: 'Anker Soundcore Life P3 Review: Budget ANC That Punches Above Its Weight',
@@ -98,6 +99,7 @@ export default function Page() {
           { q: 'Are there any known issues with the Life P3?', a: 'Some users report connectivity drops in crowded areas (like train stations) due to Bluetooth interference. Also, the touch controls can be overly sensitive.' },
         ]}
       />
+          <AuthorBio />
           <RelatedReviews slug="anker-soundcore-life-p3-review" category="budget-audio" />
     </article>
   );

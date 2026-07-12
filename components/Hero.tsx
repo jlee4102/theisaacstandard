@@ -1,7 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { reviews, categories } from '@/lib/site';
 
 export default function Hero() {
+  const latest = reviews[0];
+  const catName = categories.find((c) => c.slug === latest?.category)?.name || '';
+  const img = (latest as { image?: string })?.image;
+
   return (
     <section className="relative overflow-hidden border-b border-line">
       <div className="max-w-6xl mx-auto px-6 md:px-10 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
@@ -29,23 +34,40 @@ export default function Hero() {
             </Link>
           </div>
         </div>
-        <div className="relative aspect-[4/5] rounded-xl overflow-hidden shadow-lift">
-          <Image
-            src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=1200&q=80&auto=format&fit=crop"
-            alt="Studio headphones on a desk"
-            fill
-            priority
-            sizes="(min-width: 768px) 50vw, 100vw"
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-tr from-ink/40 via-transparent to-transparent" />
-          <div className="absolute bottom-4 left-4 right-4 bg-card/95 backdrop-blur-sm border border-line rounded-lg p-4 text-sm">
-            <div className="eyebrow mb-1 text-[0.66rem]">Currently testing</div>
-            <p className="font-medium text-ink">Budget over-ear ANC headphones under $60</p>
-          </div>
-        </div>
+
+        {latest && (
+          <Link
+            href={`/review/${latest.slug}`}
+            className="group relative z-10 block rounded-xl border border-line bg-card shadow-lift overflow-hidden"
+          >
+            <div className="aspect-[4/3] bg-highlight flex items-center justify-center overflow-hidden">
+              {img ? (
+                <Image
+                  src={img}
+                  alt={latest.title}
+                  width={640}
+                  height={480}
+                  priority
+                  className="w-full h-full object-contain p-6 transition-transform duration-500 group-hover:scale-[1.03]"
+                />
+              ) : (
+                <span className="font-mono text-xs uppercase tracking-widest text-ink-faint">The Isaac Standard</span>
+              )}
+            </div>
+            <div className="p-5 border-t border-line">
+              <div className="eyebrow mb-1 text-[0.66rem]">Latest review{catName ? ` · ${catName}` : ''}</div>
+              <p className="font-serif text-lg leading-snug group-hover:text-accent-deep transition">
+                {latest.title}
+              </p>
+              {latest.rating !== undefined && (
+                <div className="mt-2 text-accent-deep text-sm font-medium">★ {latest.rating.toFixed(1)} / 5</div>
+              )}
+            </div>
+          </Link>
+        )}
       </div>
-      <div className="absolute -right-32 top-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-20 pointer-events-none"
+      <div
+        className="absolute -right-32 top-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-20 pointer-events-none"
         style={{ background: 'radial-gradient(circle at 35% 35%, #c2562a 0%, #8f3d1c 55%, transparent 72%)', filter: 'blur(8px)' }}
       />
     </section>

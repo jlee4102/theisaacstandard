@@ -8,6 +8,7 @@ import { site } from '@/lib/site';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import StickyBuyBar from '@/components/StickyBuyBar';
 import RelatedReviews from '@/components/RelatedReviews';
+import AuthorBio from '@/components/AuthorBio';
 
 export const metadata = {
   title: 'Ecovacs GOAT Robot Lawn Mower Review: LiDAR Precision vs. Night Mowing Trade-Offs',
@@ -129,6 +130,7 @@ export default function Page() {
       <p className="text-xs text-ink/50 mt-10 not-prose">
         Specs cited from Ecovacs manufacturer listings. Measured values and impressions from hands-on testing by {site.name}. Pricing and availability vary &mdash; verify at publish time.
       </p>
+          <AuthorBio />
           <RelatedReviews slug="ecovacs-goat-robot-lawn-mower-review" category="outdoor-robots" />
     </article>
   );

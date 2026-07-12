@@ -8,6 +8,7 @@ import { site } from '@/lib/site';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import StickyBuyBar from '@/components/StickyBuyBar';
 import RelatedReviews from '@/components/RelatedReviews';
+import AuthorBio from '@/components/AuthorBio';
 
 export const metadata = {
   title: 'Govee Smart LED Strip Lights 32.8ft Review: Colorful, Cheap, and Surprisingly Capable',
@@ -125,6 +126,7 @@ export default function Page() {
       <p className="text-xs text-ink/50 mt-10 not-prose">
         Specs cited from Govee manufacturer listings. Measured values and impressions from hands-on testing by {site.name}. Pricing and availability vary &mdash; verify at publish time.
       </p>
+          <AuthorBio />
           <RelatedReviews slug="govee-smart-led-strip-review" category="smart-home" />
     </article>
   );

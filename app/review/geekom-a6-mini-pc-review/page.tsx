@@ -8,6 +8,7 @@ import { site } from '@/lib/site';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import StickyBuyBar from '@/components/StickyBuyBar';
 import RelatedReviews from '@/components/RelatedReviews';
+import AuthorBio from '@/components/AuthorBio';
 
 export const metadata = {
   title: 'Product Review: Geekom A6 Mini PC – Compact Power That Punches Above Its Weight',
@@ -128,6 +129,7 @@ export default function Page() {
       <p className="text-xs text-ink/50 mt-10 not-prose">
         Specs cited from Geekom manufacturer listings. Measured values and impressions from hands-on testing by {site.name}. Pricing and availability vary &mdash; verify at publish time.
       </p>
+          <AuthorBio />
           <RelatedReviews slug="geekom-a6-mini-pc-review" category="mini-pcs" />
     </article>
   );
