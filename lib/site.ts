@@ -52,16 +52,6 @@ export const categories = [
 
 export const reviews = [
   {
-    slug: 'samsung-galaxy-smarttag2-review',
-    title: 'Samsung Galaxy SmartTag2 Review: Honest Take After Real-World Testing',
-    category: 'trackers',
-    excerpt:
-      'The SmartTag2 is the best Bluetooth tracker for Samsung phone owners, with excellent UWB precision finding and a useful ring/battery-saving design. But it\'s useless outside Samsung',
-    date: '2026-07-12',
-    rating: 4.0,
-    image: '/brand/png/og-image.png',
-  },
-  {
     slug: 'geekom-a6-mini-pc-review',
     title: 'Geekom A6 Mini PC Review',
     category: 'mini-pcs',
