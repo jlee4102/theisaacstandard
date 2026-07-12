@@ -52,6 +52,16 @@ export const categories = [
 
 export const reviews = [
   {
+    slug: 'anker-soundcore-life-p3-review',
+    title: 'Anker Soundcore Life P3 Review: Budget ANC That Punches Above Its Weight',
+    category: 'budget-audio',
+    excerpt:
+      'The Anker Soundcore Life P3 offers solid active noise cancellation and a fun, customizable sound for under $80. Battery life is strong, but the ANC isn\'t class-leading and the buil',
+    date: '2026-07-12',
+    rating: 4.0,
+    image: '/reviews/anker-soundcore-life-p3-review/main.jpg',
+  },
+  {
     slug: 'geekom-a6-mini-pc-review',
     title: 'Geekom A6 Mini PC Review',
     category: 'mini-pcs',
