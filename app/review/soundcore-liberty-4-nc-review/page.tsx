@@ -5,6 +5,9 @@ import FAQ from '@/components/FAQ';
 import Newsletter from '@/components/Newsletter';
 import ProductImage from '@/components/ProductImage';
 import { site } from '@/lib/site';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import StickyBuyBar from '@/components/StickyBuyBar';
+import RelatedReviews from '@/components/RelatedReviews';
 
 export const metadata = {
   title: 'Soundcore Liberty 4 NC Review: Budget ANC That Punches Above Its Weight',
@@ -26,6 +29,8 @@ export default function Page() {
   const jsonLd = {"@context": "https://schema.org", "@type": "Review", "itemReviewed": {"@type": "Product", "name": "Soundcore Liberty 4 NC", "brand": {"@type": "Brand", "name": "Soundcore"}}, "author": {"@type": "Person", "name": "Isaac"}, "reviewRating": {"@type": "Rating", "ratingValue": "4.2", "bestRating": "5"}, "publisher": {"@type": "Organization", "name": "The Isaac Standard"}};
   return (
     <article className="prose-isaac max-w-3xl mx-auto px-6 md:px-10 py-10">
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Budget Audio', href: '/category/budget-audio' }, { label: 'Soundcore Liberty 4 NC Review' }]} />
+      <StickyBuyBar product="Soundcore Liberty 4 NC" asin={ASIN} rating={3.9} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <p className="text-ink/50 text-sm not-prose">Budget Audio</p>
       <h1 className="font-serif text-3xl md:text-4xl mt-2">Soundcore Liberty 4 NC Review: Budget ANC That Punches Above Its Weight</h1>
@@ -130,6 +135,7 @@ export default function Page() {
       <p className="text-xs text-ink/50 mt-10 not-prose">
         Specs cited from Soundcore manufacturer listings. Measured values and impressions from hands-on testing by {site.name}. Pricing and availability vary &mdash; verify at publish time.
       </p>
+          <RelatedReviews slug="soundcore-liberty-4-nc-review" category="budget-audio" />
     </article>
   );
 }

@@ -5,6 +5,9 @@ import FAQ from '@/components/FAQ';
 import Newsletter from '@/components/Newsletter';
 import ProductImage from '@/components/ProductImage';
 import { site } from '@/lib/site';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import StickyBuyBar from '@/components/StickyBuyBar';
+import RelatedReviews from '@/components/RelatedReviews';
 
 export const metadata = {
   title: 'Anker Soundcore Q20i Review: Strong ANC, Weak Tuning, Honest Caveats',
@@ -36,6 +39,7 @@ export default function Page() {
 
   return (
     <article className="prose-isaac max-w-3xl mx-auto px-6 md:px-10 py-10">
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Budget Audio', href: '/category/budget-audio' }, { label: 'Anker Soundcore Q20i Review' }]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <p className="text-ink/50 text-sm not-prose">Budget Audio</p>
@@ -202,6 +206,7 @@ export default function Page() {
       <p className="text-xs text-ink/50 mt-10">
         Specs cited from Soundcore manufacturer listings as of May 2026. Measured values from hands-on testing by {site.name}. Pricing and availability vary — verify at publish time.
       </p>
+          <RelatedReviews slug="anker-soundcore-q20i-review" category="budget-audio" />
     </article>
   );
 }

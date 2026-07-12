@@ -5,6 +5,9 @@ import FAQ from '@/components/FAQ';
 import Newsletter from '@/components/Newsletter';
 import ProductImage from '@/components/ProductImage';
 import { site } from '@/lib/site';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import StickyBuyBar from '@/components/StickyBuyBar';
+import RelatedReviews from '@/components/RelatedReviews';
 
 export const metadata = {
   title: 'Beelink GTi13 Ultra Review: A Quiet i9 Mini PC With a Real GPU Escape Hatch',
@@ -38,6 +41,8 @@ export default function Page() {
 
   return (
     <article className="prose-isaac max-w-3xl mx-auto px-6 md:px-10 py-10">
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Mini PCs', href: '/category/mini-pcs' }, { label: 'Beelink GTi13 Ultra Review' }]} />
+      <StickyBuyBar product="Beelink GTi13 Ultra" asin={ASIN} rating={4.2} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <p className="text-ink/50 text-sm not-prose">Mini PCs</p>
@@ -245,6 +250,7 @@ export default function Page() {
       <p className="text-xs text-ink/50 mt-10">
         Specs cited from Beelink manufacturer listings and reviewer reporting (Neowin, Windows Central, igor&apos;sLAB, Basic Tutorials, Notebookcheck) as of May 2026. Pricing varies by configuration and stock channel — verify at publish time. Daily-use observations based on three months of hands-on use by {site.name}; specific benchmark measurements cited inline from named outside reviewers.
       </p>
+          <RelatedReviews slug="beelink-gti13-ultra-review" category="mini-pcs" />
     </article>
   );
 }

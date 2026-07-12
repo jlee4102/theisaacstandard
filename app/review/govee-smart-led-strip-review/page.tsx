@@ -5,6 +5,9 @@ import FAQ from '@/components/FAQ';
 import Newsletter from '@/components/Newsletter';
 import ProductImage from '@/components/ProductImage';
 import { site } from '@/lib/site';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import StickyBuyBar from '@/components/StickyBuyBar';
+import RelatedReviews from '@/components/RelatedReviews';
 
 export const metadata = {
   title: 'Govee Smart LED Strip Lights 32.8ft Review: Colorful, Cheap, and Surprisingly Capable',
@@ -26,6 +29,8 @@ export default function Page() {
   const jsonLd = {"@context": "https://schema.org", "@type": "Review", "itemReviewed": {"@type": "Product", "name": "Govee Smart LED Strip Lights 32.8ft", "brand": {"@type": "Brand", "name": "Govee"}}, "author": {"@type": "Person", "name": "Isaac"}, "reviewRating": {"@type": "Rating", "ratingValue": "4.3", "bestRating": "5"}, "publisher": {"@type": "Organization", "name": "The Isaac Standard"}};
   return (
     <article className="prose-isaac max-w-3xl mx-auto px-6 md:px-10 py-10">
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Smart Home & Frame TVs', href: '/category/smart-home' }, { label: 'Govee Smart LED Strip Review' }]} />
+      <StickyBuyBar product="Govee Smart LED Strip" asin={ASIN} rating={4.3} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <p className="text-ink/50 text-sm not-prose">Smart Home</p>
       <h1 className="font-serif text-3xl md:text-4xl mt-2">Govee Smart LED Strip Lights 32.8ft Review: Colorful, Cheap, and Surprisingly Capable</h1>
@@ -120,6 +125,7 @@ export default function Page() {
       <p className="text-xs text-ink/50 mt-10 not-prose">
         Specs cited from Govee manufacturer listings. Measured values and impressions from hands-on testing by {site.name}. Pricing and availability vary &mdash; verify at publish time.
       </p>
+          <RelatedReviews slug="govee-smart-led-strip-review" category="smart-home" />
     </article>
   );
 }
