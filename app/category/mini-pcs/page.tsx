@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Image from 'next/image';
 import { categories, reviews } from '@/lib/site';
 import ReviewCard from '@/components/ReviewCard';
@@ -30,6 +31,15 @@ export default function Page() {
             {list.map((r) => (
               <ReviewCard key={r.slug} {...r} category={cat.name} />
             ))}
+          </div>
+        )}
+              {list.length >= 2 && (
+          <div className="mt-12 rounded-xl border border-line bg-card p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div>
+              <div className="eyebrow mb-1">Buying guide</div>
+              <p className="font-serif text-xl">Our ranked pick of the best {cat.name.toLowerCase()}</p>
+            </div>
+            <Link href={`/best/${SLUG}`} className="shrink-0 bg-ink text-paper px-5 py-3 rounded-md font-medium hover:bg-accent-deep transition">See the ranking →</Link>
           </div>
         )}
       </section>
