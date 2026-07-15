@@ -52,6 +52,16 @@ export const categories = [
 
 export const reviews = [
   {
+    slug: 'earfun-air-pro-3-review',
+    title: 'EarFun Air Pro 3 Review: The Budget King That Almost Dethrones the Premiums',
+    category: 'budget-audio',
+    excerpt:
+      'The EarFun Air Pro 3 deliver shockingly good ANC and balanced sound for under $80, but their finicky fit and average call quality keep them from being a universal recommendation. I',
+    date: '2026-07-15',
+    rating: 4.0,
+    image: '/brand/png/og-image.png',
+  },
+  {
     slug: 'anker-soundcore-life-p3-review',
     title: 'Anker Soundcore Life P3 Review: Budget ANC That Punches Above Its Weight',
     category: 'budget-audio',
