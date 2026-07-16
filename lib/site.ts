@@ -149,7 +149,7 @@ export const reviews = [
       "Don't buy this for the CPU benchmarks. Buy it for the silent operation and the PCIe x8 escape hatch that turns a fist-sized box into a real gaming rig. Three months in.",
     date: '2026-05-24',
     rating: 4.2,
-    image: 'https://www.bee-link.com/cdn/shop/files/9_a1060a2b-d1b9-4dc5-a4c6-b8c08b1d1c7d.png?v=1764744541',
+    image: '/reviews/beelink-gti13-ultra-review/main.jpg',
   },
   {
     slug: 'anker-soundcore-q20i-review',
@@ -159,7 +159,6 @@ export const reviews = [
       'After hands-on testing: the 60-hour battery is closer to 49, the ANC genuinely works, and the V-shaped tuning is the catch nobody mentions. Honest take on the budget ANC headphone everyone is buying.',
     date: '2026-05-22',
     rating: 3.9,
-    image:
-      'https://cdn.shopify.com/s/files/1/0516/3761/6830/files/soundcore-q20i-blue-anc-headphones_3840x.jpg?v=1748311376',
+    image: '/reviews/anker-soundcore-q20i-review/main.jpg',
   },
 ];
