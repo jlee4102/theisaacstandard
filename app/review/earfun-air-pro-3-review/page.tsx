@@ -34,7 +34,7 @@ export default function Page() {
       <VerdictBox asin={ASIN} rating={4.0} verdict="The EarFun Air Pro 3 deliver shockingly good ANC and balanced sound for under $80, but their finicky fit and average call quality keep them from being a universal recommendation. If you can get a good seal, these are the best value in budget audio right now." pros={['LDAC support for hi-res audio on Android', 'Excellent adaptive ANC for the price', 'Long battery life with wireless charging case', 'Balanced, enjoyable sound signature']} cons={['Call quality is poor in noisy environments', 'Fit may be loose for some ear shapes', 'Touch controls are overly sensitive', 'App lacks advanced features']} />
       <StickyBuyBar product="EarFun Air Pro 3" asin={ASIN} rating={4.0} />
       <div className="not-prose my-8">
-        <ProductImage alt="EarFun Air Pro 3 product photo" caption="Manufacturer image pending." aspect="4/3" />
+        <ProductImage src="/reviews/earfun-air-pro-3-review/main.jpg" alt="EarFun Air Pro 3 (manufacturer image)" caption="EarFun product image." aspect="4/3" />
       </div>
       <h2>What it is &amp; who it&apos;s for</h2>
       <p>The EarFun Air Pro 3 are the latest in a line of budget earbuds that keep punching above their weight. Priced around $70, they promise adaptive ANC, LDAC support, and a 45-hour battery life — specs that would have cost three times as much just a couple of years ago. They&apos;re aimed at commuters and gym-goers who want premium features without the premium price tag.</p>

@@ -59,7 +59,7 @@ export const reviews = [
       'The EarFun Air Pro 3 deliver shockingly good ANC and balanced sound for under $80, but their finicky fit and average call quality keep them from being a universal recommendation. I',
     date: '2026-07-15',
     rating: 4.0,
-    image: '/brand/png/og-image.png',
+    image: '/reviews/earfun-air-pro-3-review/main.jpg',
   },
   {
     slug: 'anker-soundcore-life-p3-review',
