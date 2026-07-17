@@ -2,7 +2,7 @@ export const site = {
   name: 'The Isaac Standard',
   tagline: 'Honest gear reviews, held to a higher bar.',
   url: process.env.SITE_URL || 'https://theisaacstandard.com',
-  affiliateTag: process.env.AMAZON_AFFILIATE_TAG || 'yourtag-20',
+  affiliateTag: process.env.AMAZON_AFFILIATE_TAG || 'theisaacstand-20',
 };
 
 // Social profiles. Add new platforms here; the footer / author page / OpenGraph
