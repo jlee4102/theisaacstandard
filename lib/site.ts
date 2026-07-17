@@ -52,6 +52,16 @@ export const categories = [
 
 export const reviews = [
   {
+    slug: 'ring-video-doorbell-pro-2-review',
+    title: 'Ring Video Doorbell Pro 2 Review: Sharp Video, But Subscription Required',
+    category: 'smart-home',
+    excerpt:
+      'The Ring Video Doorbell Pro 2 delivers excellent 1536p HD video with bird\'s-eye view and 3D motion detection, but its premium price and mandatory subscription for recording feature',
+    date: '2026-07-17',
+    rating: undefined,
+    image: '/brand/png/og-image.png',
+  },
+  {
     slug: 'earfun-air-pro-3-review',
     title: 'EarFun Air Pro 3 Review: The Budget King That Almost Dethrones the Premiums',
     category: 'budget-audio',
