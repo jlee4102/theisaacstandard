@@ -52,6 +52,16 @@ export const categories = [
 
 export const reviews = [
   {
+    slug: 'mammotion-luba-awd-1000-review',
+    title: 'Mammotion Luba AWD 1000 Review: The Lawn Robot That Actually Handles Slopes',
+    category: 'outdoor-robots',
+    excerpt:
+      'The Mammotion Luba AWD 1000 is a GPS-guided, all-wheel-drive mower that tackles steep lawns (up to 75% slope) without boundary wires. It\'s a solid pick for hilly properties, but it',
+    date: '2026-07-20',
+    rating: undefined,
+    image: '/reviews/mammotion-luba-awd-1000-review/main.jpg',
+  },
+  {
     slug: 'ring-video-doorbell-pro-2-review',
     title: 'Ring Video Doorbell Pro 2 Review: Sharp Video, But Subscription Required',
     category: 'smart-home',
