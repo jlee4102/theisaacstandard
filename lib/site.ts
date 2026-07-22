@@ -52,6 +52,16 @@ export const categories = [
 
 export const reviews = [
   {
+    slug: 'minisforum-venus-um790-pro-review',
+    title: 'Minisforum Venus UM790 Pro Review: Small Beast, Big Compromises',
+    category: 'mini-pcs',
+    excerpt:
+      'The Minisforum Venus UM790 Pro packs serious AMD Ryzen 9 power into a tiny chassis, making it a compelling choice for light gaming and productivity. But its thermal performance, fa',
+    date: '2026-07-22',
+    rating: undefined,
+    image: '/reviews/minisforum-venus-um790-pro-review/main.jpg',
+  },
+  {
     slug: 'mammotion-luba-awd-1000-review',
     title: 'Mammotion Luba AWD 1000 Review: The Lawn Robot That Actually Handles Slopes',
     category: 'outdoor-robots',
