@@ -48,9 +48,24 @@ export const categories = [
     name: 'Outdoor Robots',
     blurb: 'Pool cleaners, mowers, and the bots reclaiming your weekends.',
   },
+  {
+    slug: 'desk-gear',
+    name: 'Desk Gear',
+    blurb: 'Keyboards, mice, and the desk setup that earns its footprint.',
+  },
 ];
 
 export const reviews = [
+  {
+    slug: 'logitech-mx-mechanical-review',
+    title: 'Logitech MX Mechanical Review: The Productivity Keyboard That Almost Does It All',
+    category: 'desk-gear',
+    excerpt:
+      'The Logitech MX Mechanical is a well-built, quiet mechanical keyboard designed for productivity users who want tactile feedback without the noise. It excels in multi-device workflo',
+    date: '2026-07-12',
+    rating: 4.0,
+    image: undefined,
+  },
   {
     slug: 'soundcore-by-anker-q30-hybrid-active-noise-cancelling-headphones-review',
     title: 'Soundcore by Anker Q30 Review: The Budget ANC Headphones That Punch Above Their Weight',
