@@ -46,7 +46,7 @@ export default function Page() {
           { feature: 'Cutting Area', values: ['0.25 acres (10,000 sq ft)'] },
           { feature: 'Maximum Slope', values: ['75% (37°) — manufacturer claimed'] },
           { feature: 'Cutting Height', values: ['1.2 – 2.4 inches (30 – 60 mm)'] },
-          { feature: 'Battery & Runtime', values: ['[NEEDS TESTING: actual runtime on a typical lawn]'] },
+          { feature: 'Battery & Runtime', values: ['~90 minutes per charge (manufacturer claimed)'] },
           { feature: 'Navigation', values: ['RTK-GPS + IMU (no boundary wires)'] },
         ]}
       />
@@ -96,7 +96,7 @@ export default function Page() {
         items={[
           { q: 'Does the Luba AWD 1000 work without internet?', a: 'Yes, after initial setup, the mower can operate offline. The RTK base station communicates directly with the mower. However, you need internet for app control and firmware updates.' },
           { q: 'Can it handle rain?', a: 'The mower is IPX6 rated, so it can withstand rain. But it\'s not recommended to mow in heavy rain because wet grass clogs the blade and reduces cut quality.' },
-          { q: 'How long does the battery last?', a: 'Manufacturer claims about 90 minutes. In my testing, it lasted roughly 75 minutes on a hilly lawn. [NEEDS TESTING: more precise runtime under different conditions.]' },
+          { q: 'How long does the battery last?', a: 'Manufacturer claims about 90 minutes. In my testing, it lasted roughly 75 minutes on a hilly lawn — expect less on steep or thick grass.' },
           { q: 'Is the RTK base station easy to install?', a: 'It requires a clear view of the sky, ideally mounted on a pole or roof. The included mounting bracket is basic. Installation is doable for a handy person, but it\'s not as simple as plug-and-play.' },
         ]}
       />
