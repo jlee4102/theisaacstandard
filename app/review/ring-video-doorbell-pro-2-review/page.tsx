@@ -14,8 +14,8 @@ import { site } from '@/lib/site';
 export const metadata = {
   title: 'Ring Video Doorbell Pro 2 Review: Sharp Video, But Subscription Required',
   description: 'The Ring Video Doorbell Pro 2 delivers excellent 1536p HD video with bird\'s-eye view and 3D motion detection, but its premium price and mandatory subscription for recording feature',
-  openGraph: { title: 'Ring Video Doorbell Pro 2 Review: Sharp Video, But Subscription Required', description: 'The Ring Video Doorbell Pro 2 delivers excellent 1536p HD video with bird\'s-eye view and 3D motion detection, but its premium price and mandatory subscription for recording feature', images: [{ url: '/brand/png/og-image.png', alt: 'Ring Video Doorbell Pro 2' }] },
-  twitter: { card: 'summary_large_image', images: ['/brand/png/og-image.png'] },
+  openGraph: { title: 'Ring Video Doorbell Pro 2 Review: Sharp Video, But Subscription Required', description: 'The Ring Video Doorbell Pro 2 delivers excellent 1536p HD video with bird\'s-eye view and 3D motion detection, but its premium price and mandatory subscription for recording feature', images: [{ url: '/reviews/ring-video-doorbell-pro-2-review/main.jpg', alt: 'Ring Video Doorbell Pro 2' }] },
+  twitter: { card: 'summary_large_image', images: ['/reviews/ring-video-doorbell-pro-2-review/main.jpg'] },
 };
 
 const ASIN = 'B0898MWMBX';
@@ -34,7 +34,7 @@ export default function Page() {
       <div className="not-prose border border-ink/10 rounded-lg p-5 my-6"><p className="text-sm font-medium text-ink/60">Rating: 3.8 / 5</p><p className="mt-2">The Ring Video Doorbell Pro 2 delivers excellent 1536p HD video with bird&apos;s-eye view and 3D motion detection, but its premium price and mandatory subscription for recording features make it a hard sell for budget-conscious buyers. Best for those already in the Amazon ecosystem who want top-tier video quality and don&apos;t mind ongoing costs.</p><p className="mt-3 text-sm"><strong>Pros:</strong> Excellent 1536p video with HDR and head-to-toe view; Bird&apos;s Eye View provides unique aerial tracking; 3D motion detection reduces false alerts; Works with Alexa and Amazon Key for package delivery</p><p className="mt-1 text-sm"><strong>Cons:</strong> Requires subscription for video recording and smart alerts; Wired installation only — no battery backup; Larger than most doorbells, may not fit narrow frames; Privacy concerns with Amazon data sharing</p></div>
       <StickyBuyBar product="Ring Video Doorbell Pro 2" asin={ASIN} />
       <div className="not-prose my-8">
-        <ProductImage alt="Ring Video Doorbell Pro 2 product photo" caption="Manufacturer image pending." aspect="4/3" />
+        <ProductImage src="/reviews/ring-video-doorbell-pro-2-review/main.jpg" alt="Ring Video Doorbell Pro 2 (manufacturer image)" caption="Image: Ring (manufacturer)." aspect="4/3" />
       </div>
       <h2>What it is &amp; who it&apos;s for</h2>
       <p>The Ring Video Doorbell Pro 2 is the flagship wired doorbell from Ring, offering the highest video resolution (1536p HD) and advanced motion detection features like Bird&apos;s Eye View and 3D motion tracking. It&apos;s designed for homeowners who want a premium smart doorbell with crisp video and smart alerts, and who are comfortable with a wired installation (requires existing doorbell wiring or a transformer).</p>

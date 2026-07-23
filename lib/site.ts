@@ -64,7 +64,7 @@ export const reviews = [
       'The Logitech MX Mechanical is a well-built, quiet mechanical keyboard designed for productivity users who want tactile feedback without the noise. It excels in multi-device workflo',
     date: '2026-07-12',
     rating: 4.0,
-    image: undefined,
+    image: '/reviews/logitech-mx-mechanical-review/main.jpg',
   },
   {
     slug: 'soundcore-by-anker-q30-hybrid-active-noise-cancelling-headphones-review',
@@ -104,7 +104,7 @@ export const reviews = [
       'The Ring Video Doorbell Pro 2 delivers excellent 1536p HD video with bird\'s-eye view and 3D motion detection, but its premium price and mandatory subscription for recording feature',
     date: '2026-07-17',
     rating: 3.8,
-    image: '/brand/png/og-image.png',
+    image: '/reviews/ring-video-doorbell-pro-2-review/main.jpg',
   },
   {
     slug: 'earfun-air-pro-3-review',

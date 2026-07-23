@@ -9,8 +9,8 @@ import { site } from '@/lib/site';
 export const metadata = {
   title: 'Logitech MX Mechanical Review: The Productivity Keyboard That Almost Does It All',
   description: 'The Logitech MX Mechanical is a well-built, quiet mechanical keyboard designed for productivity users who want tactile feedback without the noise. It excels in multi-device workflo',
-  openGraph: { title: 'Logitech MX Mechanical Review: The Productivity Keyboard That Almost Does It All', description: 'The Logitech MX Mechanical is a well-built, quiet mechanical keyboard designed for productivity users who want tactile feedback without the noise. It excels in multi-device workflo', images: [{ url: '/brand/png/og-image.png', alt: 'Logitech MX Mechanical' }] },
-  twitter: { card: 'summary_large_image', images: ['/brand/png/og-image.png'] },
+  openGraph: { title: 'Logitech MX Mechanical Review: The Productivity Keyboard That Almost Does It All', description: 'The Logitech MX Mechanical is a well-built, quiet mechanical keyboard designed for productivity users who want tactile feedback without the noise. It excels in multi-device workflo', images: [{ url: '/reviews/logitech-mx-mechanical-review/main.jpg', alt: 'Logitech MX Mechanical' }] },
+  twitter: { card: 'summary_large_image', images: ['/reviews/logitech-mx-mechanical-review/main.jpg'] },
 };
 
 const ASIN = 'B09LK1P1RD';   // MX Mechanical full-size, Tactile Quiet Graphite — verified live 2026-07-22
@@ -29,7 +29,7 @@ export default function Page() {
       <p className="text-lg text-ink/80 mt-3">The Logitech MX Mechanical is a well-built, quiet mechanical keyboard designed for productivity users who want tactile feedback without the noise. It excels in multi-device workflows and battery life, but its high price, lack of backlighting on the Mac version, and limited switch options hold it back from greatness.</p>
       <p className="text-2xl font-bold my-4 not-prose">Rating: 4.0 / 5</p>
       <div className="not-prose my-8">
-        <ProductImage alt="Logitech MX Mechanical product photo" caption="Manufacturer image pending." aspect="4/3" />
+        <ProductImage src="/reviews/logitech-mx-mechanical-review/main.jpg" alt="Logitech MX Mechanical (product image)" caption="Image: Logitech (product listing)." aspect="4/3" />
       </div>
       <h2>What it is &amp; who it&apos;s for</h2>
       <p>The Logitech MX Mechanical is Logitech&apos;s first mechanical keyboard aimed squarely at the productivity crowd, not gamers. It brings the company&apos;s signature multi-device pairing, Flow software, and excellent build quality to a mechanical form factor with low-profile switches.</p>
