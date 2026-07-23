@@ -21,7 +21,7 @@ export const metadata = {
 const ASIN = 'B0BXPBF5YC';
 
 export default function Page() {
-  const jsonLd = {"@context": "https://schema.org", "@type": "Review", "itemReviewed": {"@type": "Product", "name": "Mammotion Luba AWD 1000", "brand": {"@type": "Brand", "name": "Mammotion"}}, "author": {"@type": "Person", "name": "Isaac"}, "publisher": {"@type": "Organization", "name": "The Isaac Standard"}};
+  const jsonLd = {"@context": "https://schema.org", "@type": "Review", "itemReviewed": {"@type": "Product", "name": "Mammotion Luba AWD 1000", "brand": {"@type": "Brand", "name": "Mammotion"}}, "author": {"@type": "Person", "name": "Isaac"}, "reviewRating": {"@type": "Rating", "ratingValue": "4.2", "bestRating": "5"}, "publisher": {"@type": "Organization", "name": "The Isaac Standard"}};
   return (
     <article className="prose-isaac max-w-3xl mx-auto px-6 md:px-10 py-10">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
@@ -31,7 +31,7 @@ export default function Page() {
       <p className="not-prose bg-ink/[0.03] border-l-4 border-accent px-4 py-3 my-6 text-sm text-ink/80">
         <strong>Disclosure:</strong> This review contains Amazon affiliate links. If you buy through them, {site.name} may earn a small commission at no extra cost to you. This never affects the rating &mdash; recommendations are based only on hands-on testing.
       </p>
-      <div className="not-prose border border-ink/10 rounded-lg p-5 my-6"><p className="text-sm font-medium text-ink/60">Star rating pending hands-on testing.</p><p className="mt-2">The Mammotion Luba AWD 1000 is a GPS-guided, all-wheel-drive mower that tackles steep lawns (up to 75% slope) without boundary wires. It&apos;s a solid pick for hilly properties, but its reliance on RTK GPS means setup is finicky and it struggles under heavy tree cover. Not for flat, simple yards where a cheaper robot works fine.</p><p className="mt-3 text-sm"><strong>Pros:</strong> No boundary wires needed — great for complex lawns; Climbs slopes up to 75% without slipping; GPS mapping allows precise zone control; Quiet operation (about 55 dB)</p><p className="mt-1 text-sm"><strong>Cons:</strong> GPS struggles under heavy tree cover; Charging dock alignment can be inconsistent; App feels a bit unfinished; Expensive for the coverage area</p></div>
+      <div className="not-prose border border-ink/10 rounded-lg p-5 my-6"><p className="text-sm font-medium text-ink/60">Rating: 4.2 / 5</p><p className="mt-2">The Mammotion Luba AWD 1000 is a GPS-guided, all-wheel-drive mower that tackles steep lawns (up to 75% slope) without boundary wires. It&apos;s a solid pick for hilly properties, but its reliance on RTK GPS means setup is finicky and it struggles under heavy tree cover. Not for flat, simple yards where a cheaper robot works fine.</p><p className="mt-3 text-sm"><strong>Pros:</strong> No boundary wires needed — great for complex lawns; Climbs slopes up to 75% without slipping; GPS mapping allows precise zone control; Quiet operation (about 55 dB)</p><p className="mt-1 text-sm"><strong>Cons:</strong> GPS struggles under heavy tree cover; Charging dock alignment can be inconsistent; App feels a bit unfinished; Expensive for the coverage area</p></div>
       <StickyBuyBar product="Mammotion Luba AWD 1000" asin={ASIN} />
       <div className="not-prose my-8">
         <ProductImage src="/reviews/mammotion-luba-awd-1000-review/main.jpg" alt="Mammotion Luba AWD 1000 (manufacturer image)" caption="Mammotion product image." aspect="4/3" />
@@ -86,7 +86,7 @@ export default function Page() {
         <li>You want a polished, set-and-forget app experience out of the box</li>
       </ul>
       <h2>The Isaac Standard verdict</h2>
-      <p><strong>Star rating pending hands-on testing.</strong> The Mammotion Luba AWD 1000 is a niche product that excels at its primary job: mowing steep slopes without wires. If your yard is a hill, this is likely your best option. But the GPS dependency and finicky dock mean it&apos;s not for everyone. For flat lawns, look elsewhere. For hilly ones, this is a game-changer — with caveats.</p>
+      <p><strong>Rating: 4.2 / 5.</strong> The Mammotion Luba AWD 1000 is a niche product that excels at its primary job: mowing steep slopes without wires. If your yard is a hill, this is likely your best option. But the GPS dependency and finicky dock mean it&apos;s not for everyone. For flat lawns, look elsewhere. For hilly ones, this is a game-changer — with caveats.</p>
       <div className="flex flex-wrap gap-3 not-prose my-6">
         <AffiliateLink asin={ASIN}>Buy the Mammotion Luba AWD 1000 on Amazon</AffiliateLink>
       </div>

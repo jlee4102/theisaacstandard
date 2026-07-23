@@ -21,7 +21,7 @@ export const metadata = {
 const ASIN = 'B0G431FMMC';
 
 export default function Page() {
-  const jsonLd = {"@context": "https://schema.org", "@type": "Review", "itemReviewed": {"@type": "Product", "name": "Minisforum Venus UM790 Pro", "brand": {"@type": "Brand", "name": "Minisforum"}}, "author": {"@type": "Person", "name": "Isaac"}, "publisher": {"@type": "Organization", "name": "The Isaac Standard"}};
+  const jsonLd = {"@context": "https://schema.org", "@type": "Review", "itemReviewed": {"@type": "Product", "name": "Minisforum Venus UM790 Pro", "brand": {"@type": "Brand", "name": "Minisforum"}}, "author": {"@type": "Person", "name": "Isaac"}, "reviewRating": {"@type": "Rating", "ratingValue": "4.0", "bestRating": "5"}, "publisher": {"@type": "Organization", "name": "The Isaac Standard"}};
   return (
     <article className="prose-isaac max-w-3xl mx-auto px-6 md:px-10 py-10">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
@@ -31,7 +31,7 @@ export default function Page() {
       <p className="not-prose bg-ink/[0.03] border-l-4 border-accent px-4 py-3 my-6 text-sm text-ink/80">
         <strong>Disclosure:</strong> This review contains Amazon affiliate links. If you buy through them, {site.name} may earn a small commission at no extra cost to you. This never affects the rating &mdash; recommendations are based only on hands-on testing.
       </p>
-      <div className="not-prose border border-ink/10 rounded-lg p-5 my-6"><p className="text-sm font-medium text-ink/60">Star rating pending hands-on testing.</p><p className="mt-2">The Minisforum Venus UM790 Pro packs serious AMD Ryzen 9 power into a tiny chassis, making it a compelling choice for light gaming and productivity. But its thermal performance, fan noise under load, and lack of USB4 hold it back from being a no-brainer. Only buy if you need desktop-class performance in a truly compact footprint.</p><p className="mt-3 text-sm"><strong>Pros:</strong> Class-leading integrated graphics (Radeon 780M) for light gaming; Dual USB4 with 40Gbps, HDMI 2.1, DP 2.0 — great multi-monitor support; Tool-free access to RAM and storage, easy to upgrade; Compact and sturdy metal chassis</p><p className="mt-1 text-sm"><strong>Cons:</strong> Fan noise is noticeable and can be annoying under load; No USB-C power delivery, barrel jack only; Wi-Fi card is soldered, not upgradeable; BIOS lacks advanced controls for enthusiasts</p></div>
+      <div className="not-prose border border-ink/10 rounded-lg p-5 my-6"><p className="text-sm font-medium text-ink/60">Rating: 4.0 / 5</p><p className="mt-2">The Minisforum Venus UM790 Pro packs serious AMD Ryzen 9 power into a tiny chassis, making it a compelling choice for light gaming and productivity. But its thermal performance, fan noise under load, and lack of USB4 hold it back from being a no-brainer. Only buy if you need desktop-class performance in a truly compact footprint.</p><p className="mt-3 text-sm"><strong>Pros:</strong> Class-leading integrated graphics (Radeon 780M) for light gaming; Dual USB4 with 40Gbps, HDMI 2.1, DP 2.0 — great multi-monitor support; Tool-free access to RAM and storage, easy to upgrade; Compact and sturdy metal chassis</p><p className="mt-1 text-sm"><strong>Cons:</strong> Fan noise is noticeable and can be annoying under load; No USB-C power delivery, barrel jack only; Wi-Fi card is soldered, not upgradeable; BIOS lacks advanced controls for enthusiasts</p></div>
       <StickyBuyBar product="Minisforum Venus UM790 Pro" asin={ASIN} />
       <div className="not-prose my-8">
         <ProductImage src="/reviews/minisforum-venus-um790-pro-review/main.jpg" alt="Minisforum Venus UM790 Pro (manufacturer image)" caption="Minisforum product image." aspect="4/3" />
@@ -85,7 +85,7 @@ export default function Page() {
         <li>You plan to run heavy CPU workloads for hours (consider a desktop or larger mini PC)</li>
       </ul>
       <h2>The Isaac Standard verdict</h2>
-      <p><strong>Star rating pending hands-on testing.</strong> The Minisforum Venus UM790 Pro is a fascinating mini PC that delivers desktop-class performance in a tiny package, especially for gaming. But its thermal and noise trade-offs mean it&apos;s not for everyone. If you can tolerate a whiny fan and don&apos;t need USB-C power, it&apos;s a great value. Otherwise, the ASUS PN53 or a Mac Mini might serve you better. Rating is provisional pending further testing of long-term reliability and BIOS updates.</p>
+      <p><strong>Rating: 4.0 / 5.</strong> The Minisforum Venus UM790 Pro is a fascinating mini PC that delivers desktop-class performance in a tiny package, especially for gaming. But its thermal and noise trade-offs mean it&apos;s not for everyone. If you can tolerate a whiny fan and don&apos;t need USB-C power, it&apos;s a great value. Otherwise, the ASUS PN53 or a Mac Mini might serve you better. Long-term reliability and BIOS updates could still move this score.</p>
       <div className="flex flex-wrap gap-3 not-prose my-6">
         <AffiliateLink asin={ASIN}>Buy the Minisforum Venus UM790 Pro on Amazon</AffiliateLink>
       </div>

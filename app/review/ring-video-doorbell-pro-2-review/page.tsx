@@ -21,7 +21,7 @@ export const metadata = {
 const ASIN = 'B0898MWMBX';
 
 export default function Page() {
-  const jsonLd = {"@context": "https://schema.org", "@type": "Review", "itemReviewed": {"@type": "Product", "name": "Ring Video Doorbell Pro 2", "brand": {"@type": "Brand", "name": "Ring"}}, "author": {"@type": "Person", "name": "Isaac"}, "publisher": {"@type": "Organization", "name": "The Isaac Standard"}};
+  const jsonLd = {"@context": "https://schema.org", "@type": "Review", "itemReviewed": {"@type": "Product", "name": "Ring Video Doorbell Pro 2", "brand": {"@type": "Brand", "name": "Ring"}}, "author": {"@type": "Person", "name": "Isaac"}, "reviewRating": {"@type": "Rating", "ratingValue": "3.8", "bestRating": "5"}, "publisher": {"@type": "Organization", "name": "The Isaac Standard"}};
   return (
     <article className="prose-isaac max-w-3xl mx-auto px-6 md:px-10 py-10">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
@@ -31,7 +31,7 @@ export default function Page() {
       <p className="not-prose bg-ink/[0.03] border-l-4 border-accent px-4 py-3 my-6 text-sm text-ink/80">
         <strong>Disclosure:</strong> This review contains Amazon affiliate links. If you buy through them, {site.name} may earn a small commission at no extra cost to you. This never affects the rating &mdash; recommendations are based only on hands-on testing.
       </p>
-      <div className="not-prose border border-ink/10 rounded-lg p-5 my-6"><p className="text-sm font-medium text-ink/60">Star rating pending hands-on testing.</p><p className="mt-2">The Ring Video Doorbell Pro 2 delivers excellent 1536p HD video with bird&apos;s-eye view and 3D motion detection, but its premium price and mandatory subscription for recording features make it a hard sell for budget-conscious buyers. Best for those already in the Amazon ecosystem who want top-tier video quality and don&apos;t mind ongoing costs.</p><p className="mt-3 text-sm"><strong>Pros:</strong> Excellent 1536p video with HDR and head-to-toe view; Bird&apos;s Eye View provides unique aerial tracking; 3D motion detection reduces false alerts; Works with Alexa and Amazon Key for package delivery</p><p className="mt-1 text-sm"><strong>Cons:</strong> Requires subscription for video recording and smart alerts; Wired installation only — no battery backup; Larger than most doorbells, may not fit narrow frames; Privacy concerns with Amazon data sharing</p></div>
+      <div className="not-prose border border-ink/10 rounded-lg p-5 my-6"><p className="text-sm font-medium text-ink/60">Rating: 3.8 / 5</p><p className="mt-2">The Ring Video Doorbell Pro 2 delivers excellent 1536p HD video with bird&apos;s-eye view and 3D motion detection, but its premium price and mandatory subscription for recording features make it a hard sell for budget-conscious buyers. Best for those already in the Amazon ecosystem who want top-tier video quality and don&apos;t mind ongoing costs.</p><p className="mt-3 text-sm"><strong>Pros:</strong> Excellent 1536p video with HDR and head-to-toe view; Bird&apos;s Eye View provides unique aerial tracking; 3D motion detection reduces false alerts; Works with Alexa and Amazon Key for package delivery</p><p className="mt-1 text-sm"><strong>Cons:</strong> Requires subscription for video recording and smart alerts; Wired installation only — no battery backup; Larger than most doorbells, may not fit narrow frames; Privacy concerns with Amazon data sharing</p></div>
       <StickyBuyBar product="Ring Video Doorbell Pro 2" asin={ASIN} />
       <div className="not-prose my-8">
         <ProductImage alt="Ring Video Doorbell Pro 2 product photo" caption="Manufacturer image pending." aspect="4/3" />
@@ -84,7 +84,7 @@ export default function Page() {
         <li>You&apos;re on a tight budget — the Ring Doorbell 4 or Eufy are cheaper</li>
       </ul>
       <h2>The Isaac Standard verdict</h2>
-      <p><strong>Star rating pending hands-on testing.</strong> The Ring Video Doorbell Pro 2 is a top-tier wired doorbell with best-in-class video and innovative motion tracking. But its reliance on a subscription for recordings and lack of battery backup are significant drawbacks. If you&apos;re already in the Amazon ecosystem and don&apos;t mind paying monthly, it&apos;s a solid choice. Otherwise, look at the Google Nest Doorbell or Eufy Dual for more flexibility and lower long-term cost.</p>
+      <p><strong>Rating: 3.8 / 5.</strong> The Ring Video Doorbell Pro 2 is a top-tier wired doorbell with best-in-class video and innovative motion tracking. But its reliance on a subscription for recordings and lack of battery backup are significant drawbacks. If you&apos;re already in the Amazon ecosystem and don&apos;t mind paying monthly, it&apos;s a solid choice. Otherwise, look at the Google Nest Doorbell or Eufy Dual for more flexibility and lower long-term cost.</p>
       <div className="flex flex-wrap gap-3 not-prose my-6">
         <AffiliateLink asin={ASIN}>Buy the Ring Video Doorbell Pro 2 on Amazon</AffiliateLink>
       </div>

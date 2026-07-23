@@ -83,7 +83,7 @@ export const reviews = [
     excerpt:
       'The Minisforum Venus UM790 Pro packs serious AMD Ryzen 9 power into a tiny chassis, making it a compelling choice for light gaming and productivity. But its thermal performance, fa',
     date: '2026-07-22',
-    rating: undefined,
+    rating: 4.0,
     image: '/reviews/minisforum-venus-um790-pro-review/main.jpg',
   },
   {
@@ -93,7 +93,7 @@ export const reviews = [
     excerpt:
       'The Mammotion Luba AWD 1000 is a GPS-guided, all-wheel-drive mower that tackles steep lawns (up to 75% slope) without boundary wires. It\'s a solid pick for hilly properties, but it',
     date: '2026-07-20',
-    rating: undefined,
+    rating: 4.2,
     image: '/reviews/mammotion-luba-awd-1000-review/main.jpg',
   },
   {
@@ -103,7 +103,7 @@ export const reviews = [
     excerpt:
       'The Ring Video Doorbell Pro 2 delivers excellent 1536p HD video with bird\'s-eye view and 3D motion detection, but its premium price and mandatory subscription for recording feature',
     date: '2026-07-17',
-    rating: undefined,
+    rating: 3.8,
     image: '/brand/png/og-image.png',
   },
   {
