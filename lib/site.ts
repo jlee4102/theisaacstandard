@@ -52,6 +52,16 @@ export const categories = [
 
 export const reviews = [
   {
+    slug: 'soundcore-by-anker-q30-hybrid-active-noise-cancelling-headphones-review',
+    title: 'Soundcore by Anker Q30 Review: The Budget ANC Headphones That Punch Above Their Weight',
+    category: 'budget-audio',
+    excerpt:
+      "The Soundcore Q30 delivers genuinely good hybrid ANC and a warm, bass-forward sound signature for under $60. They're not as refined as the Sony WH-1000XM4 or as comfortable for all-",
+    date: '2026-07-05',
+    rating: 4.2,
+    image: '/reviews/soundcore-by-anker-q30-hybrid-active-noise-cancelling-headphones-review/main.jpg',
+  },
+  {
     slug: 'minisforum-venus-um790-pro-review',
     title: 'Minisforum Venus UM790 Pro Review: Small Beast, Big Compromises',
     category: 'mini-pcs',
