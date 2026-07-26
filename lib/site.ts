@@ -53,6 +53,16 @@ export const categories = [
     name: 'Desk Gear',
     blurb: 'Keyboards, mice, and the desk setup that earns its footprint.',
   },
+  // AUDIENCE ALIGNMENT (2026-07-26): the site reviewed consumer tech while ARU's actual audience
+  // watches history and fitness — two disconnected businesses, so 19.5K video views had nothing to
+  // visit here and these reviews had no audience feeding them. Reps & Reason (fitness science) is
+  // the channel with both real traction and a natural purchase intent, so the review engine now
+  // covers the gear its viewers already want.
+  {
+    slug: 'fitness-gear',
+    name: 'Home Gym & Recovery',
+    blurb: 'Dumbbells, racks, and recovery tools — judged on the evidence, not the marketing.',
+  },
 ];
 
 export const reviews = [
