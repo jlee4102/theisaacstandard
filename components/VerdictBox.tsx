@@ -16,8 +16,14 @@ export default function VerdictBox({
   pros?: string[];
   cons?: string[];
 }) {
+  // DESIGN REVIEW (2026-07-26): this is THE scannable element — the thing a reader should be able
+  // to act on without reading 2,400 words — but it was disappearing into the page. Cause: bg-card
+  // (255,253,248) against bg-paper (244,241,234) is a ~12/255 difference, essentially invisible,
+  // with only a 1px hairline to define it. Fixed with a solid accent rule across the top plus a
+  // real shadow, so the card reads as the most important block on the page. Palette unchanged —
+  // this uses the existing accent, it does not introduce a new colour.
   return (
-    <aside className="not-prose my-8 rounded-xl border border-line bg-card shadow-card overflow-hidden">
+    <aside className="not-prose my-8 rounded-xl border border-line bg-card shadow-lift overflow-hidden border-t-4 border-t-accent">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-line px-6 py-5">
         <div>
           <div className="eyebrow mb-1">The verdict</div>

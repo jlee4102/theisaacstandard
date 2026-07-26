@@ -39,7 +39,11 @@ export default function Logo({ markSize = 44 }: { markSize?: number }) {
     <div className="flex items-center gap-3">
       <LogoMark size={markSize} />
       <div className="leading-none">
-        <div className="font-mono text-[0.62rem] tracking-[0.22em] uppercase text-accent-deep">
+        {/* DESIGN REVIEW (2026-07-26): this rendered at 9.9px — the smallest text on the site, and
+            it sits in the LOGO, the one element that sets the tone before anything else is read.
+            12px minimum with slightly tighter tracking keeps the same restrained look while being
+            legible. */}
+        <div className="font-mono text-[0.75rem] font-medium tracking-[0.18em] uppercase text-accent-deep">
           The Standard
         </div>
         <div className="font-serif text-2xl md:text-[1.6rem] tracking-tight mt-1 leading-none">

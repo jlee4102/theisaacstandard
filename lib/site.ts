@@ -15,11 +15,16 @@ export const socials = {
 
 // Site-wide announcement bar above the header. Set enabled=false to hide.
 // Keep the message short — under ~90 chars looks best on mobile.
+// DESIGN REVIEW (2026-07-26): the old copy read "New review every Sunday — testing in progress."
+// Two problems, on the FIRST thing every visitor sees: reviews actually publish every 2-3 days
+// (not Sundays), and "testing in progress" reads as though the SITE is unfinished. Also dropped
+// the newsletter CTA here — signups are paused until a real provider is connected, so it pointed
+// at nothing.
 export const announcement = {
   enabled: true,
-  message: 'New review every Sunday — testing in progress.',
-  cta: 'Get the weekly Standard →',
-  href: '/#latest',
+  message: 'Independent reviews · new gear covered every week',
+  cta: 'Browse the latest →',
+  href: '/reviews',
 };
 
 export const categories = [
