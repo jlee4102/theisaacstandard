@@ -1,5 +1,17 @@
+// HONESTY FIX (2026-07-26): this component was LYING to visitors. `submit()` waited 600ms, threw
+// the email away, and showed "Subscribed ✓" — on all 16 review pages, every guide and every
+// comparison. Nobody who typed their address was ever subscribed to anything, and no list existed
+// to subscribe them to (the handler carried a `TODO: wire to Beehiiv/ConvertKit`).
+//
+// A fake capture is worse than no capture: it burns the one moment a reader was willing to give
+// you their address, and it is a promise the site cannot keep. Until a real provider is wired
+// (owner step — an email service account is credential creation), this asks for nothing and
+// promises nothing. It still states the offer, so the intent is visible when the provider lands:
+// swap `LIST_ACTIVE` to true and point `submit()` at the real /api/subscribe endpoint.
 'use client';
 import { useState } from 'react';
+
+const LIST_ACTIVE = false;   // flip when a real email provider is connected
 
 export default function Newsletter() {
   const [email, setEmail] = useState('');
@@ -9,8 +21,12 @@ export default function Newsletter() {
     e.preventDefault();
     setStatus('submitting');
     try {
-      // TODO: wire to Beehiiv/ConvertKit via /api/subscribe
-      await new Promise((r) => setTimeout(r, 600));
+      const r = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+      if (!r.ok) throw new Error('subscribe failed');
       setStatus('done');
       setEmail('');
     } catch {
@@ -32,25 +48,35 @@ export default function Newsletter() {
             No spam, unsubscribe anytime.
           </p>
         </div>
-        <form onSubmit={submit} className="md:col-span-2 flex flex-col gap-2">
-          <input
-            type="email"
-            required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="you@example.com"
-            className="px-4 py-3 border border-line rounded-md bg-paper text-ink placeholder:text-ink-faint focus:outline-none focus:border-accent transition"
-            disabled={status === 'submitting' || status === 'done'}
-          />
-          <button
-            type="submit"
-            className="bg-ink text-paper px-5 py-3 rounded-md font-medium hover:bg-accent-deep transition disabled:opacity-60"
-            disabled={status === 'submitting' || status === 'done'}
-          >
-            {status === 'submitting' ? 'Subscribing…' : status === 'done' ? 'Subscribed ✓' : 'Subscribe'}
-          </button>
-          {status === 'error' && <p className="text-red-700 text-sm">Something went wrong — try again?</p>}
-        </form>
+        {LIST_ACTIVE ? (
+          <form onSubmit={submit} className="md:col-span-2 flex flex-col gap-2">
+            <input
+              type="email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="you@example.com"
+              className="px-4 py-3 border border-line rounded-md bg-paper text-ink placeholder:text-ink-faint focus:outline-none focus:border-accent transition"
+              disabled={status === 'submitting' || status === 'done'}
+            />
+            <button
+              type="submit"
+              className="bg-ink text-paper px-5 py-3 rounded-md font-medium hover:bg-accent-deep transition disabled:opacity-60"
+              disabled={status === 'submitting' || status === 'done'}
+            >
+              {status === 'submitting' ? 'Subscribing…' : status === 'done' ? 'Subscribed ✓' : 'Subscribe'}
+            </button>
+            {status === 'error' && <p className="text-red-700 text-sm">Something went wrong — try again?</p>}
+          </form>
+        ) : (
+          <div className="md:col-span-2">
+            <p className="text-sm text-ink-soft border border-line rounded-md px-4 py-3 bg-paper">
+              The newsletter isn&apos;t open for signups yet — we&apos;d rather not collect your
+              address until we can actually send you something. New reviews go up here every week
+              in the meantime.
+            </p>
+          </div>
+        )}
       </div>
     </aside>
   );
