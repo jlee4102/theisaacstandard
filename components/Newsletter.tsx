@@ -41,8 +41,10 @@ export default function Newsletter() {
       />
       <div className="relative p-7 md:p-9 grid md:grid-cols-5 gap-6 items-center">
         <div className="md:col-span-3">
-          <div className="eyebrow mb-2">The weekly Standard</div>
-          <h3 className="font-serif text-2xl md:text-3xl tracking-tight">One honest review per Sunday.</h3>
+          {/* VISUAL AUDIT (2026-07-26): the banner's untrue "every Sunday" claim was fixed, but the
+              same claim survived here — reviews actually publish every 2-3 days. */}
+          <div className="eyebrow mb-2">The Standard, by email</div>
+          <h3 className="font-serif text-2xl md:text-3xl tracking-tight">One honest review at a time.</h3>
           <p className="text-ink-soft mt-2 leading-relaxed">
             Short email. One review, one deal worth your attention, one piece of gear we&apos;d skip.
             No spam, unsubscribe anytime.

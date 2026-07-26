@@ -1,6 +1,16 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+// VISUAL AUDIT (2026-07-26): excerpts are stored pre-truncated at a fixed character count, so the
+// featured card was rendering "...excels in multi-device workflo" — chopped mid-word, no ellipsis.
+// Trimming back to the last word boundary fixes every existing card and every future one, without
+// having to re-cut the stored data.
+function tidy(s: string): string {
+  const t = s.trim();
+  if (/[.!?]$/.test(t)) return t;               // already ends cleanly
+  return t.replace(/\s*\S*$/, '') + '…';        // drop the partial trailing word
+}
+
 export default function ReviewCard({
   slug,
   title,
@@ -41,7 +51,7 @@ export default function ReviewCard({
             <h2 className="font-serif text-2xl md:text-3xl leading-tight tracking-tight group-hover:text-accent-deep transition">
               {title}
             </h2>
-            <p className="text-ink-soft mt-3 text-[0.95rem] leading-relaxed flex-1">{excerpt}</p>
+            <p className="text-ink-soft mt-3 text-[0.95rem] leading-relaxed flex-1">{tidy(excerpt)}</p>
             <div className="mt-5 flex items-center justify-between text-xs text-ink-faint">
               <span className="font-mono">{date}</span>
               {rating !== undefined ? (
@@ -73,7 +83,7 @@ export default function ReviewCard({
       <div className="p-5">
         {category && <div className="eyebrow mb-2">{category}</div>}
         <h3 className="font-serif text-lg leading-snug group-hover:text-accent-deep transition">{title}</h3>
-        <p className="text-ink-soft mt-2 text-sm leading-relaxed line-clamp-2">{excerpt}</p>
+        <p className="text-ink-soft mt-2 text-sm leading-relaxed line-clamp-2">{tidy(excerpt)}</p>
         <div className="mt-4 flex items-center justify-between text-xs text-ink-faint">
           <span className="font-mono">{date}</span>
           {rating !== undefined ? (

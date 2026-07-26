@@ -96,6 +96,7 @@ export default function Home() {
               name={c.name}
               blurb={c.blurb}
               count={reviewsByCategory[c.slug] || 0}
+              image={reviews.find((r) => r.category === c.slug)?.image}
             />
           ))}
         </div>
