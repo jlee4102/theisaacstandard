@@ -89,7 +89,6 @@ export default function Page() {
         <AffiliateLink asin={ASIN}>Buy the Ring Video Doorbell Pro 2 on Amazon</AffiliateLink>
       </div>
       <Newsletter />
-      <h2>Frequently asked</h2>
       <FAQ
         items={[
           { q: 'Can I use the Ring Pro 2 without a subscription?', a: 'Yes, but you\'ll only get live view and real-time motion alerts. You cannot view recorded video, use package detection, or access snapshot capture. The subscription is $3.99/month for one device.' },

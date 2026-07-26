@@ -116,7 +116,6 @@ export default function Page() {
         <AffiliateLink asin={ASIN}>Buy the Ecovacs GOAT Robot Lawn Mower on Amazon</AffiliateLink>
       </div>
       <Newsletter />
-      <h2>Frequently asked</h2>
       <FAQ
         items={[
           { q: 'Can I override the night mowing restriction on the Ecovacs GOAT?', a: 'No. The animal protection feature is permanently enabled and cannot be overridden or scheduled. The mower will automatically stop and return to dock at sunset. Ecovacs has stated this is a safety feature that will not be made configurable.' },

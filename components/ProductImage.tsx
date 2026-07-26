@@ -43,8 +43,14 @@ export default function ProductImage({
 
   return (
     <figure className="not-prose my-6">
-      <div className={`${aspectClass} relative rounded-lg overflow-hidden border border-line bg-card`}>
-        <Image src={src} alt={alt} fill sizes="(min-width: 768px) 800px, 100vw" className="object-cover" />
+      {/* UX AUDIT P2 (2026-07-26): sources are square (500x500 manufacturer shots) but rendered
+          into a 4:3 box with object-cover — measured 686x514 on a live review, so ~25% of the
+          image was cropped off the top and bottom. On a PRODUCT photo that can slice the product
+          itself. `object-contain` on a subtle backdrop shows the whole product; the fixed aspect
+          box is kept so the page still reserves the same space (no layout shift) and every review
+          keeps an identical image footprint. */}
+      <div className={`${aspectClass} relative rounded-lg overflow-hidden border border-line bg-highlight`}>
+        <Image src={src} alt={alt} fill sizes="(min-width: 768px) 800px, 100vw" className="object-contain p-3" />
       </div>
       {caption && <figcaption className="text-xs text-ink-faint mt-2 italic">{caption}</figcaption>}
     </figure>

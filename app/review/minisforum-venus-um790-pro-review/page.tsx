@@ -90,7 +90,6 @@ export default function Page() {
         <AffiliateLink asin={ASIN}>Buy the Minisforum Venus UM790 Pro on Amazon</AffiliateLink>
       </div>
       <Newsletter />
-      <h2>Frequently asked</h2>
       <FAQ
         items={[
           { q: 'Can the UM790 Pro run AAA games at 1080p?', a: 'Yes, but only at low settings and often with FSR enabled. Games like Cyberpunk 2077 run at 30-40 fps, while esports titles like Overwatch 2 hit 60+ fps. Don\'t expect 60 fps in modern AAA games.' },

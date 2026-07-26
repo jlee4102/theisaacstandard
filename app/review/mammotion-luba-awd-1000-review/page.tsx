@@ -91,7 +91,6 @@ export default function Page() {
         <AffiliateLink asin={ASIN}>Buy the Mammotion Luba AWD 1000 on Amazon</AffiliateLink>
       </div>
       <Newsletter />
-      <h2>Frequently asked</h2>
       <FAQ
         items={[
           { q: 'Does the Luba AWD 1000 work without internet?', a: 'Yes, after initial setup, the mower can operate offline. The RTK base station communicates directly with the mower. However, you need internet for app control and firmware updates.' },

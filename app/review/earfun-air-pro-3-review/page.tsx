@@ -90,7 +90,6 @@ export default function Page() {
         <AffiliateLink asin={ASIN}>Buy the EarFun Air Pro 3 on Amazon</AffiliateLink>
       </div>
       <Newsletter />
-      <h2>Frequently asked</h2>
       <FAQ
         items={[
           { q: 'Do the EarFun Air Pro 3 work with iPhones?', a: 'Yes, they work with iPhones via AAC, but you won\'t get LDAC (which is Android-only). Sound quality is still good, but the hi-res advantage is lost.' },

@@ -113,7 +113,6 @@ export default function Page() {
         <AffiliateLink asin={ASIN}>Buy the Makeblock mBot Robot Kit on Amazon</AffiliateLink>
       </div>
       <Newsletter />
-      <h2>Frequently asked</h2>
       <FAQ
         items={[
           { q: 'Can the mBot be programmed without an internet connection?', a: 'Yes. The mBlock software runs locally on Windows, macOS, and Chrome OS. You only need internet to download the software initially. After that, all programming and uploading works offline via USB cable.' },

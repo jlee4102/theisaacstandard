@@ -112,7 +112,6 @@ export default function Page() {
         <AffiliateLink asin={ASIN}>Buy the Govee Smart LED Strip Lights 32.8ft on Amazon</AffiliateLink>
       </div>
       <Newsletter />
-      <h2>Frequently asked</h2>
       <FAQ
         items={[
           { q: 'Can I cut the Govee strip to a custom length?', a: 'Yes, you can cut the strip every 3 LEDs along the marked cut lines. The remaining piece will still work, but the cut-off section cannot be reused unless you solder on new connectors.' },

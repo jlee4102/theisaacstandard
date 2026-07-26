@@ -114,7 +114,6 @@ export default function Page() {
         <AffiliateLink asin={ASIN}>Buy the Soundcore by Anker Q30 Hybrid Active Noise Cancelling Headphones on Amazon</AffiliateLink>
       </div>
       <Newsletter />
-      <h2>Frequently asked</h2>
       <FAQ
         items={[
           { q: 'Can the Soundcore Q30 connect to two devices at once?', a: 'Yes, the Q30 supports multi-device pairing via Bluetooth 5.0. You can connect to your phone and laptop simultaneously, but switching between them requires manual pause/play.' },

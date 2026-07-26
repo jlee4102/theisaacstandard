@@ -40,8 +40,20 @@ body::before {
   @apply font-serif text-xl mt-8 mb-2;
   font-weight: 600;
 }
+/* UX AUDIT P2 (2026-07-26): measured 14px body text on a 375px viewport across ~2,400-word
+   reviews — fatiguing for the long-form reading a buying decision needs, and below the 16px
+   readability standard. Explicit 16px/1.7 on mobile, easing to 17px on larger screens where the
+   measure is wider. Desktop reading was already fine, so this is additive, not a redesign. */
 .prose-isaac p {
-  @apply leading-7 my-4 text-ink-soft;
+  @apply my-4 text-ink-soft;
+  font-size: 1rem;      /* 16px on mobile — was inheriting 14px */
+  line-height: 1.7;
+}
+@media (min-width: 768px) {
+  .prose-isaac p {
+    font-size: 1.0625rem;   /* 17px */
+    line-height: 1.75;
+  }
 }
 .prose-isaac p strong { color: theme('colors.ink'); font-weight: 600; }
 .prose-isaac ul { @apply list-none pl-0 my-3; }

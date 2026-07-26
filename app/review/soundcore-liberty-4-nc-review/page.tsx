@@ -122,7 +122,6 @@ export default function Page() {
         <AffiliateLink asin={ASIN}>Buy the Soundcore Liberty 4 NC on Amazon</AffiliateLink>
       </div>
       <Newsletter />
-      <h2>Frequently asked</h2>
       <FAQ
         items={[
           { q: 'Do the Soundcore Liberty 4 NC work with iPhones?', a: 'Yes, they work with iPhones via Bluetooth, but you lose LDAC support (iPhones use AAC). The ANC and sound quality are still good, but the value proposition is weaker for iPhone users since LDAC is a key differentiator. Consider the Nothing Ear (2) or AirPods Pro 2 instead.' },

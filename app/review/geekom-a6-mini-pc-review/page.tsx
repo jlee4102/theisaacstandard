@@ -115,7 +115,6 @@ export default function Page() {
         <AffiliateLink asin={ASIN}>Buy the Geekom A6 Mini PC on Amazon</AffiliateLink>
       </div>
       <Newsletter />
-      <h2>Frequently asked</h2>
       <FAQ
         items={[
           { q: 'Can the Geekom A6 run Linux?', a: 'Yes. Ubuntu 22.04 LTS and Fedora 38 work out of the box. Wi-Fi, audio, and graphics acceleration all function without additional drivers. I tested Ubuntu 22.04 and had no issues.' },

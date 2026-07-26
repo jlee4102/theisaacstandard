@@ -90,7 +90,6 @@ export default function Page() {
         <AffiliateLink asin={ASIN}>Buy the Anker Soundcore Life P3 on Amazon</AffiliateLink>
       </div>
       <Newsletter />
-      <h2>Frequently asked</h2>
       <FAQ
         items={[
           { q: 'Can I use the Anker Soundcore Life P3 for running or workouts?', a: 'Yes, they have an IPX5 rating, so they can handle sweat and light rain. The wingtips help keep them secure during movement.' },

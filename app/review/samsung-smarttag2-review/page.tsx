@@ -115,7 +115,6 @@ export default function Page() {
         <AffiliateLink asin={ASIN}>Buy the Samsung SmartTag2 on Amazon</AffiliateLink>
       </div>
       <Newsletter />
-      <h2>Frequently asked</h2>
       <FAQ
         items={[
           { q: 'Can I use the Samsung SmartTag2 with an iPhone?', a: 'No. The SmartTag2 only works with Samsung Galaxy phones running Android 9 or newer. There is no iOS app, and the tag will not pair with an iPhone via Bluetooth. It is completely incompatible with Apple devices.' },

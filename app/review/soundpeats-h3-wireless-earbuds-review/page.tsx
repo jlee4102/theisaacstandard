@@ -117,7 +117,6 @@ export default function Page() {
         <AffiliateLink asin={ASIN}>Buy the Soundpeats H3 Wireless Earbuds on Amazon</AffiliateLink>
       </div>
       <Newsletter />
-      <h2>Frequently asked</h2>
       <FAQ
         items={[
           { q: 'Do the Soundpeats H3 work with iPhones?', a: 'Yes, they support AAC codec which provides good audio quality on iPhones. The app is available on iOS. Latency is slightly higher on iPhone than Android due to codec limitations.' },

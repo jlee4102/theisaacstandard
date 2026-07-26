@@ -12,15 +12,23 @@ export default function Header() {
         <Link href="/" className="group">
           <Logo markSize={44} />
         </Link>
-        <nav className="flex flex-wrap gap-x-5 gap-y-1 text-sm text-ink-soft">
+        {/* UX AUDIT P2 (2026-07-26): every nav link measured 20px tall on a 375px viewport — below
+            both Apple's and Google's 44px minimum, so the PRIMARY navigation was a mis-tap risk on
+            the device most shoppers arrive on. `py-2.5 -my-2.5` grows the touch area to ~44px
+            without changing the visual rhythm of the bar. */}
+        <nav className="flex flex-wrap gap-x-5 gap-y-0 text-sm text-ink-soft">
           {activeCategories.map((c) => (
-            <Link key={c.slug} href={`/category/${c.slug}`} className="hover:text-accent-deep transition">
+            <Link
+              key={c.slug}
+              href={`/category/${c.slug}`}
+              className="py-2.5 -my-2.5 inline-flex items-center hover:text-accent-deep transition"
+            >
               {c.name}
             </Link>
           ))}
-          <Link href="/reviews" className="hover:text-accent-deep transition">All reviews</Link>
-          <Link href="/compare" className="hover:text-accent-deep transition">Comparisons</Link>
-          <Link href="/about" className="hover:text-accent-deep transition">About</Link>
+          <Link href="/reviews" className="py-2.5 -my-2.5 inline-flex items-center hover:text-accent-deep transition">All reviews</Link>
+          <Link href="/compare" className="py-2.5 -my-2.5 inline-flex items-center hover:text-accent-deep transition">Comparisons</Link>
+          <Link href="/about" className="py-2.5 -my-2.5 inline-flex items-center hover:text-accent-deep transition">About</Link>
         </nav>
       </div>
     </header>

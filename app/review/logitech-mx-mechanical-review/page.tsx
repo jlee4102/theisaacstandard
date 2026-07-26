@@ -86,7 +86,6 @@ export default function Page() {
         <AffiliateLink asin={ASIN}>Buy the Logitech MX Mechanical on Amazon</AffiliateLink>
       </div>
       <Newsletter />
-      <h2>Frequently asked</h2>
       <FAQ
         items={[
           { q: 'Is the Logitech MX Mechanical good for gaming?', a: 'It\'s not designed for gaming. The low-profile switches are fine for casual gaming, but the lack of high polling rate, no dedicated gaming software, and the absence of RGB make it a poor choice for competitive gamers.' },

@@ -1,12 +1,37 @@
+import fs from 'node:fs';
+import path from 'node:path';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { categories, reviews } from '@/lib/site';
+import { categories, reviews, site } from '@/lib/site';
 import StarRating from '@/components/StarRating';
+import AffiliateLink from '@/components/AffiliateLink';
 
 // "Best X" roundup — the top affiliate traffic format. One dynamic route generates a ranked
 // roundup per category from the existing reviews (sorted by rating). No per-roundup files.
 const YEAR = 2026;
+
+// UX AUDIT P1 (2026-07-26): this page — the highest purchase-intent page on the site ("best X" is
+// what someone types when they are ready to buy) — shipped with ZERO buy links and no at-a-glance
+// comparison. A visitor had to click into a full review before they could act. ASINs live in each
+// review's page.tsx (not in site.ts), so they are read from disk at BUILD time: no duplicated data,
+// nothing to keep in sync, and a review published later is picked up on its next deploy.
+function asinFor(slug: string): string {
+  try {
+    const src = fs.readFileSync(path.join(process.cwd(), 'app', 'review', slug, 'page.tsx'), 'utf8');
+    const m = src.match(/const \w*ASIN\w* = '([A-Z0-9]{10})'/);
+    return m ? m[1] : '';
+  } catch {
+    return ''; // no ASIN -> render no button rather than a dead one
+  }
+}
+
+// First sentence of the excerpt doubles as a "best for" line — enough to choose on without
+// scrolling into the prose.
+function bestFor(excerpt: string): string {
+  const s = (excerpt || '').split(/(?<=[.!?])\s/)[0] || excerpt || '';
+  return s.length > 100 ? s.slice(0, 97).trimEnd() + '…' : s;
+}
 
 // Only categories with at least two reviews make a real roundup.
 function roundupCategories() {
@@ -64,6 +89,53 @@ export default function Page({ params }: { params: { category: string } }) {
         {cat.blurb ? ` ${cat.blurb}` : ''}
       </p>
 
+      {/* AT A GLANCE — decide without reading the page. Horizontally scrollable on mobile so the
+          table never forces the body to scroll sideways. */}
+      <div className="not-prose mt-8 overflow-x-auto rounded-xl border border-line">
+        <table className="w-full text-sm border-collapse min-w-[520px]">
+          <thead>
+            <tr className="bg-highlight text-left">
+              <th className="p-3 font-medium">#</th>
+              <th className="p-3 font-medium">Pick</th>
+              <th className="p-3 font-medium">Rating</th>
+              <th className="p-3 font-medium">Best for</th>
+              <th className="p-3 font-medium sr-only">Buy</th>
+            </tr>
+          </thead>
+          <tbody>
+            {ranked.map((r, i) => {
+              const asin = asinFor(r.slug);
+              return (
+                <tr key={r.slug} className="border-t border-line align-top">
+                  <td className="p-3 font-serif text-ink-faint">{i + 1}</td>
+                  <td className="p-3">
+                    <Link href={`/review/${r.slug}`} className="hover:text-accent-deep transition">
+                      {r.title.split(':')[0]}
+                    </Link>
+                  </td>
+                  <td className="p-3 whitespace-nowrap text-accent-deep font-medium">
+                    {r.rating ? r.rating.toFixed(1) : '—'}
+                  </td>
+                  <td className="p-3 text-ink-soft">{bestFor(r.excerpt)}</td>
+                  <td className="p-3 whitespace-nowrap">
+                    {asin ? (
+                      <a
+                        href={`https://www.amazon.com/dp/${asin}?tag=${site.affiliateTag}`}
+                        target="_blank"
+                        rel="nofollow sponsored noopener"
+                        className="text-accent-deep font-medium hover:text-accent transition"
+                      >
+                        Check price →
+                      </a>
+                    ) : null}
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+
       <ol className="mt-10 space-y-6 list-none pl-0">
         {ranked.map((r, i) => (
           <li
@@ -99,12 +171,17 @@ export default function Page({ params }: { params: { category: string } }) {
                   </Link>
                 </h2>
                 <p className="text-ink-soft text-sm mt-2 leading-relaxed">{r.excerpt}</p>
-                <Link
-                  href={`/review/${r.slug}`}
-                  className="inline-block mt-4 text-sm font-medium text-accent-deep hover:text-accent transition"
-                >
-                  Read the full review →
-                </Link>
+                <div className="mt-4 flex flex-wrap items-center gap-3">
+                  {asinFor(r.slug) ? (
+                    <AffiliateLink asin={asinFor(r.slug)}>Check price on Amazon</AffiliateLink>
+                  ) : null}
+                  <Link
+                    href={`/review/${r.slug}`}
+                    className="text-sm font-medium text-accent-deep hover:text-accent transition"
+                  >
+                    Read the full review →
+                  </Link>
+                </div>
               </div>
             </div>
           </li>
