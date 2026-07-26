@@ -44,6 +44,9 @@ export default function Page() {
       <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Budget Audio', href: '/category/budget-audio' }, { label: 'Anker Soundcore Q20i Review' }]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
+      {/* BUG FIX (2026-07-26): StickyBuyBar was imported here but never rendered — the only one of
+          the 16 reviews with no persistent buy CTA. Found while verifying the redesign in a browser. */}
+      <StickyBuyBar product="Anker Soundcore Q20i" asin={Q20I_ASIN} rating={3.9} />
       <p className="text-ink/50 text-sm not-prose">Budget Audio</p>
       <h1 className="font-serif text-3xl md:text-4xl mt-2">
         Anker Soundcore Q20i Review: Strong ANC, Weak Tuning, Honest Caveats
