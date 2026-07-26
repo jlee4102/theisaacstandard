@@ -19,6 +19,7 @@ export default function Header() {
             </Link>
           ))}
           <Link href="/reviews" className="hover:text-accent-deep transition">All reviews</Link>
+          <Link href="/compare" className="hover:text-accent-deep transition">Comparisons</Link>
           <Link href="/about" className="hover:text-accent-deep transition">About</Link>
         </nav>
       </div>
