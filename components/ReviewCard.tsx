@@ -1,14 +1,13 @@
-import Image from 'next/image';
 import Link from 'next/link';
+import { verdictFor, verdictColor } from '@/components/Verdict';
 
-// VISUAL AUDIT (2026-07-26): excerpts are stored pre-truncated at a fixed character count, so the
-// featured card was rendering "...excels in multi-device workflo" — chopped mid-word, no ellipsis.
-// Trimming back to the last word boundary fixes every existing card and every future one, without
-// having to re-cut the stored data.
+// Instrument list row (replaces the card grid): score numeral / name + blurb / category / ISO
+// date on a rule-divided full-bleed grid. The whole row is the link; hover tints `raised`.
+// The `featured` prop survives for API compatibility — featured rows just render larger type.
 function tidy(s: string): string {
   const t = s.trim();
-  if (/[.!?]$/.test(t)) return t;               // already ends cleanly
-  return t.replace(/\s*\S*$/, '') + '…';        // drop the partial trailing word
+  if (/[.!?]$/.test(t)) return t;
+  return t.replace(/\s*\S*$/, '') + '…';
 }
 
 export default function ReviewCard({
@@ -18,7 +17,6 @@ export default function ReviewCard({
   rating,
   date,
   category,
-  image,
   featured = false,
 }: {
   slug: string;
@@ -30,68 +28,51 @@ export default function ReviewCard({
   image?: string;
   featured?: boolean;
 }) {
-  if (featured) {
-    return (
-      <Link
-        href={`/review/${slug}`}
-        className="group block rounded-xl overflow-hidden border border-line bg-card hover:shadow-lift transition-shadow"
-      >
-        <div className="grid md:grid-cols-5">
-          <div className="md:col-span-3 relative aspect-[16/10] md:aspect-auto md:min-h-[320px] overflow-hidden">
-            {image ? (
-              <Image src={image} alt={title} fill sizes="(min-width: 768px) 60vw, 100vw" className="object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
-            ) : (
-              <div className="absolute inset-0 bg-gradient-to-br from-highlight via-card to-line flex items-center justify-center">
-                <span className="font-mono text-xs uppercase tracking-widest text-ink-faint">Cover photo pending</span>
-              </div>
-            )}
-          </div>
-          <div className="md:col-span-2 p-6 md:p-8 flex flex-col">
-            {category && <div className="eyebrow mb-3">{category}</div>}
-            <h2 className="font-serif text-2xl md:text-3xl leading-tight tracking-tight group-hover:text-accent-deep transition">
-              {title}
-            </h2>
-            <p className="text-ink-soft mt-3 text-[0.95rem] leading-relaxed flex-1">{tidy(excerpt)}</p>
-            <div className="mt-5 flex items-center justify-between text-xs text-ink-faint">
-              <span className="font-mono">{date}</span>
-              {rating !== undefined ? (
-                <span className="text-accent-deep font-medium">★ {rating.toFixed(1)}</span>
-              ) : (
-                <span className="font-mono uppercase tracking-wider text-ink-faint/80">Pending test</span>
-              )}
-            </div>
-          </div>
-        </div>
-      </Link>
-    );
-  }
-
   return (
     <Link
       href={`/review/${slug}`}
-      className="group block rounded-xl overflow-hidden border border-line bg-card hover:shadow-lift transition-shadow"
+      className="group grid grid-cols-[48px_1fr] md:grid-cols-[64px_1fr_150px_100px] gap-x-5 items-start border-b border-rule px-5 md:px-9 py-5 hover:bg-raised transition-colors"
     >
-      <div className="relative aspect-[16/10] overflow-hidden">
-        {image ? (
-          <Image src={image} alt={title} fill sizes="(min-width: 768px) 400px, 100vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
+      <div>
+        {rating !== undefined ? (
+          <>
+            <span className={`block text-[20px] font-bold tracking-[-0.02em] ${verdictColor(rating)}`}>
+              {rating.toFixed(1)}
+            </span>
+            <span
+              className={`mt-1.5 block h-[2px] ${
+                verdictFor(rating) === 'SKIP' ? 'bg-negative' : verdictFor(rating) === 'BUY' ? 'bg-positive' : 'bg-accent'
+              }`}
+              style={{ width: `${(rating / 5) * 100}%`, maxWidth: '100%' }}
+              aria-hidden
+            />
+          </>
         ) : (
-          <div className="absolute inset-0 bg-gradient-to-br from-highlight via-card to-line flex items-center justify-center">
-            <span className="font-mono text-xs uppercase tracking-widest text-ink-faint">Cover photo pending</span>
-          </div>
+          <span className="label-dim">TBD</span>
         )}
       </div>
-      <div className="p-5">
-        {category && <div className="eyebrow mb-2">{category}</div>}
-        <h3 className="font-serif text-lg leading-snug group-hover:text-accent-deep transition">{title}</h3>
-        <p className="text-ink-soft mt-2 text-sm leading-relaxed line-clamp-2">{tidy(excerpt)}</p>
-        <div className="mt-4 flex items-center justify-between text-xs text-ink-faint">
-          <span className="font-mono">{date}</span>
-          {rating !== undefined ? (
-            <span className="text-accent-deep font-medium">★ {rating.toFixed(1)}</span>
-          ) : (
-            <span className="font-mono uppercase tracking-wider text-ink-faint/80">Pending test</span>
-          )}
-        </div>
+      <div className="min-w-0">
+        <h3
+          className={`font-bold tracking-[-0.01em] leading-snug group-hover:text-accent transition-colors ${
+            featured ? 'text-[19px] md:text-[22px]' : 'text-[16px]'
+          }`}
+        >
+          {title}
+        </h3>
+        <p className="mt-1 text-[13px] leading-[1.5] text-text-muted max-w-[70ch] line-clamp-2">
+          {tidy(excerpt)}
+        </p>
+        {/* Mobile: category + date fold into one mono line under the blurb */}
+        <p className="md:hidden mt-2 font-mono text-[10px] uppercase tracking-[0.12em] text-text-dim">
+          {rating !== undefined && <span className={verdictColor(rating)}>{verdictFor(rating)}</span>}
+          {category ? ` · ${category}` : ''} · {date}
+        </p>
+      </div>
+      <div className="hidden md:block font-mono text-[11px] uppercase tracking-[0.1em] text-text-muted pt-1">
+        {category}
+      </div>
+      <div className="hidden md:block font-mono text-[11px] tracking-[0.08em] text-text-dim text-right pt-1">
+        {date}
       </div>
     </Link>
   );

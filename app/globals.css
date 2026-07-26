@@ -2,100 +2,106 @@
 @tailwind components;
 @tailwind utilities;
 
+/* INSTRUMENT REDESIGN (2026-07-26, owner handoff): near-black lab console. Dense, typographic,
+   data-forward. Two families (Archivo, IBM Plex Mono), two accents (amber, cyan) + pos/neg pair,
+   radius 0, no shadows — elevation is 1px rules and surface steps. Class NAMES from the old
+   design (.eyebrow, .prose-isaac) are kept and restyled so the 16 live review pages inherit the
+   system without per-file edits. */
+
 html { scroll-behavior: smooth; }
 
 body {
-  background: theme('colors.paper');
-  color: theme('colors.ink');
-  font-family: 'Spline Sans', system-ui, sans-serif;
-  line-height: 1.65;
+  background: theme('colors.bg');
+  color: theme('colors.text');
+  font-family: 'Archivo', system-ui, sans-serif;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Subtle film-grain overlay across the whole site */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 9999;
+/* Headlines: Archivo 700, tight tracking, balanced wrap (spec: cap 20-24ch at the call site). */
+h1, h2, h3 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
 }
 
-/* Eyebrow / mono labels */
-/* DESIGN REVIEW (2026-07-26): measured 12 distinct type sizes on one page, four of them under
-   12px — the eyebrow rendered at 11.5px, the wordmark at 9.9px, the banner at 10.9px. Sub-12px
-   uppercase with wide tracking is the single strongest "cramped template" signal a content site
-   can send, and it is genuinely hard to read on a phone. Floor is now 12px (0.75rem), with a
-   slightly tighter letter-spacing so the label still reads as a label without shouting. */
+/* Mono label — the system's connective tissue. 11px / 0.18em / uppercase / amber. */
 .eyebrow {
-  font-family: 'JetBrains Mono', ui-monospace, monospace;
-  font-size: 0.75rem;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 11px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: theme('colors.accent-deep');
+  color: theme('colors.accent');
+  font-weight: 400;
+}
+
+/* Dim variant for metadata that shouldn't lead (table headers, timestamps). ~4.6:1 on bg —
+   acceptable for 10-11px uppercase metadata only, never prose. */
+.label-dim {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: theme('colors.text-dim');
   font-weight: 500;
 }
 
-/* Article typography */
-/* DESIGN REVIEW (2026-07-26): weight audit found 239 elements at 400 and only 24 at 500 — the
-   whole page spoke in one voice, so nothing led the eye except raw size. Article headings were
-   already 600, but every heading OUTSIDE .prose-isaac (homepage hero, card titles, section heads)
-   inherited 400 — and Fraunces, a display serif, reads thin and washed-out at 400 across a 48px
-   hero. One rule gives the site a real heading tier without touching the palette or the fonts. */
-h1, h2, h3 {
-  font-weight: 600;
-}
+/* Article typography — Archivo 16px/1.7 at 70ch on text-secondary. */
 .prose-isaac h2 {
-  @apply font-serif text-2xl md:text-3xl mt-12 mb-3 tracking-tight;
-  font-weight: 600;
+  @apply text-[26px] md:text-[28px] mt-12 mb-4;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
 }
 .prose-isaac h3 {
-  @apply font-serif text-xl mt-8 mb-2;
+  @apply text-xl mt-8 mb-2;
   font-weight: 600;
 }
-/* UX AUDIT P2 (2026-07-26): measured 14px body text on a 375px viewport across ~2,400-word
-   reviews — fatiguing for the long-form reading a buying decision needs, and below the 16px
-   readability standard. Explicit 16px/1.7 on mobile, easing to 17px on larger screens where the
-   measure is wider. Desktop reading was already fine, so this is additive, not a redesign. */
 .prose-isaac p {
-  @apply my-4 text-ink-soft;
-  font-size: 1rem;      /* 16px on mobile — was inheriting 14px */
+  @apply my-4;
+  color: theme('colors.text-secondary');
+  font-size: 16px;
   line-height: 1.7;
-  /* Measured 81 characters per line on desktop; comfortable long-form reading is ~65-75. Capping
-     the PARAGRAPH (not the container) keeps headings, tables and the verdict box full-width while
-     tightening the prose — the standard editorial fix. */
-  max-width: 68ch;
+  max-width: 70ch;
+  text-wrap: pretty;
 }
-@media (min-width: 768px) {
-  .prose-isaac p {
-    font-size: 1.0625rem;   /* 17px */
-    line-height: 1.75;
-  }
-}
-.prose-isaac p strong { color: theme('colors.ink'); font-weight: 600; }
+.prose-isaac p strong { color: theme('colors.text'); font-weight: 600; }
 .prose-isaac ul { @apply list-none pl-0 my-3; }
 .prose-isaac ul li {
   position: relative;
-  padding-left: 1.5rem;
+  padding-left: 1.4rem;
   margin-bottom: 0.5rem;
-  color: theme('colors.ink-soft');
+  color: theme('colors.text-secondary');
+  font-size: 15px;
+  line-height: 1.55;
+  max-width: 70ch;
 }
+/* List marker: a 6px amber square — radius-0 system, no discs. */
 .prose-isaac ul li::before {
   content: "";
   position: absolute;
   left: 0;
-  top: 0.65em;
+  top: 0.6em;
   width: 6px;
   height: 6px;
   background: theme('colors.accent');
-  transform: rotate(45deg);
 }
-.prose-isaac ul li strong { color: theme('colors.ink'); font-weight: 600; }
+.prose-isaac ul li strong { color: theme('colors.text'); font-weight: 600; }
+/* Links are cyan — amber is reserved for CTAs and active state. */
 .prose-isaac a {
-  color: theme('colors.accent-deep');
+  color: theme('colors.info');
   text-decoration: underline;
-  text-underline-offset: 2px;
+  text-underline-offset: 3px;
   text-decoration-thickness: 1px;
 }
-.prose-isaac a:hover { color: theme('colors.accent'); }
+.prose-isaac a:hover { color: theme('colors.text'); }
+
+/* Score bars: animate scaleX once on mount; static at final width under reduced motion. */
+.score-bar {
+  transform-origin: left;
+  animation: bar-grow 1.1s ease-out both;
+}
+@keyframes bar-grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@media (prefers-reduced-motion: reduce) {
+  .score-bar { animation: none; }
+}

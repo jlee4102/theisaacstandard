@@ -41,28 +41,37 @@ function comparisons(): Cmp[] {
 
 export default function Page() {
   const list = comparisons();
+  // Instrument: rule-divided rows, whole row is the link.
   return (
-    <section className="max-w-6xl mx-auto px-6 md:px-10 py-12">
-      <div className="eyebrow mb-2">Head to head</div>
-      <h1 className="font-serif text-3xl md:text-4xl tracking-tight mb-3">Comparisons</h1>
-      <p className="text-ink-soft mb-8 max-w-2xl">
-        Two products, one verdict. Each comparison is built from our own full reviews of both
-        products — same testing, same standard, no fence-sitting.
-      </p>
+    <section>
+      <div className="px-5 md:px-9 py-10 border-b border-rule">
+        <div className="eyebrow mb-3">Head to head</div>
+        <h1 className="text-[32px] md:text-[46px] font-bold leading-[1.05] tracking-[-0.03em]">
+          Comparisons
+        </h1>
+        <p className="mt-4 text-[15px] leading-[1.55] text-text-muted max-w-[70ch]">
+          Two units, one call. Each comparison is built from our own full reviews of both
+          products — same testing, same standard, no fence-sitting.
+        </p>
+      </div>
       {list.length === 0 ? (
-        <p className="text-ink-faint italic">Comparisons coming soon.</p>
+        <p className="px-5 md:px-9 py-10 font-mono text-[11px] uppercase tracking-[0.14em] text-text-dim">
+          Comparisons coming soon.
+        </p>
       ) : (
-        <div className="grid md:grid-cols-2 gap-5">
+        <div>
           {list.map((c) => (
             <Link
               key={c.slug}
               href={`/compare/${c.slug}`}
-              className="group block rounded-xl border border-line bg-card p-6 hover:shadow-lift transition-shadow"
+              className="group flex items-center justify-between gap-6 px-5 md:px-9 py-5 border-b border-rule hover:bg-raised transition-colors"
             >
-              <h2 className="font-serif text-xl leading-snug group-hover:text-accent-deep transition">
+              <h2 className="text-[17px] font-bold tracking-[-0.01em] leading-snug group-hover:text-accent transition-colors">
                 {c.title}
               </h2>
-              <span className="text-sm text-ink-faint mt-2 inline-block">Read the comparison →</span>
+              <span className="shrink-0 font-mono text-[11px] uppercase tracking-[0.14em] text-info">
+                Read →
+              </span>
             </Link>
           ))}
         </div>

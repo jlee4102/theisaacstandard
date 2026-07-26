@@ -1,20 +1,12 @@
-// Visual 5-star rating. Overlay technique: a muted full row, with an accent row clipped to the
-// score's percentage — renders precise half/quarter stars without extra glyph logic.
+// Instrument rule: "Never write ★★★★☆." The star row is replaced by a mono numeral — the
+// component name and API survive so every existing call site restyles without edits.
 export default function StarRating({ rating, className = '' }: { rating: number; className?: string }) {
-  const pct = Math.max(0, Math.min(100, (rating / 5) * 100));
   return (
     <span
-      className={`relative inline-block align-middle leading-none ${className}`}
-      aria-label={`${rating} out of 5 stars`}
-      role="img"
+      className={`font-mono text-[12px] uppercase tracking-[0.1em] text-text-muted ${className}`}
+      aria-label={`Scored ${rating} out of 5`}
     >
-      <span className="text-line tracking-[0.12em]">★★★★★</span>
-      <span
-        className="absolute inset-0 overflow-hidden text-accent tracking-[0.12em] whitespace-nowrap"
-        style={{ width: `${pct}%` }}
-      >
-        ★★★★★
-      </span>
+      {rating.toFixed(1)}<span className="text-text-dim"> / 5</span>
     </span>
   );
 }

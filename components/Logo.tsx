@@ -1,55 +1,30 @@
-export function LogoMark({ size = 40, className = '' }: { size?: number; className?: string }) {
+// Instrument monogram: a square amber-outlined S (radius 0 — the only round thing on the site is
+// the author avatar). The handoff marks this as a placeholder for a future real logotype.
+export function LogoMark({ size = 34, className = '' }: { size?: number; className?: string }) {
   return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 64 64"
-      className={className}
+    <span
+      className={`inline-flex items-center justify-center border border-accent text-accent font-mono font-semibold select-none ${className}`}
+      style={{ width: size, height: size, fontSize: Math.round(size * 0.5) }}
       role="img"
       aria-label="The Isaac Standard mark"
     >
-      <rect width="64" height="64" rx="10" fill="#1a1d1f" />
-      <circle cx="8" cy="8" r="1.2" fill="#c2562a" opacity="0.85" />
-      <circle cx="56" cy="8" r="1.2" fill="#c2562a" opacity="0.85" />
-      <circle cx="8" cy="56" r="1.2" fill="#c2562a" opacity="0.85" />
-      <circle cx="56" cy="56" r="1.2" fill="#c2562a" opacity="0.85" />
-      <text
-        x="32"
-        y="44"
-        textAnchor="middle"
-        fontFamily="Fraunces, Georgia, serif"
-        fontStyle="italic"
-        fontWeight="900"
-        fontSize="44"
-        fill="#c2562a"
-        letterSpacing="-0.5"
-      >
-        S
-      </text>
-      <line x1="20" y1="52" x2="44" y2="52" stroke="#f4f1ea" strokeWidth="1.4" strokeLinecap="square" />
-      <line x1="20" y1="52" x2="20" y2="55" stroke="#f4f1ea" strokeWidth="1.4" />
-      <line x1="32" y1="52" x2="32" y2="54.5" stroke="#f4f1ea" strokeWidth="1.2" />
-      <line x1="44" y1="52" x2="44" y2="55" stroke="#f4f1ea" strokeWidth="1.4" />
-    </svg>
+      S
+    </span>
   );
 }
 
-export default function Logo({ markSize = 44 }: { markSize?: number }) {
+export default function Logo({ markSize = 34 }: { markSize?: number }) {
   return (
-    <div className="flex items-center gap-3">
+    <span className="flex items-center gap-3">
       <LogoMark size={markSize} />
-      <div className="leading-none">
-        {/* DESIGN REVIEW (2026-07-26): this rendered at 9.9px — the smallest text on the site, and
-            it sits in the LOGO, the one element that sets the tone before anything else is read.
-            12px minimum with slightly tighter tracking keeps the same restrained look while being
-            legible. */}
-        <div className="font-mono text-[0.75rem] font-medium tracking-[0.18em] uppercase text-accent-deep">
-          The Standard
-        </div>
-        <div className="font-serif text-2xl md:text-[1.6rem] tracking-tight mt-1 leading-none">
-          Isaac <em className="text-accent not-italic font-medium">Standard</em>
-        </div>
-      </div>
-    </div>
+      <span className="leading-none">
+        <span className="block text-[16px] font-bold uppercase tracking-[0.02em] text-text">
+          The Isaac Standard
+        </span>
+        <span className="block mt-1 font-mono text-[10px] uppercase tracking-[0.2em] text-text-muted">
+          Measured gear reviews
+        </span>
+      </span>
+    </span>
   );
 }

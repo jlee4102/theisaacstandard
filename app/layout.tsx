@@ -2,7 +2,7 @@ import './globals.css';
 import { site, socials } from '@/lib/site';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import AnnouncementBanner from '@/components/AnnouncementBanner';
+
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
@@ -34,13 +34,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* Instrument families only — Newsreader/Fraunces must not ship (handoff README). */}
         <link
-          href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,900&family=Spline+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
           rel="stylesheet"
         />
       </head>
+      {/* Instrument: the announcement banner is replaced by the (flagged-off) price ticker —
+          we have no real price data yet, and the design forbids decorative filler. */}
       <body className="min-h-screen flex flex-col">
-        <AnnouncementBanner />
         <Header />
         <main className="flex-1 w-full">{children}</main>
         <Footer />

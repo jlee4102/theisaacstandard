@@ -1,12 +1,16 @@
 import Link from 'next/link';
 
+// Instrument meta row: mono, uppercase, literal. ISO date (the system's date format everywhere).
 export default function Byline({ author = 'Isaac', authorSlug = 'isaac', date, readTime }: { author?: string; authorSlug?: string; date: string; readTime?: string }) {
   return (
-    <p className="text-ink/50 text-sm not-prose">
-      By <Link href={`/authors/${authorSlug}`} className="text-ink/80 hover:text-accent underline underline-offset-2">{author}</Link>
+    <p className="not-prose font-mono text-[11px] uppercase tracking-[0.12em] text-text-dim">
+      By{' '}
+      <Link href={`/authors/${authorSlug}`} className="text-text-muted hover:text-accent transition-colors">
+        {author}
+      </Link>
       {' · '}
-      <time dateTime={date}>{new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
-      {readTime && ` · ${readTime}`}
+      <time dateTime={date}>{date}</time>
+      {readTime && ` · ${readTime.replace('read', '').trim()}`}
     </p>
   );
 }

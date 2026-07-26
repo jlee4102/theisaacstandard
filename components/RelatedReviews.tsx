@@ -1,17 +1,18 @@
 import { reviews, categories } from '@/lib/site';
 import ReviewCard from '@/components/ReviewCard';
 
-// Internal linking at the end of every review: same-category reviews first (falls back to newest),
-// so readers go deeper and search engines see the reviews cross-link.
+// Instrument "Next in <category>": a rule-divided row list (cards are gone from the system).
+// Same-category first, newest fallback, so readers go deeper and the reviews cross-link.
 export default function RelatedReviews({ slug, category }: { slug: string; category: string }) {
   const sameCat = reviews.filter((r) => r.slug !== slug && r.category === category);
   const pool = (sameCat.length ? sameCat : reviews.filter((r) => r.slug !== slug)).slice(0, 3);
   if (pool.length === 0) return null;
   const catName = (s: string) => categories.find((c) => c.slug === s)?.name || s;
+  const label = sameCat.length ? `Next in ${catName(category)}` : 'Next on the bench';
   return (
-    <section className="not-prose mt-16 border-t border-line pt-10">
-      <div className="eyebrow mb-6">Keep reading</div>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <section className="not-prose mt-16">
+      <div className="label-dim mb-4">{label}</div>
+      <div className="border border-rule border-b-0">
         {pool.map((r) => (
           <ReviewCard
             key={r.slug}
@@ -21,7 +22,6 @@ export default function RelatedReviews({ slug, category }: { slug: string; categ
             date={r.date}
             rating={r.rating}
             category={catName(r.category)}
-            image={(r as { image?: string }).image}
           />
         ))}
       </div>

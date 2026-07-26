@@ -1,75 +1,76 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { reviews, categories } from '@/lib/site';
+import { VerdictChip } from '@/components/Verdict';
 
+// Instrument hero: 1fr / 380px. Left — amber unit line, big product headline, deck, CTAs.
+// Right — the composite score panel on `surface`. Sub-score bars from the handoff are omitted:
+// we have one real number per review (the composite); inventing five sub-scores to fill a panel
+// would fabricate data on the most-seen module of the site.
 export default function Hero() {
   const latest = reviews[0];
-  const catName = categories.find((c) => c.slug === latest?.category)?.name || '';
-  const img = (latest as { image?: string })?.image;
+  if (!latest) return null;
+  const catName = categories.find((c) => c.slug === latest.category)?.name || '';
+  const unitNo = String(reviews.length).padStart(3, '0');
 
   return (
-    <section className="relative overflow-hidden border-b border-line">
-      <div className="max-w-6xl mx-auto px-6 md:px-10 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
-        <div className="relative z-10">
-          <div className="eyebrow mb-4">Independent reviews · est. 2026</div>
-          <h1 className="font-serif font-black text-5xl md:text-6xl lg:text-7xl leading-[0.95] tracking-tight">
-            Honest gear, <em className="text-accent not-italic font-medium">held</em> to a higher bar.
-          </h1>
-          <p className="mt-6 text-lg text-ink-soft max-w-md leading-relaxed">
-            We buy it, test it, and tell you whether it&apos;s worth your money. No sponsored fluff. No
-            five-star everything. Just the call.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link
-              href="#latest"
-              className="bg-ink text-paper px-6 py-3 rounded-md font-medium hover:bg-accent-deep transition"
-            >
-              Read the latest review
-            </Link>
-            <Link
-              href="/how-we-test"
-              className="border border-ink/20 px-6 py-3 rounded-md font-medium hover:border-accent-deep hover:text-accent-deep transition"
-            >
-              How we test
-            </Link>
-          </div>
+    <section className="border-b border-rule grid lg:grid-cols-[1fr_380px]">
+      <div className="px-5 md:px-9 py-10 md:py-12 lg:border-r border-rule">
+        <div className="eyebrow mb-5">
+          Unit {unitNo} · {catName} · {latest.date}
         </div>
-
-        {latest && (
+        <h1 className="text-[32px] md:text-[52px] font-bold leading-[1.05] tracking-[-0.03em] max-w-[22ch]">
+          {latest.title}
+        </h1>
+        <p className="mt-5 text-[17px] md:text-[19px] leading-[1.5] text-text-muted max-w-[44ch]">
+          {latest.excerpt}
+        </p>
+        <div className="mt-8 flex flex-wrap gap-3">
           <Link
             href={`/review/${latest.slug}`}
-            className="group relative z-10 block rounded-xl border border-line bg-card shadow-lift overflow-hidden"
+            className="bg-accent hover:bg-accent-hover text-bg px-5 py-3 font-mono text-[11px] font-semibold uppercase tracking-[0.14em] transition-colors"
           >
-            <div className="aspect-[4/3] bg-highlight flex items-center justify-center overflow-hidden">
-              {img ? (
-                <Image
-                  src={img}
-                  alt={latest.title}
-                  width={640}
-                  height={480}
-                  priority
-                  className="w-full h-full object-contain p-6 transition-transform duration-500 group-hover:scale-[1.03]"
-                />
-              ) : (
-                <span className="font-mono text-xs uppercase tracking-widest text-ink-faint">The Isaac Standard</span>
-              )}
-            </div>
-            <div className="p-5 border-t border-line">
-              <div className="eyebrow mb-1">Latest review{catName ? ` · ${catName}` : ''}</div>
-              <p className="font-serif text-lg leading-snug group-hover:text-accent-deep transition">
-                {latest.title}
-              </p>
-              {latest.rating !== undefined && (
-                <div className="mt-2 text-accent-deep text-sm font-medium">★ {latest.rating.toFixed(1)} / 5</div>
-              )}
-            </div>
+            Read the review
           </Link>
-        )}
+          <Link
+            href="/how-we-test"
+            className="border border-rule-strong hover:border-accent hover:text-accent px-5 py-3 font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-text-secondary transition-colors"
+          >
+            How we test
+          </Link>
+        </div>
       </div>
-      <div
-        className="absolute -right-32 top-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-20 pointer-events-none"
-        style={{ background: 'radial-gradient(circle at 35% 35%, #c2562a 0%, #8f3d1c 55%, transparent 72%)', filter: 'blur(8px)' }}
-      />
+
+      <div className="bg-surface px-6 md:px-8 py-8 border-t lg:border-t-0 border-rule">
+        <div className="label-dim mb-4">Composite score</div>
+        {latest.rating !== undefined && (
+          <>
+            <div className="flex items-baseline gap-2">
+              <span className="text-[58px] font-bold leading-[0.9] tracking-[-0.04em] text-text">
+                {latest.rating.toFixed(1)}
+              </span>
+              <span className="font-mono text-[12px] text-text-dim">/5</span>
+            </div>
+            <div className="mt-4">
+              <VerdictChip rating={latest.rating} />
+            </div>
+            <div className="mt-5 h-[3px] bg-rule" aria-hidden>
+              <div
+                className="score-bar h-full bg-info"
+                style={{ width: `${(latest.rating / 5) * 100}%` }}
+              />
+            </div>
+          </>
+        )}
+        <p className="mt-6 text-[13px] leading-[1.55] text-text-muted">
+          Composite of build, performance, endurance, software and value — the method is public.
+        </p>
+        <Link
+          href="/how-we-test"
+          className="mt-4 inline-block font-mono text-[11px] uppercase tracking-[0.16em] text-info hover:text-text transition-colors"
+        >
+          See the method →
+        </Link>
+      </div>
     </section>
   );
 }
