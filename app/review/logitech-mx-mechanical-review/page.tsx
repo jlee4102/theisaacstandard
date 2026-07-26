@@ -5,6 +5,10 @@ import FAQ from '@/components/FAQ';
 import Newsletter from '@/components/Newsletter';
 import ProductImage from '@/components/ProductImage';
 import { site } from '@/lib/site';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import StickyBuyBar from '@/components/StickyBuyBar';
+import RelatedReviews from '@/components/RelatedReviews';
+import AuthorBio from '@/components/AuthorBio';
 
 export const metadata = {
   title: 'Logitech MX Mechanical Review: The Productivity Keyboard That Almost Does It All',
@@ -28,6 +32,7 @@ export default function Page() {
       </p>
       <p className="text-lg text-ink/80 mt-3">The Logitech MX Mechanical is a well-built, quiet mechanical keyboard designed for productivity users who want tactile feedback without the noise. It excels in multi-device workflows and battery life, but its high price, lack of backlighting on the Mac version, and limited switch options hold it back from greatness.</p>
       <p className="text-2xl font-bold my-4 not-prose">Rating: 4.0 / 5</p>
+      <StickyBuyBar product="Logitech" asin={ASIN} />
       <div className="not-prose my-8">
         <ProductImage src="/reviews/logitech-mx-mechanical-review/main.jpg" alt="Logitech MX Mechanical (product image)" caption="Image: Logitech (product listing)." aspect="4/3" />
       </div>
@@ -94,6 +99,7 @@ export default function Page() {
           { q: 'How does the battery life hold up in real use?', a: 'With backlighting on, expect about 10-12 days of heavy use. Without backlighting, it can last months. The USB-C charging is fast, and you can use it while charging.' },
         ]}
       />
+      <AuthorBio />
     </article>
   );
 }

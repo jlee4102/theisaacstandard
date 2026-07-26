@@ -5,6 +5,10 @@ import FAQ from '@/components/FAQ';
 import Newsletter from '@/components/Newsletter';
 import ProductImage from '@/components/ProductImage';
 import { site } from '@/lib/site';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import StickyBuyBar from '@/components/StickyBuyBar';
+import RelatedReviews from '@/components/RelatedReviews';
+import AuthorBio from '@/components/AuthorBio';
 
 export const metadata = {
   title: 'Soundcore by Anker Q30 Review: The Budget ANC Headphones That Punch Above Their Weight',
@@ -27,7 +31,7 @@ export default function Page() {
   return (
     <article className="prose-isaac max-w-3xl mx-auto px-6 md:px-10 py-10">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <p className="text-ink/50 text-sm not-prose">Budget Audio</p>
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Budget Audio', href: '/category/budget-audio' }, { label: 'Soundcore by Anker Q30 Review: The Budget ANC Headphones That Punch Ab' }]} />
       <h1 className="font-serif text-3xl md:text-4xl mt-2">Soundcore by Anker Q30 Review: The Budget ANC Headphones That Punch Above Their Weight</h1>
       <Byline date="2026-06-13" readTime="8 min read" />
       <p className="not-prose bg-ink/[0.03] border-l-4 border-accent px-4 py-3 my-6 text-sm text-ink/80">
@@ -35,6 +39,7 @@ export default function Page() {
       </p>
       <p className="text-lg text-ink/80 mt-3">The Soundcore Q30 delivers genuinely good hybrid ANC and a warm, bass-forward sound signature for under $60. They&apos;re not as refined as the Sony WH-1000XM4 or as comfortable for all-day wear, but for the price, the noise cancellation punches well above its weight. If you want decent ANC on a tight budget and can tolerate a slightly plasticky build, these are the best value play in budget ANC right now.</p>
       <p className="text-2xl font-bold my-4 not-prose">Rating: 4.2 / 5</p>
+      <StickyBuyBar product="Soundcore" asin={ASIN} />
       <div className="not-prose my-8">
         <ProductImage src="/reviews/soundcore-by-anker-q30-hybrid-active-noise-cancelling-headphones-review/main.jpg" alt="Soundcore by Anker Q30 Hybrid Active Noise Cancelling Headphones (manufacturer image)" caption="Image: Soundcore (manufacturer)." aspect="4/3" />
       </div>
@@ -127,6 +132,8 @@ export default function Page() {
       <p className="text-xs text-ink/50 mt-10 not-prose">
         Specs cited from Soundcore manufacturer listings. Measured values and impressions from hands-on testing by {site.name}. Pricing and availability vary &mdash; verify at publish time.
       </p>
+      <RelatedReviews slug="soundcore-by-anker-q30-hybrid-active-noise-cancelling-headphones-review" category="budget-audio" />
+      <AuthorBio />
     </article>
   );
 }
