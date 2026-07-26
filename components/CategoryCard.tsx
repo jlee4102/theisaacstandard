@@ -36,7 +36,7 @@ export default function CategoryCard({
         />
         <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/10 to-transparent" />
         {isEmpty && (
-          <span className="absolute top-3 right-3 bg-paper/95 text-ink-soft text-[0.62rem] font-mono uppercase tracking-widest px-2 py-1 rounded">
+          <span className="absolute top-3 right-3 bg-paper/95 text-ink-soft font-mono uppercase tracking-widest px-2 py-1 rounded">
             Coming soon
           </span>
         )}

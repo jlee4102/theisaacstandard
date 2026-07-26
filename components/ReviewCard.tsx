@@ -71,7 +71,7 @@ export default function ReviewCard({
         )}
       </div>
       <div className="p-5">
-        {category && <div className="eyebrow mb-2 text-[0.66rem]">{category}</div>}
+        {category && <div className="eyebrow mb-2">{category}</div>}
         <h3 className="font-serif text-lg leading-snug group-hover:text-accent-deep transition">{title}</h3>
         <p className="text-ink-soft mt-2 text-sm leading-relaxed line-clamp-2">{excerpt}</p>
         <div className="mt-4 flex items-center justify-between text-xs text-ink-faint">

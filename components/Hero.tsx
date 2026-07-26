@@ -55,7 +55,7 @@ export default function Hero() {
               )}
             </div>
             <div className="p-5 border-t border-line">
-              <div className="eyebrow mb-1 text-[0.66rem]">Latest review{catName ? ` · ${catName}` : ''}</div>
+              <div className="eyebrow mb-1">Latest review{catName ? ` · ${catName}` : ''}</div>
               <p className="font-serif text-lg leading-snug group-hover:text-accent-deep transition">
                 {latest.title}
               </p>
