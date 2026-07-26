@@ -34,7 +34,9 @@ export default function CategoryCard({
           sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/10 to-transparent" />
+        {/* The old stock art was dark, so a light scrim held the white label. Real product shots are
+            mostly white-background, so the label needs a stronger, deeper scrim to stay legible. */}
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/40 to-ink/5" />
         <div className="absolute bottom-3 left-4 right-4">
           <h3 className="font-serif text-xl text-paper drop-shadow-md">{name}</h3>
         </div>
