@@ -22,7 +22,8 @@ export default function Hero() {
           {latest.title}
         </h1>
         <p className="mt-5 text-[17px] md:text-[19px] leading-[1.5] text-text-muted max-w-[44ch]">
-          {latest.excerpt}
+          {/* excerpts are stored pre-truncated mid-word — trim to the word boundary */}
+          {latest.excerpt.trim().match(/[.!?]$/) ? latest.excerpt.trim() : latest.excerpt.trim().replace(/\s*\S*$/, '') + '…'}
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <Link

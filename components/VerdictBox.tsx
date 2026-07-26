@@ -19,7 +19,9 @@ export default function VerdictBox({
 }) {
   return (
     <aside className="not-prose my-9 border border-rule">
-      <div className="grid md:grid-cols-[300px_1fr]">
+      {/* 240px (not the handoff's 300px): inside the 768px article measure, 300 left the two
+          pros/cons columns ~230px each — five-word lines. Full-width articles can go back to 300. */}
+      <div className="grid md:grid-cols-[240px_1fr]">
         {/* Score panel */}
         <div className="bg-surface border-b md:border-b-0 md:border-r border-rule p-6">
           <div className="label-dim mb-3">Composite</div>

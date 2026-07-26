@@ -86,6 +86,10 @@ h1, h2, h3 {
   height: 6px;
   background: theme('colors.accent');
 }
+/* .not-prose blocks (verdict band, FAQ…) carry their own glyphs — the descendant selector above
+   would double-mark them (seen live: an amber square AND a +/− on every strengths bullet). */
+.prose-isaac .not-prose ul li { padding-left: 0; }
+.prose-isaac .not-prose ul li::before { content: none; }
 .prose-isaac ul li strong { color: theme('colors.text'); font-weight: 600; }
 /* Links are cyan — amber is reserved for CTAs and active state. */
 .prose-isaac a {
