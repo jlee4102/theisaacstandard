@@ -9,6 +9,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import StickyBuyBar from '@/components/StickyBuyBar';
 import RelatedReviews from '@/components/RelatedReviews';
 import AuthorBio from '@/components/AuthorBio';
+import VerdictBox from '@/components/VerdictBox';
 
 export const metadata = {
   title: 'Logitech MX Mechanical Review: The Productivity Keyboard That Almost Does It All',
@@ -31,7 +32,7 @@ export default function Page() {
         <strong>Disclosure:</strong> This review contains Amazon affiliate links. If you buy through them, {site.name} may earn a small commission at no extra cost to you. This never affects the rating &mdash; recommendations are based only on hands-on testing.
       </p>
       <p className="text-lg text-ink/80 mt-3">The Logitech MX Mechanical is a well-built, quiet mechanical keyboard designed for productivity users who want tactile feedback without the noise. It excels in multi-device workflows and battery life, but its high price, lack of backlighting on the Mac version, and limited switch options hold it back from greatness.</p>
-      <p className="text-2xl font-bold my-4 not-prose">Rating: 4.0 / 5</p>
+      <VerdictBox asin={ASIN} rating={4.0} verdict="" pros={['Quiet tactile mechanical switches ideal for open offices', 'Excellent multi-device pairing and Logitech Flow software', 'Long battery life with white backlighting (Windows version)']} cons={['Mac version lacks backlighting entirely', 'Proprietary switches and keycaps limit customization', 'High price ($149.99) for non-hot-swappable design']} />
       <StickyBuyBar product="Logitech" asin={ASIN} />
       <div className="not-prose my-8">
         <ProductImage src="/reviews/logitech-mx-mechanical-review/main.jpg" alt="Logitech MX Mechanical (product image)" caption="Image: Logitech (product listing)." aspect="4/3" />

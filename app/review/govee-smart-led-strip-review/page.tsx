@@ -9,6 +9,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import StickyBuyBar from '@/components/StickyBuyBar';
 import RelatedReviews from '@/components/RelatedReviews';
 import AuthorBio from '@/components/AuthorBio';
+import VerdictBox from '@/components/VerdictBox';
 
 export const metadata = {
   title: 'Govee Smart LED Strip Lights 32.8ft Review: Colorful, Cheap, and Surprisingly Capable',
@@ -40,7 +41,7 @@ export default function Page() {
         <strong>Disclosure:</strong> This review contains Amazon affiliate links. If you buy through them, {site.name} may earn a small commission at no extra cost to you. This never affects the rating &mdash; recommendations are based only on hands-on testing.
       </p>
       <p className="text-lg text-ink/80 mt-3">For $30, you get 33 feet of vibrant, multi-color LED strip with music sync that works—but the adhesive is mediocre and you&apos;re locked out of HomeKit. The RGBIC feature lets you display multiple colors simultaneously, which is rare at this price. Setup is quick, the app is intuitive, and Alexa/Google integration is solid. Just don&apos;t expect professional brightness or long-lasting adhesive.</p>
-      <p className="text-2xl font-bold my-4 not-prose">Rating: 4.3 / 5</p>
+      <VerdictBox asin={ASIN} rating={4.3} verdict="" pros={['RGBIC displays multiple colors simultaneously, rare at $30', 'Music sync works well with bass-heavy tracks', 'Setup under 10 minutes, intuitive app']} cons={['Adhesive is mediocre, may not last long', 'No HomeKit or IFTTT support', 'Brightness lower than claimed (~1500 vs 1900 lumens/m)']} />
       <div className="not-prose my-8">
         <ProductImage src="/reviews/govee-smart-led-strip-review/main.jpg" alt="Govee Smart LED Strip Lights 32.8ft (manufacturer image)" caption="Image: Govee (manufacturer)." aspect="4/3" />
       </div>

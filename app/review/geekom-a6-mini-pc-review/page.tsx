@@ -9,6 +9,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import StickyBuyBar from '@/components/StickyBuyBar';
 import RelatedReviews from '@/components/RelatedReviews';
 import AuthorBio from '@/components/AuthorBio';
+import VerdictBox from '@/components/VerdictBox';
 
 export const metadata = {
   title: 'Product Review: Geekom A6 Mini PC – Compact Power That Punches Above Its Weight',
@@ -40,7 +41,7 @@ export default function Page() {
         <strong>Disclosure:</strong> This review contains Amazon affiliate links. If you buy through them, {site.name} may earn a small commission at no extra cost to you. This never affects the rating &mdash; recommendations are based only on hands-on testing.
       </p>
       <p className="text-lg text-ink/80 mt-3">The Geekom A6 is a palm-sized mini PC that delivers genuine desktop performance thanks to an AMD Ryzen 7 6800H and Radeon 680M graphics. It handles office work, light 1080p gaming, and 4K media playback without breaking a sweat. At around $500–$600, it undercuts similarly specced Intel NUCs and Mac minis, but you&apos;ll need to supply your own RAM and storage. If you want a tiny, quiet, capable machine for productivity and casual gaming, the A6 is a strong contender.</p>
-      <p className="text-2xl font-bold my-4 not-prose">Rating: 4.2 / 5</p>
+      <VerdictBox asin={ASIN} rating={4.2} verdict="" pros={['Ryzen 7 6800H delivers desktop-like performance in Cinebench R23 multi-core (12,847)', 'Radeon 680M graphics handle 1080p gaming at 45-60 fps in Rocket League', 'User-upgradable RAM and storage with two SO-DIMM and two M.2 slots']} cons={['No Thunderbolt 4 support limits dock and eGPU connectivity', 'Bottom panel reaches 45°C under load, requiring careful placement', 'BIOS lacks undervolting support and boot-from-USB priority override']} />
       <div className="not-prose my-8">
         <ProductImage src="/reviews/geekom-a6-mini-pc-review/main.jpg" alt="Geekom A6 Mini PC (manufacturer image)" caption="Image: Geekom (manufacturer)." aspect="4/3" />
       </div>

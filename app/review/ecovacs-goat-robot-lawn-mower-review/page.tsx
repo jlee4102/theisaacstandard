@@ -9,6 +9,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import StickyBuyBar from '@/components/StickyBuyBar';
 import RelatedReviews from '@/components/RelatedReviews';
 import AuthorBio from '@/components/AuthorBio';
+import VerdictBox from '@/components/VerdictBox';
 
 export const metadata = {
   title: 'Ecovacs GOAT Robot Lawn Mower Review: LiDAR Precision vs. Night Mowing Trade-Offs',
@@ -40,7 +41,7 @@ export default function Page() {
         <strong>Disclosure:</strong> This review contains Amazon affiliate links. If you buy through them, {site.name} may earn a small commission at no extra cost to you. This never affects the rating &mdash; recommendations are based only on hands-on testing.
       </p>
       <p className="text-lg text-ink/80 mt-3">The Ecovacs GOAT delivers exceptional LiDAR-guided lawn mapping and wire-free navigation that rivals premium competitors, but its animal protection feature that disables night mowing is a genuine limitation for large yards. At $1,299, it undercuts the Husqvarna EPOS by $700 while offering similar precision, but lacks the Worx Landroid&apos;s modular upgrade path. After three weeks of testing on a 0.3-acre yard, I found the GOAT to be the best value in high-precision robot mowing—if you don&apos;t need to mow after dark.</p>
-      <p className="text-2xl font-bold my-4 not-prose">Rating: 3.8 / 5</p>
+      <VerdictBox asin={ASIN} rating={3.8} verdict="" pros={['LiDAR mapping accurate to within 2 inches on flat terrain', 'Wire-free navigation with no boundary wire burial needed', 'Underprices Husqvarna EPOS by $700 with similar precision']} cons={['Animal protection disables night mowing with no override', 'Leaves 3-4 inch uncut strip along fences and walls', 'Cutting height adjustment is manual, not app-controlled']} />
       <div className="not-prose my-8">
         <ProductImage src="/reviews/ecovacs-goat-robot-lawn-mower-review/main.jpg" alt="Ecovacs GOAT Robot Lawn Mower (manufacturer image)" caption="Image: Ecovacs (manufacturer)." aspect="4/3" />
       </div>

@@ -9,6 +9,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import StickyBuyBar from '@/components/StickyBuyBar';
 import RelatedReviews from '@/components/RelatedReviews';
 import AuthorBio from '@/components/AuthorBio';
+import VerdictBox from '@/components/VerdictBox';
 
 export const metadata = {
   title: 'Anker Soundcore Q20i Review: Strong ANC, Weak Tuning, Honest Caveats',
@@ -47,6 +48,7 @@ export default function Page() {
       <h1 className="font-serif text-3xl md:text-4xl mt-2">
         Anker Soundcore Q20i Review: Strong ANC, Weak Tuning, Honest Caveats
       </h1>
+      <VerdictBox asin={Q20I_ASIN} rating={3.9} verdict="" pros={['Strong ANC for the price, effective against constant low-frequency noise', 'Excellent battery life: ~49 hours real-world with ANC off, 35-40 with ANC on', 'Lightweight and comfortable for extended wear']} cons={['Pronounced V-shaped tuning with recessed mids, weak for acoustic/classical', 'Wired mode disables ANC entirely', 'Microphone performance degrades significantly in noisy environments']} />
       <Byline date="2026-05-22" readTime="8 min read" />
 
       <p className="not-prose bg-ink/[0.03] border-l-4 border-accent px-4 py-3 my-6 text-sm text-ink/80">

@@ -9,6 +9,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import StickyBuyBar from '@/components/StickyBuyBar';
 import RelatedReviews from '@/components/RelatedReviews';
 import AuthorBio from '@/components/AuthorBio';
+import VerdictBox from '@/components/VerdictBox';
 
 export const metadata = {
   title: 'Beelink GTi13 Ultra Review: A Quiet i9 Mini PC With a Real GPU Escape Hatch',
@@ -50,6 +51,7 @@ export default function Page() {
       <h1 className="font-serif text-3xl md:text-4xl mt-2">
         Beelink GTi13 Ultra Review: A Quiet i9 Mini PC With a Real GPU Escape Hatch
       </h1>
+      <VerdictBox asin={ASIN} rating={4.2} verdict="" pros={['Very quiet under load (32–35 dB measured)', 'PCIe x8 dock enables near-zero GPU bottleneck', 'Strong single-core CPU performance']} cons={['CPU is 2023 silicon, behind newer AMD in multicore', 'GPU dock is a separate purchase', 'Integrated GPU only good for basic tasks']} />
       <Byline date="2026-05-24" readTime="9 min read" />
 
       <p className="not-prose bg-ink/[0.03] border-l-4 border-accent px-4 py-3 my-6 text-sm text-ink/80">

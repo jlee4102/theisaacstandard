@@ -9,6 +9,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import StickyBuyBar from '@/components/StickyBuyBar';
 import RelatedReviews from '@/components/RelatedReviews';
 import AuthorBio from '@/components/AuthorBio';
+import VerdictBox from '@/components/VerdictBox';
 
 export const metadata = {
   title: 'Soundcore Liberty 4 NC Review: Budget ANC That Punches Above Its Weight',
@@ -40,7 +41,7 @@ export default function Page() {
         <strong>Disclosure:</strong> This review contains Amazon affiliate links. If you buy through them, {site.name} may earn a small commission at no extra cost to you. This never affects the rating &mdash; recommendations are based only on hands-on testing.
       </p>
       <p className="text-lg text-ink/80 mt-3">The Soundcore Liberty 4 NC delivers genuinely impressive active noise cancellation and LDAC support for just $100, making it one of the best value propositions in the budget audio space. Sound quality is consumer-friendly with strong bass, and battery life is solid at 8 hours with ANC on. However, the touch controls are finicky, call quality in wind is poor, and the fit won&apos;t work for everyone—especially those with smaller ears. If you&apos;re an Android user who prioritizes ANC on a budget, these are a no-brainer; iPhone users and call-heavy buyers should look elsewhere.</p>
-      <p className="text-2xl font-bold my-4 not-prose">Rating: 4.2 / 5</p>
+      <VerdictBox asin={ASIN} rating={4.2} verdict="" pros={['Best ANC under $150, with strong low-frequency cancellation', 'LDAC support for high-res audio on Android', 'Wireless charging case included at $100']} cons={['Touch controls are finicky', 'Call quality in wind is poor', 'Fit creates pressure points for smaller ears']} />
       <div className="not-prose my-8">
         <ProductImage src="/reviews/soundcore-liberty-4-nc-review/main.jpg" alt="Soundcore Liberty 4 NC (manufacturer image)" caption="Image: Soundcore (manufacturer)." aspect="4/3" />
       </div>

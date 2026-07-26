@@ -9,6 +9,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import StickyBuyBar from '@/components/StickyBuyBar';
 import RelatedReviews from '@/components/RelatedReviews';
 import AuthorBio from '@/components/AuthorBio';
+import VerdictBox from '@/components/VerdictBox';
 
 export const metadata = {
   title: 'Anker Soundcore Life P3 Review: Budget ANC That Punches Above Its Weight',
@@ -33,7 +34,7 @@ export default function Page() {
         <strong>Disclosure:</strong> This review contains Amazon affiliate links. If you buy through them, {site.name} may earn a small commission at no extra cost to you. This never affects the rating &mdash; recommendations are based only on hands-on testing.
       </p>
       <p className="text-lg text-ink/80 mt-3">The Anker Soundcore Life P3 offers solid active noise cancellation and a fun, customizable sound for under $80. Battery life is strong, but the ANC isn&apos;t class-leading and the build feels a bit plasticky. A great value pick for casual listeners who want ANC on a budget.</p>
-      <p className="text-2xl font-bold my-4 not-prose">Rating: 4.0 / 5</p>
+      <VerdictBox asin={ASIN} rating={4.0} verdict="" pros={['Solid ANC for the price', 'Fun, customizable sound via app EQ', 'Strong battery life (11h claimed)']} cons={['Plasticky build and case', 'ANC not class-leading', 'No wireless charging']} />
       <div className="not-prose my-8">
         <ProductImage src="/reviews/anker-soundcore-life-p3-review/main.jpg" alt="Anker Soundcore Life P3 (manufacturer image)" caption="Anker product image." aspect="4/3" />
       </div>

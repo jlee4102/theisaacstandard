@@ -9,6 +9,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import StickyBuyBar from '@/components/StickyBuyBar';
 import RelatedReviews from '@/components/RelatedReviews';
 import AuthorBio from '@/components/AuthorBio';
+import VerdictBox from '@/components/VerdictBox';
 
 export const metadata = {
   title: 'Samsung SmartTag2 Review – The Galaxy-Only Tracker That Finally Gets It Right',
@@ -40,7 +41,7 @@ export default function Page() {
         <strong>Disclosure:</strong> This review contains Amazon affiliate links. If you buy through them, {site.name} may earn a small commission at no extra cost to you. This never affects the rating &mdash; recommendations are based only on hands-on testing.
       </p>
       <p className="text-lg text-ink/80 mt-3">The Samsung SmartTag2 is the best Bluetooth tracker for Galaxy phone owners, period. It fixes the original SmartTag&apos;s biggest flaw—battery life—by jumping from 5 months to up to 500 days in power-save mode. The new ring-shaped design is more durable and easier to attach, and the IP67 rating means it survives the rain, the washing machine, and a drop in the toilet. But if you don&apos;t own a Samsung phone, the SmartTag2 is useless—no iOS support, no generic Android app. At $29.99 for one or $79.99 for a four-pack, it&apos;s cheaper than an AirTag but locked into Samsung&apos;s ecosystem. For Galaxy users, it&apos;s a no-brainer. For everyone else, skip it.</p>
-      <p className="text-2xl font-bold my-4 not-prose">Rating: 4.1 / 5</p>
+      <VerdictBox asin={ASIN} rating={4.1} verdict="" pros={['Up to 500 days battery life in power-save mode', 'IP67 water and dust resistance', 'UWB precision finding on compatible Galaxy phones']} cons={['Only works with Samsung Galaxy phones', 'No iOS or generic Android support', 'UWB requires a Galaxy phone with UWB hardware']} />
       <div className="not-prose my-8">
         <ProductImage src="/reviews/samsung-smarttag2-review/main.jpg" alt="Samsung SmartTag2 (manufacturer image)" caption="Image: Samsung (manufacturer)." aspect="4/3" />
       </div>

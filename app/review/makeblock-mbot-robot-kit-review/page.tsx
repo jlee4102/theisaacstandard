@@ -9,6 +9,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import StickyBuyBar from '@/components/StickyBuyBar';
 import RelatedReviews from '@/components/RelatedReviews';
 import AuthorBio from '@/components/AuthorBio';
+import VerdictBox from '@/components/VerdictBox';
 
 export const metadata = {
   title: 'Makeblock mBot Robot Kit Review: The $65 STEM Robot That Actually Teaches Coding',
@@ -40,7 +41,7 @@ export default function Page() {
         <strong>Disclosure:</strong> This review contains Amazon affiliate links. If you buy through them, {site.name} may earn a small commission at no extra cost to you. This never affects the rating &mdash; recommendations are based only on hands-on testing.
       </p>
       <p className="text-lg text-ink/80 mt-3">The Makeblock mBot Robot Kit is the best entry-level coding robot for kids aged 8-12, offering genuine Scratch-based programming in a durable, outdoor-friendly package for $65. It&apos;s not a toy you assemble once and forget — the modular design and IR remote control add replay value that most sub-$100 STEM kits lack. But the Bluetooth version costs $20 more, the screwdriver assembly is tedious for small hands, and advanced coders will outgrow it within weeks. If your kid is new to programming and you want something tougher than a plastic classroom robot, this is the one.</p>
-      <p className="text-2xl font-bold my-4 not-prose">Rating: 4.2 / 5</p>
+      <VerdictBox asin={ASIN} rating={4.2} verdict="" pros={['Genuine Scratch-based programming with immediate feedback', 'Durable metal chassis survives drops and outdoor use', 'Under $65, undercuts most competitors']} cons={['Screwdriver assembly tedious for small hands', 'Standard version tethered via USB cable', 'Advanced coders outgrow it within weeks']} />
       <div className="not-prose my-8">
         <ProductImage src="/reviews/makeblock-mbot-robot-kit-review/main.jpg" alt="Makeblock mBot Robot Kit (manufacturer image)" caption="Image: Makeblock (manufacturer)." aspect="4/3" />
       </div>

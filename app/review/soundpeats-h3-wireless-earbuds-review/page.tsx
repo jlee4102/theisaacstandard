@@ -9,6 +9,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import StickyBuyBar from '@/components/StickyBuyBar';
 import RelatedReviews from '@/components/RelatedReviews';
 import AuthorBio from '@/components/AuthorBio';
+import VerdictBox from '@/components/VerdictBox';
 
 export const metadata = {
   title: 'Soundpeats H3 Wireless Earbuds Review – Budget ANC That Actually Works',
@@ -40,7 +41,7 @@ export default function Page() {
         <strong>Disclosure:</strong> This review contains Amazon affiliate links. If you buy through them, {site.name} may earn a small commission at no extra cost to you. This never affects the rating &mdash; recommendations are based only on hands-on testing.
       </p>
       <p className="text-lg text-ink/80 mt-3">The Soundpeats H3 earbuds deliver genuinely effective active noise cancellation and solid sound quality for just $40, making them the best budget ANC option I&apos;ve tested in 2026. Battery life hits 8 hours with ANC on (claimed 10), and the IPX5 rating means they survive workouts. But the call quality is mediocre, the charging case feels cheap, and the touch controls are overly sensitive. If you need ANC on a tight budget, these are your best bet — just don&apos;t expect premium build or great phone calls.</p>
-      <p className="text-2xl font-bold my-4 not-prose">Rating: 3.7 / 5</p>
+      <VerdictBox asin={ASIN} rating={3.7} verdict="" pros={['Effective ANC for $40, reduces low-frequency noise by 80-85%', 'Full bass response from 12mm drivers', 'IPX5 sweat resistance for workouts']} cons={['Mediocre call quality', 'Cheap-feeling plastic case with hinge wobble', 'Overly sensitive touch controls']} />
       <div className="not-prose my-8">
         <ProductImage src="/reviews/soundpeats-h3-wireless-earbuds-review/main.jpg" alt="Soundpeats H3 Wireless Earbuds (manufacturer image)" caption="Image: Soundpeats (manufacturer)." aspect="4/3" />
       </div>

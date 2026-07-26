@@ -9,6 +9,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import StickyBuyBar from '@/components/StickyBuyBar';
 import RelatedReviews from '@/components/RelatedReviews';
 import AuthorBio from '@/components/AuthorBio';
+import VerdictBox from '@/components/VerdictBox';
 
 export const metadata = {
   title: 'Soundcore by Anker Q30 Review: The Budget ANC Headphones That Punch Above Their Weight',
@@ -38,7 +39,7 @@ export default function Page() {
         <strong>Disclosure:</strong> This review contains Amazon affiliate links. If you buy through them, {site.name} may earn a small commission at no extra cost to you. This never affects the rating &mdash; recommendations are based only on hands-on testing.
       </p>
       <p className="text-lg text-ink/80 mt-3">The Soundcore Q30 delivers genuinely good hybrid ANC and a warm, bass-forward sound signature for under $60. They&apos;re not as refined as the Sony WH-1000XM4 or as comfortable for all-day wear, but for the price, the noise cancellation punches well above its weight. If you want decent ANC on a tight budget and can tolerate a slightly plasticky build, these are the best value play in budget ANC right now.</p>
-      <p className="text-2xl font-bold my-4 not-prose">Rating: 4.2 / 5</p>
+      <VerdictBox asin={ASIN} rating={4.2} verdict="" pros={['Effective hybrid ANC for under $60', 'Warm, bass-forward sound with customizable EQ', '40-hour battery life']} cons={['Plasticky build with creaking headband', 'Earcup pressure after 90 minutes, thin headband padding', 'No carrying case included']} />
       <StickyBuyBar product="Soundcore" asin={ASIN} />
       <div className="not-prose my-8">
         <ProductImage src="/reviews/soundcore-by-anker-q30-hybrid-active-noise-cancelling-headphones-review/main.jpg" alt="Soundcore by Anker Q30 Hybrid Active Noise Cancelling Headphones (manufacturer image)" caption="Image: Soundcore (manufacturer)." aspect="4/3" />
