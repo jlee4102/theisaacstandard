@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { track } from '@vercel/analytics/server';
 import { site } from '@/lib/site';
 import affiliateLinks from '@/lib/affiliate-links.json';
 
@@ -9,6 +10,32 @@ import affiliateLinks from '@/lib/affiliate-links.json';
 //  2. Anything else -> the original Amazon search redirect with the tag applied server-side.
 // Owner fills their real referral ids in ARU config/affiliate_links.json (mirrored to lib/); until
 // then a link still resolves to the tool's homepage (no commission, never broken).
+//
+// CLICK TRACKING (2026-07-26): this route was a BLIND FUNNEL — 19,512 YouTube views across four
+// channels, every video carrying a working tagged link, and no way to tell whether 1 person
+// clicked or 1,000. Every downstream revenue decision (which channel converts, whether the Amazon
+// 3-qualifying-sale deadline is reachable, whether affiliate is worth continuing at all) was
+// unmeasurable. Each redirect now emits a custom event via @vercel/analytics — ALREADY a
+// dependency here, so no new package and nothing to provision. Amazon's own `ascsubtag` was
+// evaluated first and rejected: Amazon grants it only to select publishers, not to new Associates.
+// Strictly fail-soft — any tracking error is swallowed so an analytics hiccup can never break a
+// revenue link. No personal data: only the slug, the video id we generated, and the dest host.
+async function logClick(slug: string, video: string, mode: 'tool' | 'amazon', destHost: string) {
+  const payload = { slug, video: video || '(none)', mode, dest: destHost };
+  try {
+    await track('affiliate_click', payload);
+  } catch {
+    /* analytics must never break a redirect */
+  }
+  // Redundant record in the function log — independent of the analytics pipeline, greppable in the
+  // Vercel dashboard, and useful if a click ever needs to be reconstructed.
+  try {
+    console.log(`[affiliate_click] ${JSON.stringify(payload)}`);
+  } catch {
+    /* ignore */
+  }
+}
+
 export async function GET(
   req: NextRequest,
   { params }: { params: Promise<{ q: string }> }
@@ -25,6 +52,13 @@ export async function GET(
       const sep = dest.includes('?') ? '&' : '?';
       dest = `${dest}${sep}sub_id=${encodeURIComponent(v)}`; // merchant/PartnerStack sub-id attribution
     }
+    let host = 'unknown';
+    try {
+      host = new URL(dest).host;
+    } catch {
+      /* malformed dest still redirects; just log the host as unknown */
+    }
+    await logClick(slug, v, 'tool', host);
     return NextResponse.redirect(dest, 307); // 307 preserves method if a program's tracking needs it
   }
 
@@ -33,5 +67,6 @@ export async function GET(
   const target = query
     ? `https://www.amazon.com/s?k=${encodeURIComponent(query)}&tag=${site.affiliateTag}`
     : `https://www.amazon.com/?tag=${site.affiliateTag}`;
+  await logClick(slug, v, 'amazon', 'www.amazon.com');
   return NextResponse.redirect(target, 302);
 }
