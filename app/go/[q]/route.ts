@@ -20,6 +20,43 @@ import affiliateLinks from '@/lib/affiliate-links.json';
 // evaluated first and rejected: Amazon grants it only to select publishers, not to new Associates.
 // Strictly fail-soft — any tracking error is swallowed so an analytics hiccup can never break a
 // revenue link. No personal data: only the slug, the video id we generated, and the dest host.
+// READABLE CLICK COUNTERS (2026-07-26). track() above records to Vercel Analytics, but that is a
+// DASHBOARD — ARU cannot query it without a Vercel token and a plan tier exposing custom events, so
+// the fleet still could not see a single click. It was tuning thumbnails and topics against VIEWS
+// (measurable) while the step that actually pays stayed invisible: steering on the wrong signal.
+//
+// These INCR counters in a Redis-compatible REST store that BOTH sides can reach — this route
+// writes, ARU's scripts/funnel.py reads. Chosen over Vercel KV/Postgres because it is a plain HTTP
+// call: no SDK, no new package, no plan gating.
+//
+// Fully optional: with the env vars unset this is a no-op and the redirect behaves exactly as
+// before. Swallowed and non-blocking — a counter must never delay or break a revenue link.
+// Counts only: slug, video id, mode, day. No IPs, no user identifiers, nothing personal.
+async function bumpCounters(slug: string, video: string, mode: string) {
+  const url = process.env.UPSTASH_REDIS_REST_URL;
+  const tok = process.env.UPSTASH_REDIS_REST_TOKEN;
+  if (!url || !tok) return;
+  const day = new Date().toISOString().slice(0, 10);
+  // one pipelined round trip so the redirect never waits on several calls
+  const cmds: string[][] = [
+    ['INCR', 'clicks:total'],
+    ['INCR', `clicks:day:${day}`],
+    ['INCR', `clicks:slug:${slug}`],
+    ['INCR', `clicks:mode:${mode}`],
+  ];
+  if (video) cmds.push(['INCR', `clicks:video:${video}`]);
+  try {
+    await fetch(`${url}/pipeline`, {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${tok}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify(cmds),
+      cache: 'no-store',
+    });
+  } catch {
+    /* a counter must never break a redirect */
+  }
+}
+
 async function logClick(slug: string, video: string, mode: 'tool' | 'amazon', destHost: string) {
   const payload = { slug, video: video || '(none)', mode, dest: destHost };
   try {
@@ -27,6 +64,7 @@ async function logClick(slug: string, video: string, mode: 'tool' | 'amazon', de
   } catch {
     /* analytics must never break a redirect */
   }
+  await bumpCounters(slug, video, mode);
   // Redundant record in the function log — independent of the analytics pipeline, greppable in the
   // Vercel dashboard, and useful if a click ever needs to be reconstructed.
   try {
