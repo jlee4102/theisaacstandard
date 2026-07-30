@@ -72,6 +72,16 @@ export const categories = [
 
 export const reviews = [
   {
+    slug: 'cotsoco-mini-massage-gun-review',
+    title: 'Cotsoco Mini Massage Gun Review: Small, Quiet, but Is It Strong Enough?',
+    category: 'fitness-gear',
+    excerpt:
+      'The Cotsoco Mini Massage Gun is a compact, whisper-quiet massager that\'s great for travel or desk use, but its low stall force and limited battery life make it unsuitable for deep',
+    date: '2026-07-30',
+    rating: 3.2,
+    image: undefined,
+  },
+  {
     slug: 'logitech-mx-mechanical-review',
     title: 'Logitech MX Mechanical Review: The Productivity Keyboard That Almost Does It All',
     category: 'desk-gear',
