@@ -48,7 +48,7 @@ export default function Hero() {
             site. The photo sits on a white tile because the shots are white-background cutouts;
             floating them on near-black looks broken. Score stays primary, photo gives it a face. */}
         {(latest as { image?: string }).image && (
-          <div className="mb-6 bg-white p-4 flex items-center justify-center" style={{ aspectRatio: '16/10' }}>
+          <div className="mb-6 bg-white border border-rule p-4 flex items-center justify-center" style={{ aspectRatio: '16/10' }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={(latest as { image?: string }).image} alt={latest.title}
                  className="max-h-full max-w-full object-contain" />

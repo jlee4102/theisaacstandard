@@ -17,30 +17,37 @@ const config: Config = {
     },
     extend: {
       colors: {
-        // Instrument tokens (canonical names)
-        bg: '#0A0B0D',
-        surface: '#0E1012',
-        raised: '#111316',
-        rule: '#232629',
-        'rule-strong': '#333A40',
-        text: '#E8E9EA',
-        'text-secondary': '#C5CAD0',
-        'text-muted': '#8A9098',
-        'text-dim': '#6E757C',
-        info: '#5EC8D8',
-        positive: '#7FBF8A',
-        negative: '#E0705C',
-        'accent-hover': '#F5BC63',
+        // LIGHT THEME (owner 2026-08-04: "go light"). The dark Instrument system read "tech
+        // dashboard"; every mainstream review site (Wirecutter/RTINGS/Tom's Guide) is light —
+        // white ground, near-black text — because that's what consumer trust looks like in this
+        // genre. Same token NAMES, so the entire site re-themes here; layout/type/structure of
+        // Instrument (rule-divided grids, mono labels, score-first) survive intact.
+        // Amber identity kept but DARKENED to amber-700: #E8A33D on white is ~1.9:1 (illegible);
+        // #B45309 is ~4.6:1 as text on white AND carries white text as a fill — one value serves
+        // both jobs. Same treatment for info/positive/negative.
+        bg: '#FFFFFF',
+        surface: '#F7F7F5',
+        raised: '#EFEFEC',
+        rule: '#E5E5E1',
+        'rule-strong': '#C9C9C2',
+        text: '#1A1D1F',
+        'text-secondary': '#3F4448',
+        'text-muted': '#6A7076',
+        'text-dim': '#8A9097',
+        info: '#0E7490',
+        positive: '#15803D',
+        negative: '#B91C1C',
+        'accent-hover': '#92400E',
         // Legacy names remapped (existing pages keep compiling, restyled)
-        ink: '#E8E9EA',
-        'ink-soft': '#C5CAD0',
-        'ink-faint': '#8A9098',
-        paper: '#0A0B0D',
-        card: '#0E1012',
-        accent: '#E8A33D',
-        'accent-deep': '#E8A33D',
-        line: '#232629',
-        highlight: '#111316',
+        ink: '#1A1D1F',
+        'ink-soft': '#3F4448',
+        'ink-faint': '#8A9097',
+        paper: '#FFFFFF',
+        card: '#F7F7F5',
+        accent: '#B45309',
+        'accent-deep': '#92400E',
+        line: '#E5E5E1',
+        highlight: '#EFEFEC',
       },
       fontFamily: {
         // font-serif intentionally maps to Archivo: every existing headline uses font-serif, and

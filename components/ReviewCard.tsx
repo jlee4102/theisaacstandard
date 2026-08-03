@@ -57,7 +57,7 @@ export default function ReviewCard({
           <span className="label-dim">TBD</span>
         )}
       </div>
-      <div className="bg-white p-1 flex items-center justify-center w-[56px] h-[56px] md:w-[72px] md:h-[72px]">
+      <div className="bg-white border border-rule p-1 flex items-center justify-center w-[56px] h-[56px] md:w-[72px] md:h-[72px]">
         {image ? (
           <Image src={image} alt="" width={72} height={72} className="max-h-full max-w-full object-contain" />
         ) : (
