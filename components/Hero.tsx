@@ -42,6 +42,18 @@ export default function Hero() {
       </div>
 
       <div className="bg-surface px-6 md:px-8 py-8 border-t lg:border-t-0 border-rule">
+        {/* PRODUCT PHOTO (owner 2026-08-04: "it look cheap and not like other review website").
+            The single biggest genre difference vs Wirecutter/RTINGS was ZERO product photography —
+            the handoff went text-only, and a wall of dark text reads as a terminal, not a review
+            site. The photo sits on a white tile because the shots are white-background cutouts;
+            floating them on near-black looks broken. Score stays primary, photo gives it a face. */}
+        {(latest as { image?: string }).image && (
+          <div className="mb-6 bg-white p-4 flex items-center justify-center" style={{ aspectRatio: '16/10' }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={(latest as { image?: string }).image} alt={latest.title}
+                 className="max-h-full max-w-full object-contain" />
+          </div>
+        )}
         <div className="label-dim mb-4">Composite score</div>
         {latest.rating !== undefined && (
           <>

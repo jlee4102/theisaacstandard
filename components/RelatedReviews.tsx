@@ -21,6 +21,7 @@ export default function RelatedReviews({ slug, category }: { slug: string; categ
             excerpt={r.excerpt}
             date={r.date}
             rating={r.rating}
+              image={(r as { image?: string }).image}
             category={catName(r.category)}
           />
         ))}

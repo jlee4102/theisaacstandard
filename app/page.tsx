@@ -35,6 +35,7 @@ export default function Home() {
               excerpt={r.excerpt}
               date={r.date}
               rating={r.rating}
+              image={(r as { image?: string }).image}
               category={categoryName(r.category)}
             />
           ))}

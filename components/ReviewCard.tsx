@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { verdictFor, verdictColor } from '@/components/Verdict';
 
@@ -17,6 +18,7 @@ export default function ReviewCard({
   rating,
   date,
   category,
+  image,
   featured = false,
 }: {
   slug: string;
@@ -28,10 +30,14 @@ export default function ReviewCard({
   image?: string;
   featured?: boolean;
 }) {
+  // PRODUCT THUMBNAILS (owner 2026-08-04: "looks cheap and not like other review website"): every
+  // consumer review site leads each row with the product's photo — the all-text rows read as a
+  // log viewer. White tile because the shots are white-background cutouts; on near-black they
+  // look torn out. The score column stays first: the score is still the site's signature.
   return (
     <Link
       href={`/review/${slug}`}
-      className="group grid grid-cols-[48px_1fr] md:grid-cols-[64px_1fr_150px_100px] gap-x-5 items-start border-b border-rule px-5 md:px-9 py-5 hover:bg-raised transition-colors"
+      className="group grid grid-cols-[48px_56px_1fr] md:grid-cols-[64px_72px_1fr_150px_100px] gap-x-4 md:gap-x-5 items-start border-b border-rule px-5 md:px-9 py-5 hover:bg-raised transition-colors"
     >
       <div>
         {rating !== undefined ? (
@@ -49,6 +55,13 @@ export default function ReviewCard({
           </>
         ) : (
           <span className="label-dim">TBD</span>
+        )}
+      </div>
+      <div className="bg-white p-1 flex items-center justify-center w-[56px] h-[56px] md:w-[72px] md:h-[72px]">
+        {image ? (
+          <Image src={image} alt="" width={72} height={72} className="max-h-full max-w-full object-contain" />
+        ) : (
+          <span className="font-mono text-[9px] text-neutral-400">—</span>
         )}
       </div>
       <div className="min-w-0">

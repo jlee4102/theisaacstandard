@@ -57,6 +57,7 @@ export default function CategoryPage({ slug }: { slug: string }) {
               excerpt={r.excerpt}
               date={r.date}
               rating={r.rating}
+              image={(r as { image?: string }).image}
               category={cat.name}
             />
           ))}

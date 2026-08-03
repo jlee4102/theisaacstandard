@@ -96,8 +96,9 @@ export default function ReviewsBrowser({
       </div>
 
       {/* Column headers (desktop) */}
-      <div className="hidden md:grid grid-cols-[64px_1fr_150px_100px] gap-x-5 px-9 py-3 border-b border-rule-strong">
+      <div className="hidden md:grid grid-cols-[64px_72px_1fr_150px_100px] gap-x-5 px-9 py-3 border-b border-rule-strong">
         <span className="label-dim">Score</span>
+        <span className="label-dim"></span>
         <span className="label-dim">Unit</span>
         <span className="label-dim">Category</span>
         <span className="label-dim text-right">Date</span>
@@ -111,6 +112,7 @@ export default function ReviewsBrowser({
           excerpt={r.excerpt}
           date={r.date}
           rating={r.rating}
+              image={(r as { image?: string }).image}
           category={catName(r.category)}
         />
       ))}
