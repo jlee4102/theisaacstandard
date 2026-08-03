@@ -100,6 +100,22 @@ export async function GET(
     return NextResponse.redirect(dest, 307); // 307 preserves method if a program's tracking needs it
   }
 
+  // Mode 1.5: DIRECT PRODUCT redirect — the slug IS an ASIN (2026-08-03). The Associates
+  // dashboard finally gave ground truth: 798 clicks in 30 days, 0 orders, 0.00% conversion.
+  // Every click was landing on a SEARCH-RESULTS page (mode 2 below) — a wall of products the
+  // viewer must dig through, which converts near zero. ARU now resolves a specific, identity-
+  // checked ASIN per linked product where it can (reviewer._resolve_asin + the ratings-count
+  // demand gate) and links /go/<ASIN>; this sends that click to the actual product page, the
+  // highest-converting landing Amazon has. Search stays as the fallback for unresolvable names.
+  // Two ASIN shapes exist: B0-prefixed for most products, and ISBN-10 (9 digits + digit/X) for
+  // books — the history/context channels link books, so both must route to /dp/.
+  if (/^b0[a-z0-9]{8}$/.test(slug) || /^[0-9]{9}[0-9x]$/.test(slug)) {
+    const asin = slug.toUpperCase();
+    await logClick(slug, v, 'amazon', 'www.amazon.com/dp');
+    return NextResponse.redirect(
+      `https://www.amazon.com/dp/${asin}?tag=${site.affiliateTag}`, 302);
+  }
+
   // Mode 2: Amazon search fallback (unchanged behavior)
   const query = slug.replace(/-/g, ' ').slice(0, 150);
   const target = query
