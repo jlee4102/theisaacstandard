@@ -18,7 +18,7 @@ export const metadata = {
   twitter: { card: 'summary_large_image', images: ['/brand/png/og-image.png'] },
 };
 
-const ASIN = 'B0CP3K8G9X';
+const ASIN = 'B0DMW5Z8D6';
 
 export default function Page() {
   const jsonLd = {"@context": "https://schema.org", "@type": "Review", "itemReviewed": {"@type": "Product", "name": "Cotsoco Mini Massage Gun", "brand": {"@type": "Brand", "name": "Cotsoco"}}, "author": {"@type": "Person", "name": "Isaac"}, "publisher": {"@type": "Organization", "name": "The Isaac Standard"}, "reviewRating": {"@type": "Rating", "ratingValue": "3.2", "bestRating": "5"}};
