@@ -72,6 +72,16 @@ export const categories = [
 
 export const reviews = [
   {
+    slug: 'hyperice-hypervolt-2-pro-review',
+    title: 'Hyperice Hypervolt 2 Pro Review: Heavy-Duty Percussion Therapy, But Is It Worth the Premium?',
+    category: 'fitness-gear',
+    excerpt:
+      'The Hypervolt 2 Pro hits 60 lbs of stall force and runs quieter than most rivals, but its high price and clunky app make it a tough sell for casual users.…',
+    date: '2026-08-05',
+    rating: 3.5,
+    image: undefined,
+  },
+  {
     slug: 'cotsoco-mini-massage-gun-review',
     title: 'Cotsoco Mini Massage Gun Review: Small, Quiet, but Is It Strong Enough?',
     category: 'fitness-gear',
