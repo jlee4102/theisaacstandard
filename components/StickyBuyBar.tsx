@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { site } from '@/lib/site';
 import { verdictFor, verdictColor } from '@/components/Verdict';
 
 // Instrument sticky product bar. Desktop: sticks to the viewport TOP once the reader is past the
@@ -27,7 +26,9 @@ export default function StickyBuyBar({
   }, []);
 
   if (!asin) return null;
-  const href = `https://www.amazon.com/dp/${asin}?tag=${site.affiliateTag}`;
+  // Routed through /go for per-page click attribution (Layer 5, 2026-08-07) — tag applied
+  // server-side by the route; see AffiliateLink.tsx for the rationale.
+  const href = `/go/${asin}`;
 
   const cta = (
     <a

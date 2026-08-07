@@ -32,7 +32,7 @@ import affiliateLinks from '@/lib/affiliate-links.json';
 // Fully optional: with the env vars unset this is a no-op and the redirect behaves exactly as
 // before. Swallowed and non-blocking — a counter must never delay or break a revenue link.
 // Counts only: slug, video id, mode, day. No IPs, no user identifiers, nothing personal.
-async function bumpCounters(slug: string, video: string, mode: string) {
+async function bumpCounters(slug: string, video: string, mode: string, page: string) {
   const url = process.env.UPSTASH_REDIS_REST_URL;
   const tok = process.env.UPSTASH_REDIS_REST_TOKEN;
   if (!url || !tok) return;
@@ -45,6 +45,7 @@ async function bumpCounters(slug: string, video: string, mode: string) {
     ['INCR', `clicks:mode:${mode}`],
   ];
   if (video) cmds.push(['INCR', `clicks:video:${video}`]);
+  if (page) cmds.push(['INCR', `clicks:page:${page}`]);
   try {
     await fetch(`${url}/pipeline`, {
       method: 'POST',
@@ -57,14 +58,15 @@ async function bumpCounters(slug: string, video: string, mode: string) {
   }
 }
 
-async function logClick(slug: string, video: string, mode: 'tool' | 'amazon', destHost: string) {
-  const payload = { slug, video: video || '(none)', mode, dest: destHost };
+async function logClick(slug: string, video: string, mode: 'tool' | 'amazon', destHost: string,
+                        page = '') {
+  const payload = { slug, video: video || '(none)', mode, dest: destHost, page: page || '(none)' };
   try {
     await track('affiliate_click', payload);
   } catch {
     /* analytics must never break a redirect */
   }
-  await bumpCounters(slug, video, mode);
+  await bumpCounters(slug, video, mode, page);
   // Redundant record in the function log — independent of the analytics pipeline, greppable in the
   // Vercel dashboard, and useful if a click ever needs to be reconstructed.
   try {
@@ -81,6 +83,20 @@ export async function GET(
   const { q } = await params;
   const slug = decodeURIComponent(q || '').trim().toLowerCase();
   const v = req.nextUrl.searchParams.get('v') || '';
+  // PER-PAGE ATTRIBUTION (Layer 5, 2026-08-07): review-page CTAs now route through /go, and the
+  // page that sent the click is derived from the same-origin Referer — no per-page prop threading,
+  // so every already-published page participates. Cross-origin/absent referers count as '(none)'.
+  // No personal data: a path on our own site, nothing else.
+  let page = '';
+  try {
+    const ref = req.headers.get('referer') || '';
+    const u = new URL(ref);
+    if (u.host === req.nextUrl.host) {
+      page = u.pathname.replace(/^\/+|\/+$/g, '').slice(0, 120); // e.g. review/sony-wh1000xm5-review
+    }
+  } catch {
+    /* no referer is normal (direct hits, some privacy modes) — attribution stays blank */
+  }
 
   // Mode 1: known affiliate tool
   const links = affiliateLinks as Record<string, string>;
@@ -96,7 +112,7 @@ export async function GET(
     } catch {
       /* malformed dest still redirects; just log the host as unknown */
     }
-    await logClick(slug, v, 'tool', host);
+    await logClick(slug, v, 'tool', host, page);
     return NextResponse.redirect(dest, 307); // 307 preserves method if a program's tracking needs it
   }
 
@@ -111,7 +127,7 @@ export async function GET(
   // books — the history/context channels link books, so both must route to /dp/.
   if (/^b0[a-z0-9]{8}$/.test(slug) || /^[0-9]{9}[0-9x]$/.test(slug)) {
     const asin = slug.toUpperCase();
-    await logClick(slug, v, 'amazon', 'www.amazon.com/dp');
+    await logClick(slug, v, 'amazon', 'www.amazon.com/dp', page);
     return NextResponse.redirect(
       `https://www.amazon.com/dp/${asin}?tag=${site.affiliateTag}`, 302);
   }
@@ -121,6 +137,6 @@ export async function GET(
   const target = query
     ? `https://www.amazon.com/s?k=${encodeURIComponent(query)}&tag=${site.affiliateTag}`
     : `https://www.amazon.com/?tag=${site.affiliateTag}`;
-  await logClick(slug, v, 'amazon', 'www.amazon.com');
+  await logClick(slug, v, 'amazon', 'www.amazon.com', page);
   return NextResponse.redirect(target, 302);
 }
