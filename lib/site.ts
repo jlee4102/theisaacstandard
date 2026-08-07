@@ -72,6 +72,16 @@ export const categories = [
 
 export const reviews = [
   {
+    slug: 'bowflex-selecttech-840-kettlebell-review',
+    title: 'Bowflex SelectTech 840 Kettlebell Review: Smart Adjustable Weight, But Is It Worth It?',
+    category: 'fitness-gear',
+    excerpt:
+      'The Bowflex SelectTech 840 Kettlebell is a genuinely clever space-saver that replaces 6 kettlebells with a dial-turning mechanism. But the bulky design…',
+    date: '2026-08-07',
+    rating: 3.5,
+    image: '/reviews/bowflex-selecttech-840-kettlebell-review/main.jpg',
+  },
+  {
     slug: 'hyperice-hypervolt-2-pro-review',
     title: 'Hyperice Hypervolt 2 Pro Review: Heavy-Duty Percussion Therapy, But Is It Worth the Premium?',
     category: 'fitness-gear',
