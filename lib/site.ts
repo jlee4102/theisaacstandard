@@ -72,6 +72,16 @@ export const categories = [
 
 export const reviews = [
   {
+    slug: 'ironmaster-quick-lock-adjustable-dumbbells-review',
+    title: 'Ironmaster Quick-Lock Adjustable Dumbbells Review: The Honest Trade-Offs',
+    category: 'fitness-gear',
+    excerpt:
+      'The Ironmaster Quick-Lock is a rugged, space-saving set of cast-iron dumbbells that expands to 120 lbs per hand. Slow plate changes and a $500+ entry price…',
+    date: '2026-08-08',
+    rating: 3.5,
+    image: undefined,
+  },
+  {
     slug: 'bowflex-selecttech-840-kettlebell-review',
     title: 'Bowflex SelectTech 840 Kettlebell Review: Smart Adjustable Weight, But Is It Worth It?',
     category: 'fitness-gear',
