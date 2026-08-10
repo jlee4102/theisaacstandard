@@ -72,6 +72,16 @@ export const categories = [
 
 export const reviews = [
   {
+    slug: 'folding-squat-rack-e-g-prx-or-similar-review',
+    title: 'Folding Squat Rack Review: The Honest Truth About Wall-Mounted Power Racks',
+    category: 'fitness-gear',
+    excerpt:
+      'Folding squat racks are a smart space-saver for home gyms, but not a true substitute for a full power rack. You trade cage depth for a fold-away footprint…',
+    date: '2026-08-10',
+    rating: 3.5,
+    image: '/reviews/folding-squat-rack-e-g-prx-or-similar-review/main.jpg',
+  },
+  {
     slug: 'ironmaster-quick-lock-adjustable-dumbbells-review',
     title: 'Ironmaster Quick-Lock Adjustable Dumbbells Review: The Honest Trade-Offs',
     category: 'fitness-gear',
