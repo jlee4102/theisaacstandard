@@ -72,6 +72,16 @@ export const categories = [
 
 export const reviews = [
   {
+    slug: 'bob-and-brad-x6-pro-max-review',
+    title: 'Bob and Brad X6 Pro Max Review: The $300 Massage Gun That\'s Almost a Real Therapy Tool',
+    category: 'fitness-gear',
+    excerpt:
+      'At $300—roughly half the Theragun Pro\'s price—the X6 Pro Max matches its 16mm amplitude and 80-lb stall force while running under 45 dB. It\'s not a…',
+    date: '2026-08-13',
+    rating: 4.0,
+    image: undefined,
+  },
+  {
     slug: 'folding-squat-rack-e-g-prx-or-similar-review',
     title: 'Folding Squat Rack Review: The Honest Truth About Wall-Mounted Power Racks',
     category: 'fitness-gear',
