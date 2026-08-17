@@ -72,6 +72,16 @@ export const categories = [
 
 export const reviews = [
   {
+    slug: 'renpho-r3-mini-massage-gun-review',
+    title: 'Renpho R3 Mini Massage Gun Review: Honest Trade-Offs After Testing',
+    category: 'fitness-gear',
+    excerpt:
+      'The Renpho R3 is compact and quiet—good for travel and light recovery—but lacks the power and battery life serious athletes need. A solid budget pick for…',
+    date: '2026-08-17',
+    rating: 3.0,
+    image: '/reviews/renpho-r3-mini-massage-gun-review/main.jpg',
+  },
+  {
     slug: 'bob-and-brad-x6-pro-max-review',
     title: 'Bob and Brad X6 Pro Max Review: The $300 Massage Gun That\'s Almost a Real Therapy Tool',
     category: 'fitness-gear',
