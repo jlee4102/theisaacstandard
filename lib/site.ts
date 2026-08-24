@@ -72,6 +72,16 @@ export const categories = [
 
 export const reviews = [
   {
+    slug: 'ekrin-b37-review',
+    title: 'Ekrin B37 Percussion Massager Review: The Honest Trade-Offs After 3 Months',
+    category: 'fitness-gear',
+    excerpt:
+      'The Ekrin B37 delivers 56 lbs of stall force, runs quieter than a Theragun Pro, and feels premium for the price. The 2.4-lb weight and missing carry case…',
+    date: '2026-08-24',
+    rating: 4.0,
+    image: '/reviews/ekrin-b37-review/main.jpg',
+  },
+  {
     slug: 'renpho-r3-mini-massage-gun-review',
     title: 'Renpho R3 Mini Massage Gun Review: Honest Trade-Offs After Testing',
     category: 'fitness-gear',
