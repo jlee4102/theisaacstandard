@@ -72,6 +72,16 @@ export const categories = [
 
 export const reviews = [
   {
+    slug: 'soundpeats-air4-pro-review',
+    title: 'Soundpeats Air4 Pro Review: Budget Earbuds That Sound Twice the Price',
+    category: 'budget-audio',
+    excerpt:
+      'The Soundpeats Air4 Pro deliver mature sound, effective ANC, and a comfortable fit for around $60—one of the best-value wireless earbuds of the year. But…',
+    date: '2026-08-26',
+    rating: 3.5,
+    image: '/reviews/soundpeats-air4-pro-review/main.jpg',
+  },
+  {
     slug: 'ekrin-b37-review',
     title: 'Ekrin B37 Percussion Massager Review: The Honest Trade-Offs After 3 Months',
     category: 'fitness-gear',
