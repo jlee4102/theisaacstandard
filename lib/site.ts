@@ -72,6 +72,16 @@ export const categories = [
 
 export const reviews = [
   {
+    slug: 'pulsio-air-massage-gun-review',
+    title: 'Pulsio Air Massage Gun Review: Is This Budget-Friendly Percussion Therapy Worth It?',
+    category: 'fitness-gear',
+    excerpt:
+      'The Pulsio Air Massage Gun delivers a decent percussive massage for around $50, but its 3,200-RPM motor and real-world 1.5-hour battery will disappoint…',
+    date: '2026-08-31',
+    rating: 3.5,
+    image: undefined,
+  },
+  {
     slug: 'soundpeats-air4-pro-review',
     title: 'Soundpeats Air4 Pro Review: Budget Earbuds That Sound Twice the Price',
     category: 'budget-audio',
