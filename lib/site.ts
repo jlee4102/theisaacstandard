@@ -72,6 +72,16 @@ export const categories = [
 
 export const reviews = [
   {
+    slug: 'tozo-t10-review',
+    title: 'Tozo T10 Review: Still a Budget Champ in 2026, But the Bar Has Moved',
+    category: 'budget-audio',
+    excerpt:
+      'The Tozo T10 is a solid budget true-wireless pick with punchy bass and an IPX8 rating, but in 2026 the competition has caught up. On sale they\'re a steal…',
+    date: '2026-09-01',
+    rating: 3.5,
+    image: '/reviews/tozo-t10-review/main.jpg',
+  },
+  {
     slug: 'pulsio-air-massage-gun-review',
     title: 'Pulsio Air Massage Gun Review: Is This Budget-Friendly Percussion Therapy Worth It?',
     category: 'fitness-gear',
